@@ -1,0 +1,129 @@
+---
+title: "GDP and Economic Growth"
+subtitle: "Lesson 5 - Economics with R"
+author: "Irfan Tri Raharjo"
+format: 
+  html:
+    code-fold: false
+    toc: true
+    toc-depth: 3
+execute:
+  warning: false
+  message: false
+---
+
+# GDP dan Pertumbuhan Ekonomi
+
+Setelah membahas pasar, sekarang kita naik level ke skala negara. Di sesi ini, kita akan kenalan sama GDP atau PDB (Produk Domestik Bruto), yaitu 'rapor' kesehatan ekonomi suatu negara, dan gimana kita bisa menganalisis Pertumbuhan Ekonomi pakai R.
+
+------------------------------------------------------------------------
+
+## Apa itu GDP?
+
+Saya yakin kalian sudah paham, tapi ini perlu tetap saya tulis untuk memenuhi halaman lesson, duh.
+
+GDP itu ibarat total nilai belanjaan seluruh penduduk dan entitas di suatu negara selama periode tertentu (misalnya setahun). Secara formal, GDP adalah total nilai moneter dari semua barang dan jasa akhir yang diproduksi di dalam batas wilayah suatu negara dalam periode waktu spesifik.
+
+Intinya: GDP adalah indikator yang paling sering dipakai buat tahu seberapa 'sehat' dan aktif ekonomi suatu negara. Semakin tinggi PDB, biasanya semakin besar kue ekonominya.
+
+## Komponen GDP
+
+dihitung dari sisi Pengeluaran (Expenditure Approach). Coba lihat ke mana saja uang di negara itu mengalir:
+
+**Formula:**
+
+$$GDP = C + I + G + (X - M)$$
+
+**Keterangan:**
+
+-   C (Consumer Spending / Konsumsi):
+
+Pengeluaran kita sehari-hari, dari beli kopi sampai bayar kosan. Ini adalah komponen terbesar, biasanya 60-70% PDB. - I (Investment / Investasi):
+
+Pengeluaran bisnis untuk barang modal (misalnya pabrik baru, mesin, software).
+
+-   G (Government Spending / Belanja Pemerintah):
+
+Pengeluaran pemerintah untuk barang dan jasa (misalnya bangun jalan, bayar gaji PNS).
+
+-   X - M (Net Exports / Ekspor Bersih):
+
+Ekspor (X) (barang yang kita jual ke luar) dikurangi Impor (M) (barang yang kita beli dari luar).
+
+## Coba kita simulasikan
+
+```{r}
+# Buat data frame GDP (billions)
+years <- 2015:2024
+consumption <- c(12000, 12400, 12800, 13100, 13500, 
+                 13200, 13800, 14300, 14800, 15200)
+investment <- c(3000, 3100, 3200, 3300, 3400, 
+                3000, 3300, 3500, 3700, 3900)
+government <- c(3500, 3600, 3700, 3800, 3900, 
+                4200, 4300, 4400, 4500, 4600)
+net_exports <- c(-500, -550, -600, -650, -700, 
+                 -600, -550, -500, -450, -400)
+
+gdp <- consumption + investment + government + net_exports
+
+gdp_data <- data.frame(
+  Year = years,
+  GDP = gdp,
+  Consumption = consumption,
+  Investment = investment,
+  Government = government,
+  Net_Exports = net_exports
+)
+
+# Hitung growth rate dari GDP
+gdp_growth <- c(NA, diff(gdp) / gdp[-length(gdp)] * 100)
+gdp_data$Growth_Rate <- gdp_growth
+
+print(gdp_data)
+```
+
+## Visualisasi GDP dan pertumbuhan ekonomi
+
+```{r}
+library(ggplot2)
+
+# Bikin data frame
+chart_data <- data.frame(
+  year = c(2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024),
+  GDP_Billions = c(18000, 18550, 19100, 19550, 20100, 19800, 20850, 21700, 22550, 23300)
+)
+
+# Tetapkan area plotnya
+ggplot(chart_data, aes(x = year)) +
+  geom_area(aes(y = GDP_Billions, fill = "GDP Billions"), alpha = 0.6)
+  labs(title = "GDP Growth Over Time",
+       x = "Year",
+       y = "Value",
+       fill = "Legend") +
+  theme_minimal()
+```
+
+## Menghitung Real vs Nominal GDP
+
+```{r}
+# Nominal vs Real GDP (adjusting for inflation)
+nominal_gdp <- c(20000, 21000, 22100, 23300, 24600)
+cpi <- c(100, 102, 105, 108, 112)  # Consumer Price Index
+
+# Real GDP (base year = first year)
+real_gdp <- (nominal_gdp / cpi) * 100
+
+gdp_comparison <- data.frame(
+  Year = 2020:2024,
+  Nominal_GDP = nominal_gdp,
+  Real_GDP = real_gdp,
+  CPI = cpi
+)
+
+print(paste("\nNominal GDP shows the current dollar value\n"))
+print(paste("Real GDP adjusts for inflation\n\n"))
+print(gdp_comparison)
+```
+
+
+------------------------------------------------------------------------

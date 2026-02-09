@@ -1,0 +1,51 @@
+---
+title: "Introduction to Economics & R"
+subtitle: "Lesson 1 - Economics with R"
+author: "Irfan Tri Raharjo"
+format: 
+  html:
+    code-fold: false
+    toc: true
+    toc-depth: 3
+execute:
+  warning: false
+  message: false
+---
+
+# Kenalan dengan R untuk Ekonomi
+
+Di sesi ini, kita bakal mengupas tuntas dasar-dasar Ekonomi dan gimana R bisa jadi tools super buat kamu menganalisis dunia ekonomi.
+
+## Ekonomi itu Apa Sih?
+
+Coba kamu bayangin: Setiap pagi kamu Cuma punya 15 ribu buat jajan, padahal kamu pengen banget beli kopi susu kekinian, seblak, plus thai tea. Gimana cara kamu milih?
+
+Nah, itulah esensi dari…Ekonomi! Ekonomi adalah ilmu sosial yang sebagian besar kerjanya adalah mengamati gimana individu seperti kamu, bisnis (warung kopi), pemerintah, bahkan negara membuat pilihan cerdas buat ngatur sumber daya yang serba terbatas demi memenuhi keinginan yang tidak terbatas.
+
+Garis besarnya, Ekonomi itu punya dua jagoan utama:
+
+-   Microeconomics (Ekonomi Mikro): ini fokus ke keputusan kecil. Contohnya: Kenapa harga nasi bakso di kampusmu naik? Kenapa kamu lebih milih streaming film daripada beli buku?
+
+-   Macroeconomics (Ekonomi Makro): ini lebih melihat gambaran besar. Contoh: Kenapa suatu negara bisa inflasi? Atau Gimana cara pemerintah ngurangin angka pengangguran?
+
+## Kenapa Anak Ekonomi Wajib Banget Kenalan Sama R?
+
+Kenapa Anak Ekonomi Wajib Banget Kenalan Sama R? - Pertama dan utama, Gratis Total! (ga perlu bajak software mahal) - Ada toolkit/package khusus econometrics yang lengkap (Jeffrey Wooldridge) - Cocok buat bikin visualisasi data
+
+Ok, install dulu R dan Rstudio kalian
+
+## Setting Up si R
+
+```{r}
+# Load libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Your first R command
+print("Kenapa singa kalau berburu harus bersama-sama? 
+      karena kalau sendiri namanya bukan singa, tapi single!")
+```
+
+
+Sebagai awal perkenalan, kalian bisa lanjut ke [The Wiken Project](https://irfan-tri-raharjo.quarto.pub/r-microecon/thewikenpro.html)\| [Pengenalan R dan RStudio](https://rpubs.com/Irfan_Raharjo/1021498)

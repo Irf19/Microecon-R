@@ -1,0 +1,485 @@
+[
+  {
+    "objectID": "home.html",
+    "href": "home.html",
+    "title": "R-Econ - Laman Belajar Ekonomi dan R",
+    "section": "",
+    "text": "R-Econ berisi materi belajar ekonomi dasar yang dirancang untuk para pelajar SMA/SMK sederajat yang baru mulai mengenal ekonomi mikro, grafik permintaan dan penawaran, serta sedikit komputasi statistik.\nPlatform ini disusun dari pengalaman mengikuti program micromasters dan praktik belajar mandiri. R sendiri merupakan bahasa pemrograman untuk komputasi statistik dan grafis yang open-source.\nMelalui platform ini, kamu akan belajar melalui praktik belajar mandiri, mencoba langsung konsep ekonomi mikro menggunakan data sederhana di R. R-Econ bisa jadi langkah awal sebelum naik ke level pembelajaran ala Micromasters DEDP."
+  },
+  {
+    "objectID": "thewikenpro.html",
+    "href": "thewikenpro.html",
+    "title": "The Wiken Project| Eksplorasi Ekonomi & Data dengan R",
+    "section": "",
+    "text": "The Wiken Project adalah koleksi simulasi analisis data ekonomi menggunakan R yang menjembatani teori ekonomi mikro dengan fenomena nyata. Di sini, anda akan menemukan tulisan dan aplikasi interaktif tentang pengenalan R, visualisasi mobilitas sosial, pengaruh kota kelahiran terhadap pendapatan, dan lain-lain sebagai bagian dari pembelajaran ekonomi berbasis data.\nJelajahi proyek ekonomi berbasis simulasi data & R yang menghubungkan teori dengan realitas ekonomi sehari-hari. Termasuk analisis mobilitas sosial, birthplace effect, dan visualisasi data.\n\nRPubs\n1. Pengenalan R dan RStudio\n\nTeknologi dan Pertumbuhan Ekonomi: Analisis Dampak Inovasi Digital\nVisualisasi Mobilitas Sosial: Perintis vs Pewaris dalam Grafik Sankey\nPengaruh Kota Kelahiran terhadap Pendapatan | Birthplace Effect\n\n\n\nShinnyApp\n\nAnalisis Regresi\nTicTac Games"
+  },
+  {
+    "objectID": "lessons/lesson-6-inflation-and-cpi.html",
+    "href": "lessons/lesson-6-inflation-and-cpi.html",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "Setelah ngitung kekayaan negara (GDP), sekarang kita bahas penyakitnya: Inflasi. Di sesi ini, kita akan tahu apa itu inflasi, cara mengukurnya pakai Indeks Harga Konsumen (IHK/CPI), dan menganalisis trennya pakai R.\n\n\n\nInflasi adalah kondisi di mana harga-harga barang dan jasa secara umum naik terus-menerus.\nBayangkan: Tahun lalu, Rp10.000 bisa buat beli dua bungkus nasi, sekarang cuma dapat satu. Daya beli uangmu terkikis.\nTugas utama Bank Sentral (di Indonesia: Bank Indonesia) adalah mengendalikan laju inflasi—dan mencegah deflasi (harga turun drastis) — agar ekonomi tetap berjalan mulus.\n\n\n\nIHK adalah alat ukur utama inflasi.\nCara kerjanya: IHK mengukur rata-rata perubahan harga sekelompok barang dan jasa yang biasa dibeli konsumen (beras, pulsa, transportasi, dll.) dari waktu ke waktu.\nRumus Sederhana untuk Menghitung Laju Inflasi: \\[\\text{Laju Inflasi} = \\frac{(CPI_{\\text{sekarang}} - CPI_{\\text{sebelum}}) }{CPI_{\\text{sebelum}}} \\times 100\\]\n\n\n\n\n# Buat data frame CPI sekian tahun\nyears &lt;- 2015:2024\ncpi &lt;- c(237.0, 240.0, 245.1, 251.1, 255.7, \n         258.8, 271.0, 284.2, 296.8, 307.5)\n\n# Hitung Inflation Rate\ninflation_rate &lt;- c(NA, diff(cpi) / cpi[-length(cpi)] * 100)\n\ninflation_data &lt;- data.frame(\n  Year = years,\n  CPI = cpi,\n  Inflation_Rate = round(inflation_rate, 2)\n)\n\nprint(inflation_data)\n\n   Year   CPI Inflation_Rate\n1  2015 237.0             NA\n2  2016 240.0           1.27\n3  2017 245.1           2.12\n4  2018 251.1           2.45\n5  2019 255.7           1.83\n6  2020 258.8           1.21\n7  2021 271.0           4.71\n8  2022 284.2           4.87\n9  2023 296.8           4.43\n10 2024 307.5           3.61\n\n# Hitung average inflation\navg_inflation &lt;- mean(inflation_rate, na.rm = TRUE)\nprint(paste(\"Average Inflation Rate:\", round(avg_inflation, 2)))\n\n[1] \"Average Inflation Rate: 2.95\"\n\n\n\n\n\nPenting buat kamu:\n\nDaya Beli Turun: Uangmu jadi kurang powernya dari tahun ke tahun.\nTabungan Terkikis: Kalau uang kamu cuma disimpan di bawah kasur, nilainya akan terus turun.\nIdealnya: Inflasi yang moderat (sekitar 2-3%) dianggap sehat karena mendorong orang untuk belanja dan investasi, yang memacu pertumbuhan ekonomi.\nBahayanya: Inflasi yang tinggi (Hyperinflation) bisa bikin ekonomi kacau\n\n\n\n\nFYI, R menyediakan banyak data yang bisa kita gunakan untuk simulasi tidak hanya matematika ekonomi, bahkan ekonometrika. Coba saja package wooldridge"
+  },
+  {
+    "objectID": "lessons/lesson-6-inflation-and-cpi.html#inflasi-itu-apa",
+    "href": "lessons/lesson-6-inflation-and-cpi.html#inflasi-itu-apa",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "Inflasi adalah kondisi di mana harga-harga barang dan jasa secara umum naik terus-menerus.\nBayangkan: Tahun lalu, Rp10.000 bisa buat beli dua bungkus nasi, sekarang cuma dapat satu. Daya beli uangmu terkikis.\nTugas utama Bank Sentral (di Indonesia: Bank Indonesia) adalah mengendalikan laju inflasi—dan mencegah deflasi (harga turun drastis) — agar ekonomi tetap berjalan mulus."
+  },
+  {
+    "objectID": "lessons/lesson-6-inflation-and-cpi.html#indeks-harga-konsumen--ihk-cpi",
+    "href": "lessons/lesson-6-inflation-and-cpi.html#indeks-harga-konsumen--ihk-cpi",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "IHK adalah alat ukur utama inflasi.\nCara kerjanya: IHK mengukur rata-rata perubahan harga sekelompok barang dan jasa yang biasa dibeli konsumen (beras, pulsa, transportasi, dll.) dari waktu ke waktu.\nRumus Sederhana untuk Menghitung Laju Inflasi: \\[\\text{Laju Inflasi} = \\frac{(CPI_{\\text{sekarang}} - CPI_{\\text{sebelum}}) }{CPI_{\\text{sebelum}}} \\times 100\\]"
+  },
+  {
+    "objectID": "lessons/lesson-6-inflation-and-cpi.html#simulasi-perhitungan-inflasi",
+    "href": "lessons/lesson-6-inflation-and-cpi.html#simulasi-perhitungan-inflasi",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "# Buat data frame CPI sekian tahun\nyears &lt;- 2015:2024\ncpi &lt;- c(237.0, 240.0, 245.1, 251.1, 255.7, \n         258.8, 271.0, 284.2, 296.8, 307.5)\n\n# Hitung Inflation Rate\ninflation_rate &lt;- c(NA, diff(cpi) / cpi[-length(cpi)] * 100)\n\ninflation_data &lt;- data.frame(\n  Year = years,\n  CPI = cpi,\n  Inflation_Rate = round(inflation_rate, 2)\n)\n\nprint(inflation_data)\n\n   Year   CPI Inflation_Rate\n1  2015 237.0             NA\n2  2016 240.0           1.27\n3  2017 245.1           2.12\n4  2018 251.1           2.45\n5  2019 255.7           1.83\n6  2020 258.8           1.21\n7  2021 271.0           4.71\n8  2022 284.2           4.87\n9  2023 296.8           4.43\n10 2024 307.5           3.61\n\n# Hitung average inflation\navg_inflation &lt;- mean(inflation_rate, na.rm = TRUE)\nprint(paste(\"Average Inflation Rate:\", round(avg_inflation, 2)))\n\n[1] \"Average Inflation Rate: 2.95\""
+  },
+  {
+    "objectID": "lessons/lesson-6-inflation-and-cpi.html#dampak-inflasi",
+    "href": "lessons/lesson-6-inflation-and-cpi.html#dampak-inflasi",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "Penting buat kamu:\n\nDaya Beli Turun: Uangmu jadi kurang powernya dari tahun ke tahun.\nTabungan Terkikis: Kalau uang kamu cuma disimpan di bawah kasur, nilainya akan terus turun.\nIdealnya: Inflasi yang moderat (sekitar 2-3%) dianggap sehat karena mendorong orang untuk belanja dan investasi, yang memacu pertumbuhan ekonomi.\nBahayanya: Inflasi yang tinggi (Hyperinflation) bisa bikin ekonomi kacau"
+  },
+  {
+    "objectID": "lessons/lesson-6-inflation-and-cpi.html#coba-lebih-lanjut",
+    "href": "lessons/lesson-6-inflation-and-cpi.html#coba-lebih-lanjut",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "FYI, R menyediakan banyak data yang bisa kita gunakan untuk simulasi tidak hanya matematika ekonomi, bahkan ekonometrika. Coba saja package wooldridge"
+  },
+  {
+    "objectID": "lessons/lesson-4-elasticity-of-demand.html",
+    "href": "lessons/lesson-4-elasticity-of-demand.html",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "Seberapa “Sensitif” Pembeli?\nOke, kita tahu kalau harga naik, Permintaan turun. Tapi, seberapa jauh penurunannya? Di sesi ini, kita akan bedah Elastisitas Harga Permintaan (Elasticity of Demand), yaitu ilmu yang mengukur tingkat sensitivitas pembeli terhadap perubahan harga. Dan pastinya, kita hitung pakai R!\n\n\n\nElastisitas ini mengukur: “Kalau harga naik 1%, seberapa besar sih Permintaan itu bakal berubah (dalam % juga)?”\nRumus perhitungannya gampang:\n\\[E_d = \\frac{\\% \\text{ Perubahan Kuantitas Diminta}}{\\% \\text{ Perubahan Harga}}\\]\nPenting: Nilai \\(E_d\\) ini selalu dalam nilai absolut (\\(|E_d|\\)).\nFormula:\n\\[\nE_d = (\\% \\text{ Change in Quantity Demanded}) / (\\% \\text{ Change in Price})\n\\]\n\n\n\nPoin utama:\n• Elastis \\((|E_d| &gt; 1)\\):\nContoh: Jasa ojek online. Kalau harganya naik dikit, kamu langsung pindah ke transportasi lain. Sangat responsif!\n• Inelastis \\((|E_d| &lt; 1)\\):\nContoh: Bensin, atau obat-obatan penting. Mau harganya naik, kamu tetap harus beli. Tidak responsif terhadap perubahan harga.\n• Unit Elastis \\((|E_d| = 1)\\):\nPerubahan harga (misal 10%) menghasilkan perubahan Permintaan yang sama persis (10%).\n• Sangat Elastis/Sempurna \\((|E_d| = \\infty)\\):\nKenaikan harga sekecil apapun, Permintaan langsung nol. (Ini teori ideal, jarang di dunia nyata).\n• Sangat Inelastis/Sempurna \\((|E_d| = 0)\\):\nHarga berubah drastis, tapi Permintaan tidak bergerak sama sekali. (Contoh: Air mineral di gurun).\n\n\n\n\n# Hitung Elastisitas Permintaan\ncalculate_elasticity &lt;- function(P1, P2, Q1, Q2) {\n  # Metode Midpoint (lebih akurat)\n  price_change &lt;- (P2 - P1) / ((P2 + P1) / 2)\n  quantity_change &lt;- (Q2 - Q1) / ((Q2 + Q1) / 2)\n  \n  elasticity &lt;- quantity_change / price_change\n  return(elasticity)\n}\n\n# Contoh: Permintaan Kopi\nprice1 &lt;- 3.00\nprice2 &lt;- 3.50\nquantity1 &lt;- 100\nquantity2 &lt;- 85\n\nelasticity &lt;- calculate_elasticity(price1, price2, \n                                   quantity1, quantity2)\n\nprint(paste(\"Price Elasticity of Demand:\", round(elasticity, 2)))\n\n[1] \"Price Elasticity of Demand: -1.05\"\n\nif (abs(elasticity) &gt; 1) {\n  print(paste(\"Demand is ELASTIC\"))\n} else if (abs(elasticity) &lt; 1) {\n  print(paste(\"Demand is INELASTIC\"))\n} else {\n  print(paste(\"Demand is UNIT ELASTIC\"))\n}\n\n[1] \"Demand is ELASTIC\"\n\n\n\n\n\nKalau kamu tahu produkmu itu Inelastis, kamu bisa menaikkan harga tanpa takut kehilangan banyak pelanggan. Sebaliknya, kalau Elastis, kamu harus hati-hati banget.\n\n\n\nHarga sebuah produk turun dari Rp 10.000 menjadi Rp 8.000. Akibat dari penurunan harga tersebut, jumlah barang yang diminta meningkat dari 100 unit menjadi 140 unit. Coba kalian hitung elastisitas permintaannya, dan tentukan apakah permintaan tersebut elastis atau inelastis."
+  },
+  {
+    "objectID": "lessons/lesson-4-elasticity-of-demand.html#elastisitas-harga-permintaan",
+    "href": "lessons/lesson-4-elasticity-of-demand.html#elastisitas-harga-permintaan",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "Elastisitas ini mengukur: “Kalau harga naik 1%, seberapa besar sih Permintaan itu bakal berubah (dalam % juga)?”\nRumus perhitungannya gampang:\n\\[E_d = \\frac{\\% \\text{ Perubahan Kuantitas Diminta}}{\\% \\text{ Perubahan Harga}}\\]\nPenting: Nilai \\(E_d\\) ini selalu dalam nilai absolut (\\(|E_d|\\)).\nFormula:\n\\[\nE_d = (\\% \\text{ Change in Quantity Demanded}) / (\\% \\text{ Change in Price})\n\\]"
+  },
+  {
+    "objectID": "lessons/lesson-4-elasticity-of-demand.html#tipe-elastisitas",
+    "href": "lessons/lesson-4-elasticity-of-demand.html#tipe-elastisitas",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "Poin utama:\n• Elastis \\((|E_d| &gt; 1)\\):\nContoh: Jasa ojek online. Kalau harganya naik dikit, kamu langsung pindah ke transportasi lain. Sangat responsif!\n• Inelastis \\((|E_d| &lt; 1)\\):\nContoh: Bensin, atau obat-obatan penting. Mau harganya naik, kamu tetap harus beli. Tidak responsif terhadap perubahan harga.\n• Unit Elastis \\((|E_d| = 1)\\):\nPerubahan harga (misal 10%) menghasilkan perubahan Permintaan yang sama persis (10%).\n• Sangat Elastis/Sempurna \\((|E_d| = \\infty)\\):\nKenaikan harga sekecil apapun, Permintaan langsung nol. (Ini teori ideal, jarang di dunia nyata).\n• Sangat Inelastis/Sempurna \\((|E_d| = 0)\\):\nHarga berubah drastis, tapi Permintaan tidak bergerak sama sekali. (Contoh: Air mineral di gurun)."
+  },
+  {
+    "objectID": "lessons/lesson-4-elasticity-of-demand.html#menghitung-elastisitas",
+    "href": "lessons/lesson-4-elasticity-of-demand.html#menghitung-elastisitas",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "# Hitung Elastisitas Permintaan\ncalculate_elasticity &lt;- function(P1, P2, Q1, Q2) {\n  # Metode Midpoint (lebih akurat)\n  price_change &lt;- (P2 - P1) / ((P2 + P1) / 2)\n  quantity_change &lt;- (Q2 - Q1) / ((Q2 + Q1) / 2)\n  \n  elasticity &lt;- quantity_change / price_change\n  return(elasticity)\n}\n\n# Contoh: Permintaan Kopi\nprice1 &lt;- 3.00\nprice2 &lt;- 3.50\nquantity1 &lt;- 100\nquantity2 &lt;- 85\n\nelasticity &lt;- calculate_elasticity(price1, price2, \n                                   quantity1, quantity2)\n\nprint(paste(\"Price Elasticity of Demand:\", round(elasticity, 2)))\n\n[1] \"Price Elasticity of Demand: -1.05\"\n\nif (abs(elasticity) &gt; 1) {\n  print(paste(\"Demand is ELASTIC\"))\n} else if (abs(elasticity) &lt; 1) {\n  print(paste(\"Demand is INELASTIC\"))\n} else {\n  print(paste(\"Demand is UNIT ELASTIC\"))\n}\n\n[1] \"Demand is ELASTIC\""
+  },
+  {
+    "objectID": "lessons/lesson-4-elasticity-of-demand.html#saran",
+    "href": "lessons/lesson-4-elasticity-of-demand.html#saran",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "Kalau kamu tahu produkmu itu Inelastis, kamu bisa menaikkan harga tanpa takut kehilangan banyak pelanggan. Sebaliknya, kalau Elastis, kamu harus hati-hati banget."
+  },
+  {
+    "objectID": "lessons/lesson-4-elasticity-of-demand.html#contoh-soal",
+    "href": "lessons/lesson-4-elasticity-of-demand.html#contoh-soal",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "Harga sebuah produk turun dari Rp 10.000 menjadi Rp 8.000. Akibat dari penurunan harga tersebut, jumlah barang yang diminta meningkat dari 100 unit menjadi 140 unit. Coba kalian hitung elastisitas permintaannya, dan tentukan apakah permintaan tersebut elastis atau inelastis."
+  },
+  {
+    "objectID": "lessons/lesson-2-supply-and-demand.html",
+    "href": "lessons/lesson-2-supply-and-demand.html",
+    "title": "Supply and Demand",
+    "section": "",
+    "text": "Di bagian ini, kita cari tahu konsep dasar yang mengatur semua harga di dunia: Permintaan (Demand) dan Penawaran (Supply). Selanjutnya, kita bakal coba visualisasikan dinamika ini pakai R.\n\n\n\nSekarang, pikirkan kopi susu favoritmu. Sampai akhir minggu lalu harga kopi susu itu masih 15 ribu, dan kamu beli stiap hari. Tapi, tiba-tiba mulai awal minggu ini harganya naik jadi 30 ribu. Kira-kira kamu masih beli sesering dulu enggak?\nKemungkinan besar enggak, kan? Mungkin kamu cuman akan beli awal bulan, atau cari alternatif yang lebih murah.\nInilah Hukum Permintaan: Kalau semua faktor lain tidak berubah, saat harga suatu barang naik, maka jumlah barang yang diminta akan turun. Sebalikanya, kalau harga turun, permintaan naik. Intinya: Hubungan antara harga dan permintaan itu terbalik. Inilah dasar mengapa harga di pasar bergerak.\nFormula:\n\\[Qd = a - b*P\\]\n\n\n\n\n# Tentukan Fungsi Permintaannya\nprice &lt;- seq(0, 100, by = 5)\nquantity_demanded &lt;- 100 - 0.8 * price\n\n# Lanjut kita buat data frame\ndemand_data &lt;- data.frame(\n  Price = price,\n  Quantity = quantity_demanded\n)\n\n# Baru Lanjut Plot Kurvanya\nlibrary(ggplot2)\nggplot(demand_data, aes(x = Quantity, y = Price)) +\n  geom_line(color = \"blue\", size = 1.5) +\n  labs(title = \"Demand Curve\",\n       x = \"Quantity Demanded\",\n       y = \"Price (Rp)\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\nSekarang posisi kita adalah penjual atau produsen. Kamu adalah pemilik kedai kopi. Jika harga kopi susu lagi malah banget (30 ribu) kamu pasti semangat bangget buat bikin stok yang banyak, kalau perlu nambah jam operasional. Kenapa? Karena ada potensi Untung Gede.\nInilah Hukum Penawaran. Kalau semua faktor lain tidak berubah, saat harga suatu barang naik, jumlah barang yang ditawarkan juga akan bertambah. Intinya: Produsen itu semakin semangat menawarkan banyak barang ketika harganya sedang tinggi.\nFormula:\n\\[Qs = c + d*P\\]\n\n\n\n\n# Tentukan Fungsi Permintaan & Penawaran\nprice &lt;- seq(0, 100, by = 2)\nquantity_demanded &lt;- 100 - 0.8 * price\nquantity_supplied &lt;- -20 + 1.2 * price\n\n# Buat kombinasi data framenya\nmarket_data &lt;- data.frame(\n  Price = price,\n  Demand = quantity_demanded,\n  Supply = quantity_supplied\n)\n\n# Cari Titik Keseimbangan\nequilibrium_price &lt;- (100 + 20) / (0.8 + 1.2)\nequilibrium_quantity &lt;- 100 - 0.8 * equilibrium_price\n\nprint(paste(\"Equilibrium Price:\", round(equilibrium_price, 2)))\n\n[1] \"Equilibrium Price: 60\"\n\nprint(paste(\"Equilibrium Quantity:\", round(equilibrium_quantity, 2)))\n\n[1] \"Equilibrium Quantity: 52\"\n\n\n\n\n\nlibrary(ggplot2)\n\n# Fungsi harga\nprice &lt;- seq(0, 100, by = 2)\n\n# Fungsi permintaan & penawaran\ndemand &lt;- 100 - 0.8 * price\nsupply &lt;- -20 + 1.2 * price\n\n# Data frame pasar\nmarket_data &lt;- data.frame(\n  Price = price,\n  Demand = demand,\n  Supply = supply\n)\n\n# cek 6 baris pertama\nhead(market_data)\n\n  Price Demand Supply\n1     0  100.0  -20.0\n2     2   98.4  -17.6\n3     4   96.8  -15.2\n4     6   95.2  -12.8\n5     8   93.6  -10.4\n6    10   92.0   -8.0\n\n\n\n# Plot kurva permintaan\n\nggplot(market_data) +\n  geom_line(aes(x = Demand, y = Price, color = \"Permintaan\")) +\n  geom_line(aes(x = Supply, y = Price, color = \"Penawaran\")) +\n  labs(\n    title = \"Kurva Permintaan dan Penawaran\",\n    x = \"Jumlah\",\n    y = \"Harga\"\n  ) +\n  theme_minimal() +\n  theme(\n    legend.position = c(0.9, 0.5)\n  )\n\n\n\n\n\n\n\n\nPermintaan dan penawaran membantu kita memahami bagaimana keputusan individu bertemu di pasar. Melalui kurva tersebut, kita bisa melihat bagaimana harga keseimbangan terbentuk, mengapa pasar cenderung menunju titik tertentu, dan bagaimana perubahan kondisi mempengaruhi hasil akhir. Konsep ini bisa menjadi fondasi untuk analisis kebijakan ekonomi.\n##Membuat Fungsi Permintaan\nPenasaran kan bagaimana fungsi permintaan seperti \\[Qd = 1000 - 140*P\\] bisa tiba-tiba muncul? Sini aku jelasin.\nMisal, seorang pelaku UMKM mencatat 30 kali transaksi penjualan tas sekolah. Penjualan ke-1 sampai ke-15, harga relatif stabil. Mulai penjualan ke-16, harga mulai dinaikkan (misal karena biaya bahan naik), maka:\n\nset.seed (123)\n\nn &lt;- 30\nobs &lt;- 1:n\n\n# Perhatikan, harga stabil lalu naik di observasi ke-16\nP &lt;- c(\n  rep(80,15), #harga awal\n  seq(85, 120, length.out = 15) #harga naik bertahap\n)\n\n# Permintaan menurun + noise (perilaku konsumen tidak sempurna)\nQ &lt;- 18000 - 100*P + rnorm(n, mean = 0, sd=300)\n\n# Buat dataframe data penjualan (datpj)\n\ndatpj &lt;-data.frame(\n  obs = obs,\n  P=P,\n  Q=round(Q)\n  )\ndatpj\n\n   obs     P     Q\n1    1  80.0  9832\n2    2  80.0  9931\n3    3  80.0 10468\n4    4  80.0 10021\n5    5  80.0 10039\n6    6  80.0 10515\n7    7  80.0 10138\n8    8  80.0  9620\n9    9  80.0  9794\n10  10  80.0  9866\n11  11  80.0 10367\n12  12  80.0 10108\n13  13  80.0 10120\n14  14  80.0 10033\n15  15  80.0  9833\n16  16  85.0 10036\n17  17  87.5  9399\n18  18  90.0  8410\n19  19  92.5  8960\n20  20  95.0  8358\n21  21  97.5  7930\n22  22 100.0  7935\n23  23 102.5  7442\n24  24 105.0  7281\n25  25 107.5  7062\n26  26 110.0  6494\n27  27 112.5  7001\n28  28 115.0  6546\n29  29 117.5  5909\n30  30 120.0  6376\n\n\nSetelah kita dapatkan data, selanjutnya kita periksa visualisasi datanya\n\nlibrary(ggplot2)\n\nggplot(datpj, aes(x=P, y=Q)) +\n  geom_point(size=2) +\n  geom_vline(xintercept = P[16], linetype = \"dashed\") +\n  labs(\n    title = \"Data Penjualan UMKM\",\n    subtitle = \"Harga naik mulai observasi ke-16\",\n    x = \"Harga (ribu rupiah)\",\n    y = \"Jumlah Terjual\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nMelalui visualisasi kita bisa lihat secara jelas ya bagaimana pola datanya. Lanjut, bagian terpenting untuk menjawab pertanyaan awal bagaimana fungsi permintaannya?\n\nmodel_permint &lt;- lm(Q ~ P, data = datpj)\n\nsummary(model_permint)\n\n\nCall:\nlm(formula = Q ~ P, data = datpj)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-581.31 -203.14  -13.31  160.33  522.65 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 18388.020    362.997   50.66   &lt;2e-16 ***\nP            -104.408      3.935  -26.54   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 293 on 28 degrees of freedom\nMultiple R-squared:  0.9618,    Adjusted R-squared:  0.9604 \nF-statistic: 704.2 on 1 and 28 DF,  p-value: &lt; 2.2e-16\n\n\nBerdasarkan formula diatas, kita dapati hasil sebagai berikut:\nPerhatikan nilai intercept dan P\nQ = 18388 - 104*P Q = 18388 - 104P\nIni adalah fungsi permintaan linear. Apakah kalian bisa mengartikan nilai koefisien dari fungsi tersebut?"
+  },
+  {
+    "objectID": "lessons/lesson-2-supply-and-demand.html#hukum-permintaan",
+    "href": "lessons/lesson-2-supply-and-demand.html#hukum-permintaan",
+    "title": "Supply and Demand",
+    "section": "",
+    "text": "Sekarang, pikirkan kopi susu favoritmu. Sampai akhir minggu lalu harga kopi susu itu masih 15 ribu, dan kamu beli stiap hari. Tapi, tiba-tiba mulai awal minggu ini harganya naik jadi 30 ribu. Kira-kira kamu masih beli sesering dulu enggak?\nKemungkinan besar enggak, kan? Mungkin kamu cuman akan beli awal bulan, atau cari alternatif yang lebih murah.\nInilah Hukum Permintaan: Kalau semua faktor lain tidak berubah, saat harga suatu barang naik, maka jumlah barang yang diminta akan turun. Sebalikanya, kalau harga turun, permintaan naik. Intinya: Hubungan antara harga dan permintaan itu terbalik. Inilah dasar mengapa harga di pasar bergerak.\nFormula:\n\\[Qd = a - b*P\\]"
+  },
+  {
+    "objectID": "lessons/lesson-2-supply-and-demand.html#bikin-kurva-permintaan-di-r",
+    "href": "lessons/lesson-2-supply-and-demand.html#bikin-kurva-permintaan-di-r",
+    "title": "Supply and Demand",
+    "section": "",
+    "text": "# Tentukan Fungsi Permintaannya\nprice &lt;- seq(0, 100, by = 5)\nquantity_demanded &lt;- 100 - 0.8 * price\n\n# Lanjut kita buat data frame\ndemand_data &lt;- data.frame(\n  Price = price,\n  Quantity = quantity_demanded\n)\n\n# Baru Lanjut Plot Kurvanya\nlibrary(ggplot2)\nggplot(demand_data, aes(x = Quantity, y = Price)) +\n  geom_line(color = \"blue\", size = 1.5) +\n  labs(title = \"Demand Curve\",\n       x = \"Quantity Demanded\",\n       y = \"Price (Rp)\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "lessons/lesson-2-supply-and-demand.html#hukum-penawaran",
+    "href": "lessons/lesson-2-supply-and-demand.html#hukum-penawaran",
+    "title": "Supply and Demand",
+    "section": "",
+    "text": "Sekarang posisi kita adalah penjual atau produsen. Kamu adalah pemilik kedai kopi. Jika harga kopi susu lagi malah banget (30 ribu) kamu pasti semangat bangget buat bikin stok yang banyak, kalau perlu nambah jam operasional. Kenapa? Karena ada potensi Untung Gede.\nInilah Hukum Penawaran. Kalau semua faktor lain tidak berubah, saat harga suatu barang naik, jumlah barang yang ditawarkan juga akan bertambah. Intinya: Produsen itu semakin semangat menawarkan banyak barang ketika harganya sedang tinggi.\nFormula:\n\\[Qs = c + d*P\\]"
+  },
+  {
+    "objectID": "lessons/lesson-2-supply-and-demand.html#gabungkan-kurva-permintaan-dan-penawaran",
+    "href": "lessons/lesson-2-supply-and-demand.html#gabungkan-kurva-permintaan-dan-penawaran",
+    "title": "Supply and Demand",
+    "section": "",
+    "text": "# Tentukan Fungsi Permintaan & Penawaran\nprice &lt;- seq(0, 100, by = 2)\nquantity_demanded &lt;- 100 - 0.8 * price\nquantity_supplied &lt;- -20 + 1.2 * price\n\n# Buat kombinasi data framenya\nmarket_data &lt;- data.frame(\n  Price = price,\n  Demand = quantity_demanded,\n  Supply = quantity_supplied\n)\n\n# Cari Titik Keseimbangan\nequilibrium_price &lt;- (100 + 20) / (0.8 + 1.2)\nequilibrium_quantity &lt;- 100 - 0.8 * equilibrium_price\n\nprint(paste(\"Equilibrium Price:\", round(equilibrium_price, 2)))\n\n[1] \"Equilibrium Price: 60\"\n\nprint(paste(\"Equilibrium Quantity:\", round(equilibrium_quantity, 2)))\n\n[1] \"Equilibrium Quantity: 52\"\n\n\n\n\n\nlibrary(ggplot2)\n\n# Fungsi harga\nprice &lt;- seq(0, 100, by = 2)\n\n# Fungsi permintaan & penawaran\ndemand &lt;- 100 - 0.8 * price\nsupply &lt;- -20 + 1.2 * price\n\n# Data frame pasar\nmarket_data &lt;- data.frame(\n  Price = price,\n  Demand = demand,\n  Supply = supply\n)\n\n# cek 6 baris pertama\nhead(market_data)\n\n  Price Demand Supply\n1     0  100.0  -20.0\n2     2   98.4  -17.6\n3     4   96.8  -15.2\n4     6   95.2  -12.8\n5     8   93.6  -10.4\n6    10   92.0   -8.0\n\n\n\n# Plot kurva permintaan\n\nggplot(market_data) +\n  geom_line(aes(x = Demand, y = Price, color = \"Permintaan\")) +\n  geom_line(aes(x = Supply, y = Price, color = \"Penawaran\")) +\n  labs(\n    title = \"Kurva Permintaan dan Penawaran\",\n    x = \"Jumlah\",\n    y = \"Harga\"\n  ) +\n  theme_minimal() +\n  theme(\n    legend.position = c(0.9, 0.5)\n  )\n\n\n\n\n\n\n\n\nPermintaan dan penawaran membantu kita memahami bagaimana keputusan individu bertemu di pasar. Melalui kurva tersebut, kita bisa melihat bagaimana harga keseimbangan terbentuk, mengapa pasar cenderung menunju titik tertentu, dan bagaimana perubahan kondisi mempengaruhi hasil akhir. Konsep ini bisa menjadi fondasi untuk analisis kebijakan ekonomi.\n##Membuat Fungsi Permintaan\nPenasaran kan bagaimana fungsi permintaan seperti \\[Qd = 1000 - 140*P\\] bisa tiba-tiba muncul? Sini aku jelasin.\nMisal, seorang pelaku UMKM mencatat 30 kali transaksi penjualan tas sekolah. Penjualan ke-1 sampai ke-15, harga relatif stabil. Mulai penjualan ke-16, harga mulai dinaikkan (misal karena biaya bahan naik), maka:\n\nset.seed (123)\n\nn &lt;- 30\nobs &lt;- 1:n\n\n# Perhatikan, harga stabil lalu naik di observasi ke-16\nP &lt;- c(\n  rep(80,15), #harga awal\n  seq(85, 120, length.out = 15) #harga naik bertahap\n)\n\n# Permintaan menurun + noise (perilaku konsumen tidak sempurna)\nQ &lt;- 18000 - 100*P + rnorm(n, mean = 0, sd=300)\n\n# Buat dataframe data penjualan (datpj)\n\ndatpj &lt;-data.frame(\n  obs = obs,\n  P=P,\n  Q=round(Q)\n  )\ndatpj\n\n   obs     P     Q\n1    1  80.0  9832\n2    2  80.0  9931\n3    3  80.0 10468\n4    4  80.0 10021\n5    5  80.0 10039\n6    6  80.0 10515\n7    7  80.0 10138\n8    8  80.0  9620\n9    9  80.0  9794\n10  10  80.0  9866\n11  11  80.0 10367\n12  12  80.0 10108\n13  13  80.0 10120\n14  14  80.0 10033\n15  15  80.0  9833\n16  16  85.0 10036\n17  17  87.5  9399\n18  18  90.0  8410\n19  19  92.5  8960\n20  20  95.0  8358\n21  21  97.5  7930\n22  22 100.0  7935\n23  23 102.5  7442\n24  24 105.0  7281\n25  25 107.5  7062\n26  26 110.0  6494\n27  27 112.5  7001\n28  28 115.0  6546\n29  29 117.5  5909\n30  30 120.0  6376\n\n\nSetelah kita dapatkan data, selanjutnya kita periksa visualisasi datanya\n\nlibrary(ggplot2)\n\nggplot(datpj, aes(x=P, y=Q)) +\n  geom_point(size=2) +\n  geom_vline(xintercept = P[16], linetype = \"dashed\") +\n  labs(\n    title = \"Data Penjualan UMKM\",\n    subtitle = \"Harga naik mulai observasi ke-16\",\n    x = \"Harga (ribu rupiah)\",\n    y = \"Jumlah Terjual\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nMelalui visualisasi kita bisa lihat secara jelas ya bagaimana pola datanya. Lanjut, bagian terpenting untuk menjawab pertanyaan awal bagaimana fungsi permintaannya?\n\nmodel_permint &lt;- lm(Q ~ P, data = datpj)\n\nsummary(model_permint)\n\n\nCall:\nlm(formula = Q ~ P, data = datpj)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-581.31 -203.14  -13.31  160.33  522.65 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 18388.020    362.997   50.66   &lt;2e-16 ***\nP            -104.408      3.935  -26.54   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 293 on 28 degrees of freedom\nMultiple R-squared:  0.9618,    Adjusted R-squared:  0.9604 \nF-statistic: 704.2 on 1 and 28 DF,  p-value: &lt; 2.2e-16\n\n\nBerdasarkan formula diatas, kita dapati hasil sebagai berikut:\nPerhatikan nilai intercept dan P\nQ = 18388 - 104*P Q = 18388 - 104P\nIni adalah fungsi permintaan linear. Apakah kalian bisa mengartikan nilai koefisien dari fungsi tersebut?"
+  },
+  {
+    "objectID": "belajar.html",
+    "href": "belajar.html",
+    "title": "BelajaR",
+    "section": "",
+    "text": "Aplikasi Ekonomi Mikro dengan R: Pengantar\nPada bagian ini kalian akan belajar memulai pembelajaran ekonomi mikro menggunakan R. Sebagai awalan kalian akan menjawab pertanyaan kuis klasik dari Principles of Economics - Mankiw dan berlatih menggunakan kode R sederhana untuk mencari nilai Q dan P.\nLink : R-Econ 01\n\n\nAplikasi Ekonomi Mikro dengan R: Producer Surplus\nSoal cerita yang tersaji akan mengingatkan anda pada perhitungan producer surplus sekaligus menjajal kode R.\nLink : R-Econ 02\n\n\nAplikasi Ekonomi Mikro dengan R: Simulasi Permintaan\nSelanjutnya kita sajikan simulasi permintaan. Selain mengingat materi ilmu ekonomi, kalian juga musti ingat beberapa konsep statistik.\nLink : R-Econ 03"
+  },
+  {
+    "objectID": "lessons/lesson-1-introduction-to-economics-and-r.html",
+    "href": "lessons/lesson-1-introduction-to-economics-and-r.html",
+    "title": "Introduction to Economics & R",
+    "section": "",
+    "text": "Di sesi ini, kita bakal mengupas tuntas dasar-dasar Ekonomi dan gimana R bisa jadi tools super buat kamu menganalisis dunia ekonomi.\n\n\nCoba kamu bayangin: Setiap pagi kamu Cuma punya 15 ribu buat jajan, padahal kamu pengen banget beli kopi susu kekinian, seblak, plus thai tea. Gimana cara kamu milih?\nNah, itulah esensi dari…Ekonomi! Ekonomi adalah ilmu sosial yang sebagian besar kerjanya adalah mengamati gimana individu seperti kamu, bisnis (warung kopi), pemerintah, bahkan negara membuat pilihan cerdas buat ngatur sumber daya yang serba terbatas demi memenuhi keinginan yang tidak terbatas.\nGaris besarnya, Ekonomi itu punya dua jagoan utama:\n\nMicroeconomics (Ekonomi Mikro): ini fokus ke keputusan kecil. Contohnya: Kenapa harga nasi bakso di kampusmu naik? Kenapa kamu lebih milih streaming film daripada beli buku?\nMacroeconomics (Ekonomi Makro): ini lebih melihat gambaran besar. Contoh: Kenapa suatu negara bisa inflasi? Atau Gimana cara pemerintah ngurangin angka pengangguran?\n\n\n\n\nKenapa Anak Ekonomi Wajib Banget Kenalan Sama R? - Pertama dan utama, Gratis Total! (ga perlu bajak software mahal) - Ada toolkit/package khusus econometrics yang lengkap (Jeffrey Wooldridge) - Cocok buat bikin visualisasi data\nOk, install dulu R dan Rstudio kalian\n\n\n\n\n# Load libraries\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\n\n# Your first R command\nprint(\"Kenapa singa kalau berburu harus bersama-sama? \n      karena kalau sendiri namanya bukan singa, tapi single!\")\n\n[1] \"Kenapa singa kalau berburu harus bersama-sama? \\n      karena kalau sendiri namanya bukan singa, tapi single!\"\n\n\nSebagai awal perkenalan, kalian bisa lanjut ke The Wiken Project| Pengenalan R dan RStudio"
+  },
+  {
+    "objectID": "lessons/lesson-1-introduction-to-economics-and-r.html#ekonomi-itu-apa-sih",
+    "href": "lessons/lesson-1-introduction-to-economics-and-r.html#ekonomi-itu-apa-sih",
+    "title": "Introduction to Economics & R",
+    "section": "",
+    "text": "Coba kamu bayangin: Setiap pagi kamu Cuma punya 15 ribu buat jajan, padahal kamu pengen banget beli kopi susu kekinian, seblak, plus thai tea. Gimana cara kamu milih?\nNah, itulah esensi dari…Ekonomi! Ekonomi adalah ilmu sosial yang sebagian besar kerjanya adalah mengamati gimana individu seperti kamu, bisnis (warung kopi), pemerintah, bahkan negara membuat pilihan cerdas buat ngatur sumber daya yang serba terbatas demi memenuhi keinginan yang tidak terbatas.\nGaris besarnya, Ekonomi itu punya dua jagoan utama:\n\nMicroeconomics (Ekonomi Mikro): ini fokus ke keputusan kecil. Contohnya: Kenapa harga nasi bakso di kampusmu naik? Kenapa kamu lebih milih streaming film daripada beli buku?\nMacroeconomics (Ekonomi Makro): ini lebih melihat gambaran besar. Contoh: Kenapa suatu negara bisa inflasi? Atau Gimana cara pemerintah ngurangin angka pengangguran?"
+  },
+  {
+    "objectID": "lessons/lesson-1-introduction-to-economics-and-r.html#kenapa-anak-ekonomi-wajib-banget-kenalan-sama-r",
+    "href": "lessons/lesson-1-introduction-to-economics-and-r.html#kenapa-anak-ekonomi-wajib-banget-kenalan-sama-r",
+    "title": "Introduction to Economics & R",
+    "section": "",
+    "text": "Kenapa Anak Ekonomi Wajib Banget Kenalan Sama R? - Pertama dan utama, Gratis Total! (ga perlu bajak software mahal) - Ada toolkit/package khusus econometrics yang lengkap (Jeffrey Wooldridge) - Cocok buat bikin visualisasi data\nOk, install dulu R dan Rstudio kalian"
+  },
+  {
+    "objectID": "lessons/lesson-1-introduction-to-economics-and-r.html#setting-up-si-r",
+    "href": "lessons/lesson-1-introduction-to-economics-and-r.html#setting-up-si-r",
+    "title": "Introduction to Economics & R",
+    "section": "",
+    "text": "# Load libraries\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\n\n# Your first R command\nprint(\"Kenapa singa kalau berburu harus bersama-sama? \n      karena kalau sendiri namanya bukan singa, tapi single!\")\n\n[1] \"Kenapa singa kalau berburu harus bersama-sama? \\n      karena kalau sendiri namanya bukan singa, tapi single!\"\n\n\nSebagai awal perkenalan, kalian bisa lanjut ke The Wiken Project| Pengenalan R dan RStudio"
+  },
+  {
+    "objectID": "lessons/lesson-3-market-equilibrium.html",
+    "href": "lessons/lesson-3-market-equilibrium.html",
+    "title": "Market Equilibrium",
+    "section": "",
+    "text": "Kita sudah tahu gimana pasar mencari “titik damai”. Sekarang, kita akan bahas: Apa yang bikin kedamaian itu terganggu?\n\n\nKeseimbangan pasar adalah saat:\n\\[\\text{Permintaan} = \\text{Penawaran}\\]\n• Di titik ini, harga sudah pas (Market-Clearing Price).\n• Tidak ada kelebihan stok (surplus) atau kekurangan stok (shortage).\nPasar stabil.\n\n\n\n\n# Tentukan dulu Fungsi Permintaan & Penawaran\ndemand_function &lt;- function(P) {\n  return(100 - 2*P)\n}\n\nsupply_function &lt;- function(P) {\n  return(-10 + 3*P)\n}\n\n# Tentukan Harga Keseimbangan (prinsip, Qd = Qs)\n# 100 - 2P = -10 + 3P\n# 110 = 5P\nequilibrium_price &lt;- 110 / 5\nequilibrium_quantity &lt;- demand_function(equilibrium_price)\n\nprint(paste(\"Equilibrium Price: $\", equilibrium_price))\n\n[1] \"Equilibrium Price: $ 22\"\n\nprint(paste(\"Equilibrium Quantity:\", equilibrium_quantity, \"units\"))\n\n[1] \"Equilibrium Quantity: 56 units\"\n\n\n\n\n\nHarga bisa berubah mendadak bukan cuma karena penjual iseng, tapi karena ada faktor besar lain yang menggeser seluruh kurva Permintaan atau Penawaran.\nIni kayak ada gempa yang mengubah seluruh peta pasar, menghasilkan titik keseimbangan (harga) yang baru."
+  },
+  {
+    "objectID": "lessons/lesson-3-market-equilibrium.html#memahami-keseimbangan-pasar",
+    "href": "lessons/lesson-3-market-equilibrium.html#memahami-keseimbangan-pasar",
+    "title": "Market Equilibrium",
+    "section": "",
+    "text": "Keseimbangan pasar adalah saat:\n\\[\\text{Permintaan} = \\text{Penawaran}\\]\n• Di titik ini, harga sudah pas (Market-Clearing Price).\n• Tidak ada kelebihan stok (surplus) atau kekurangan stok (shortage).\nPasar stabil."
+  },
+  {
+    "objectID": "lessons/lesson-3-market-equilibrium.html#mencari-titik-keseimbangan",
+    "href": "lessons/lesson-3-market-equilibrium.html#mencari-titik-keseimbangan",
+    "title": "Market Equilibrium",
+    "section": "",
+    "text": "# Tentukan dulu Fungsi Permintaan & Penawaran\ndemand_function &lt;- function(P) {\n  return(100 - 2*P)\n}\n\nsupply_function &lt;- function(P) {\n  return(-10 + 3*P)\n}\n\n# Tentukan Harga Keseimbangan (prinsip, Qd = Qs)\n# 100 - 2P = -10 + 3P\n# 110 = 5P\nequilibrium_price &lt;- 110 / 5\nequilibrium_quantity &lt;- demand_function(equilibrium_price)\n\nprint(paste(\"Equilibrium Price: $\", equilibrium_price))\n\n[1] \"Equilibrium Price: $ 22\"\n\nprint(paste(\"Equilibrium Quantity:\", equilibrium_quantity, \"units\"))\n\n[1] \"Equilibrium Quantity: 56 units\""
+  },
+  {
+    "objectID": "lessons/lesson-3-market-equilibrium.html#pergeseran-kurva-permintaan-dan-penawaran",
+    "href": "lessons/lesson-3-market-equilibrium.html#pergeseran-kurva-permintaan-dan-penawaran",
+    "title": "Market Equilibrium",
+    "section": "",
+    "text": "Harga bisa berubah mendadak bukan cuma karena penjual iseng, tapi karena ada faktor besar lain yang menggeser seluruh kurva Permintaan atau Penawaran.\nIni kayak ada gempa yang mengubah seluruh peta pasar, menghasilkan titik keseimbangan (harga) yang baru."
+  },
+  {
+    "objectID": "lessons/lesson-3-market-equilibrium.html#simulasi",
+    "href": "lessons/lesson-3-market-equilibrium.html#simulasi",
+    "title": "Market Equilibrium",
+    "section": "Simulasi",
+    "text": "Simulasi\n\n# Pergeseran Permintaan\nprice &lt;- seq(0, 50, by = 2)\ndemand_original &lt;- 100 - 2 * price\ndemand_shifted &lt;- 120 - 2 * price  # Peningkatan Permintaan\nsupply &lt;- -10 + 3 * price\n\n# Bikin data frame untuk Visualisasi\nshift_data &lt;- data.frame(\n  Price = price,\n  Original_Demand = demand_original,\n  Shifted_Demand = demand_shifted,\n  Supply = supply\n)\n\n# Hitung Harga Keseimbangan Baru\nnew_equilibrium_price &lt;- (120 + 10) / (2 + 3)\nnew_equilibrium_quantity &lt;- -10 + 3 * new_equilibrium_price\n\nprint(paste(\"Original Equilibrium Price: $22\"))\n\n[1] \"Original Equilibrium Price: $22\"\n\nprint(paste(\"New Equilibrium Price: $\", new_equilibrium_price))\n\n[1] \"New Equilibrium Price: $ 26\"\n\n\nPada lesson ini, kita telah mempelajari bagaimana interaksi antara permintaan dan penawaran menentukan keseimbangan pasar yang baru. Konsep market equilibrium ini dapat kita gunakan untuk menganalisis pasar, termasuk dampak kebijakan, perubahan teknologi, dan intervensi pemerintah.\n\n\n\n\n\n\nNote\n\n\n\nMengapa pasar tidak selalu berada pada titik keseimbangan? Kondisi apa yang menyebabkan atau memperlambat proses penyesuaian harga?"
+  },
+  {
+    "objectID": "lessons/lesson-5-gdp-and-economic-growth.html",
+    "href": "lessons/lesson-5-gdp-and-economic-growth.html",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "Setelah membahas pasar, sekarang kita naik level ke skala negara. Di sesi ini, kita akan kenalan sama GDP atau PDB (Produk Domestik Bruto), yaitu ‘rapor’ kesehatan ekonomi suatu negara, dan gimana kita bisa menganalisis Pertumbuhan Ekonomi pakai R.\n\n\n\nSaya yakin kalian sudah paham, tapi ini perlu tetap saya tulis untuk memenuhi halaman lesson, duh.\nGDP itu ibarat total nilai belanjaan seluruh penduduk dan entitas di suatu negara selama periode tertentu (misalnya setahun). Secara formal, GDP adalah total nilai moneter dari semua barang dan jasa akhir yang diproduksi di dalam batas wilayah suatu negara dalam periode waktu spesifik.\nIntinya: GDP adalah indikator yang paling sering dipakai buat tahu seberapa ‘sehat’ dan aktif ekonomi suatu negara. Semakin tinggi PDB, biasanya semakin besar kue ekonominya.\n\n\n\ndihitung dari sisi Pengeluaran (Expenditure Approach). Coba lihat ke mana saja uang di negara itu mengalir:\nFormula:\n\\[GDP = C + I + G + (X - M)\\]\nKeterangan:\n\nC (Consumer Spending / Konsumsi):\n\nPengeluaran kita sehari-hari, dari beli kopi sampai bayar kosan. Ini adalah komponen terbesar, biasanya 60-70% PDB. - I (Investment / Investasi):\nPengeluaran bisnis untuk barang modal (misalnya pabrik baru, mesin, software).\n\nG (Government Spending / Belanja Pemerintah):\n\nPengeluaran pemerintah untuk barang dan jasa (misalnya bangun jalan, bayar gaji PNS).\n\nX - M (Net Exports / Ekspor Bersih):\n\nEkspor (X) (barang yang kita jual ke luar) dikurangi Impor (M) (barang yang kita beli dari luar).\n\n\n\n\n# Buat data frame GDP (billions)\nyears &lt;- 2015:2024\nconsumption &lt;- c(12000, 12400, 12800, 13100, 13500, \n                 13200, 13800, 14300, 14800, 15200)\ninvestment &lt;- c(3000, 3100, 3200, 3300, 3400, \n                3000, 3300, 3500, 3700, 3900)\ngovernment &lt;- c(3500, 3600, 3700, 3800, 3900, \n                4200, 4300, 4400, 4500, 4600)\nnet_exports &lt;- c(-500, -550, -600, -650, -700, \n                 -600, -550, -500, -450, -400)\n\ngdp &lt;- consumption + investment + government + net_exports\n\ngdp_data &lt;- data.frame(\n  Year = years,\n  GDP = gdp,\n  Consumption = consumption,\n  Investment = investment,\n  Government = government,\n  Net_Exports = net_exports\n)\n\n# Hitung growth rate dari GDP\ngdp_growth &lt;- c(NA, diff(gdp) / gdp[-length(gdp)] * 100)\ngdp_data$Growth_Rate &lt;- gdp_growth\n\nprint(gdp_data)\n\n   Year   GDP Consumption Investment Government Net_Exports Growth_Rate\n1  2015 18000       12000       3000       3500        -500          NA\n2  2016 18550       12400       3100       3600        -550    3.055556\n3  2017 19100       12800       3200       3700        -600    2.964960\n4  2018 19550       13100       3300       3800        -650    2.356021\n5  2019 20100       13500       3400       3900        -700    2.813299\n6  2020 19800       13200       3000       4200        -600   -1.492537\n7  2021 20850       13800       3300       4300        -550    5.303030\n8  2022 21700       14300       3500       4400        -500    4.076739\n9  2023 22550       14800       3700       4500        -450    3.917051\n10 2024 23300       15200       3900       4600        -400    3.325942\n\n\n\n\n\n\nlibrary(ggplot2)\n\n# Bikin data frame\nchart_data &lt;- data.frame(\n  year = c(2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024),\n  GDP_Billions = c(18000, 18550, 19100, 19550, 20100, 19800, 20850, 21700, 22550, 23300)\n)\n\n# Tetapkan area plotnya\nggplot(chart_data, aes(x = year)) +\n  geom_area(aes(y = GDP_Billions, fill = \"GDP Billions\"), alpha = 0.6)\n\n\n\n\n\n\n\n  labs(title = \"GDP Growth Over Time\",\n       x = \"Year\",\n       y = \"Value\",\n       fill = \"Legend\") +\n  theme_minimal()\n\nNULL\n\n\n\n\n\n\n# Nominal vs Real GDP (adjusting for inflation)\nnominal_gdp &lt;- c(20000, 21000, 22100, 23300, 24600)\ncpi &lt;- c(100, 102, 105, 108, 112)  # Consumer Price Index\n\n# Real GDP (base year = first year)\nreal_gdp &lt;- (nominal_gdp / cpi) * 100\n\ngdp_comparison &lt;- data.frame(\n  Year = 2020:2024,\n  Nominal_GDP = nominal_gdp,\n  Real_GDP = real_gdp,\n  CPI = cpi\n)\n\nprint(paste(\"\\nNominal GDP shows the current dollar value\\n\"))\n\n[1] \"\\nNominal GDP shows the current dollar value\\n\"\n\nprint(paste(\"Real GDP adjusts for inflation\\n\\n\"))\n\n[1] \"Real GDP adjusts for inflation\\n\\n\"\n\nprint(gdp_comparison)\n\n  Year Nominal_GDP Real_GDP CPI\n1 2020       20000 20000.00 100\n2 2021       21000 20588.24 102\n3 2022       22100 21047.62 105\n4 2023       23300 21574.07 108\n5 2024       24600 21964.29 112"
+  },
+  {
+    "objectID": "lessons/lesson-5-gdp-and-economic-growth.html#apa-itu-gdp",
+    "href": "lessons/lesson-5-gdp-and-economic-growth.html#apa-itu-gdp",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "Saya yakin kalian sudah paham, tapi ini perlu tetap saya tulis untuk memenuhi halaman lesson, duh.\nGDP itu ibarat total nilai belanjaan seluruh penduduk dan entitas di suatu negara selama periode tertentu (misalnya setahun). Secara formal, GDP adalah total nilai moneter dari semua barang dan jasa akhir yang diproduksi di dalam batas wilayah suatu negara dalam periode waktu spesifik.\nIntinya: GDP adalah indikator yang paling sering dipakai buat tahu seberapa ‘sehat’ dan aktif ekonomi suatu negara. Semakin tinggi PDB, biasanya semakin besar kue ekonominya."
+  },
+  {
+    "objectID": "lessons/lesson-5-gdp-and-economic-growth.html#komponen-gdp",
+    "href": "lessons/lesson-5-gdp-and-economic-growth.html#komponen-gdp",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "dihitung dari sisi Pengeluaran (Expenditure Approach). Coba lihat ke mana saja uang di negara itu mengalir:\nFormula:\n\\[GDP = C + I + G + (X - M)\\]\nKeterangan:\n\nC (Consumer Spending / Konsumsi):\n\nPengeluaran kita sehari-hari, dari beli kopi sampai bayar kosan. Ini adalah komponen terbesar, biasanya 60-70% PDB. - I (Investment / Investasi):\nPengeluaran bisnis untuk barang modal (misalnya pabrik baru, mesin, software).\n\nG (Government Spending / Belanja Pemerintah):\n\nPengeluaran pemerintah untuk barang dan jasa (misalnya bangun jalan, bayar gaji PNS).\n\nX - M (Net Exports / Ekspor Bersih):\n\nEkspor (X) (barang yang kita jual ke luar) dikurangi Impor (M) (barang yang kita beli dari luar)."
+  },
+  {
+    "objectID": "lessons/lesson-5-gdp-and-economic-growth.html#coba-kita-simulasikan",
+    "href": "lessons/lesson-5-gdp-and-economic-growth.html#coba-kita-simulasikan",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "# Buat data frame GDP (billions)\nyears &lt;- 2015:2024\nconsumption &lt;- c(12000, 12400, 12800, 13100, 13500, \n                 13200, 13800, 14300, 14800, 15200)\ninvestment &lt;- c(3000, 3100, 3200, 3300, 3400, \n                3000, 3300, 3500, 3700, 3900)\ngovernment &lt;- c(3500, 3600, 3700, 3800, 3900, \n                4200, 4300, 4400, 4500, 4600)\nnet_exports &lt;- c(-500, -550, -600, -650, -700, \n                 -600, -550, -500, -450, -400)\n\ngdp &lt;- consumption + investment + government + net_exports\n\ngdp_data &lt;- data.frame(\n  Year = years,\n  GDP = gdp,\n  Consumption = consumption,\n  Investment = investment,\n  Government = government,\n  Net_Exports = net_exports\n)\n\n# Hitung growth rate dari GDP\ngdp_growth &lt;- c(NA, diff(gdp) / gdp[-length(gdp)] * 100)\ngdp_data$Growth_Rate &lt;- gdp_growth\n\nprint(gdp_data)\n\n   Year   GDP Consumption Investment Government Net_Exports Growth_Rate\n1  2015 18000       12000       3000       3500        -500          NA\n2  2016 18550       12400       3100       3600        -550    3.055556\n3  2017 19100       12800       3200       3700        -600    2.964960\n4  2018 19550       13100       3300       3800        -650    2.356021\n5  2019 20100       13500       3400       3900        -700    2.813299\n6  2020 19800       13200       3000       4200        -600   -1.492537\n7  2021 20850       13800       3300       4300        -550    5.303030\n8  2022 21700       14300       3500       4400        -500    4.076739\n9  2023 22550       14800       3700       4500        -450    3.917051\n10 2024 23300       15200       3900       4600        -400    3.325942"
+  },
+  {
+    "objectID": "lessons/lesson-5-gdp-and-economic-growth.html#visualisasi-gdp-dan-pertumbuhan-ekonomi",
+    "href": "lessons/lesson-5-gdp-and-economic-growth.html#visualisasi-gdp-dan-pertumbuhan-ekonomi",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "library(ggplot2)\n\n# Bikin data frame\nchart_data &lt;- data.frame(\n  year = c(2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024),\n  GDP_Billions = c(18000, 18550, 19100, 19550, 20100, 19800, 20850, 21700, 22550, 23300)\n)\n\n# Tetapkan area plotnya\nggplot(chart_data, aes(x = year)) +\n  geom_area(aes(y = GDP_Billions, fill = \"GDP Billions\"), alpha = 0.6)\n\n\n\n\n\n\n\n  labs(title = \"GDP Growth Over Time\",\n       x = \"Year\",\n       y = \"Value\",\n       fill = \"Legend\") +\n  theme_minimal()\n\nNULL"
+  },
+  {
+    "objectID": "lessons/lesson-5-gdp-and-economic-growth.html#menghitung-real-vs-nominal-gdp",
+    "href": "lessons/lesson-5-gdp-and-economic-growth.html#menghitung-real-vs-nominal-gdp",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "# Nominal vs Real GDP (adjusting for inflation)\nnominal_gdp &lt;- c(20000, 21000, 22100, 23300, 24600)\ncpi &lt;- c(100, 102, 105, 108, 112)  # Consumer Price Index\n\n# Real GDP (base year = first year)\nreal_gdp &lt;- (nominal_gdp / cpi) * 100\n\ngdp_comparison &lt;- data.frame(\n  Year = 2020:2024,\n  Nominal_GDP = nominal_gdp,\n  Real_GDP = real_gdp,\n  CPI = cpi\n)\n\nprint(paste(\"\\nNominal GDP shows the current dollar value\\n\"))\n\n[1] \"\\nNominal GDP shows the current dollar value\\n\"\n\nprint(paste(\"Real GDP adjusts for inflation\\n\\n\"))\n\n[1] \"Real GDP adjusts for inflation\\n\\n\"\n\nprint(gdp_comparison)\n\n  Year Nominal_GDP Real_GDP CPI\n1 2020       20000 20000.00 100\n2 2021       21000 20588.24 102\n3 2022       22100 21047.62 105\n4 2023       23300 21574.07 108\n5 2024       24600 21964.29 112"
+  },
+  {
+    "objectID": "mailme.html",
+    "href": "mailme.html",
+    "title": "mail.me",
+    "section": "",
+    "text": "Kolaborasi dan project, hubungi\nirfantriharjo@gmail.com"
+  },
+  {
+    "objectID": "mailme.html#mail.me",
+    "href": "mailme.html#mail.me",
+    "title": "mail.me",
+    "section": "",
+    "text": "Kolaborasi dan project, hubungi\nirfantriharjo@gmail.com"
+  },
+  {
+    "objectID": "docs/lessons/lesson-6-inflation-and-cpi.html",
+    "href": "docs/lessons/lesson-6-inflation-and-cpi.html",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "Setelah ngitung kekayaan negara (GDP), sekarang kita bahas penyakitnya: Inflasi. Di sesi ini, kita akan tahu apa itu inflasi, cara mengukurnya pakai Indeks Harga Konsumen (IHK/CPI), dan menganalisis trennya pakai R.\n\n\n\nInflasi adalah kondisi di mana harga-harga barang dan jasa secara umum naik terus-menerus.\nBayangkan: Tahun lalu, Rp10.000 bisa buat beli dua bungkus nasi, sekarang cuma dapat satu. Daya beli uangmu terkikis.\nTugas utama Bank Sentral (di Indonesia: Bank Indonesia) adalah mengendalikan laju inflasi—dan mencegah deflasi (harga turun drastis) — agar ekonomi tetap berjalan mulus.\n\n\n\nIHK adalah alat ukur utama inflasi.\nCara kerjanya: IHK mengukur rata-rata perubahan harga sekelompok barang dan jasa yang biasa dibeli konsumen (beras, pulsa, transportasi, dll.) dari waktu ke waktu.\nRumus Sederhana untuk Menghitung Laju Inflasi: \\[\\text{Laju Inflasi} = \\frac{(CPI_{\\text{sekarang}} - CPI_{\\text{sebelum}}) }{CPI_{\\text{sebelum}}} \\times 100\\]\n\n\n\n\n# Buat data frame CPI sekian tahun\nyears &lt;- 2015:2024\ncpi &lt;- c(237.0, 240.0, 245.1, 251.1, 255.7, \n         258.8, 271.0, 284.2, 296.8, 307.5)\n\n# Hitung Inflation Rate\ninflation_rate &lt;- c(NA, diff(cpi) / cpi[-length(cpi)] * 100)\n\ninflation_data &lt;- data.frame(\n  Year = years,\n  CPI = cpi,\n  Inflation_Rate = round(inflation_rate, 2)\n)\n\nprint(inflation_data)\n\n   Year   CPI Inflation_Rate\n1  2015 237.0             NA\n2  2016 240.0           1.27\n3  2017 245.1           2.12\n4  2018 251.1           2.45\n5  2019 255.7           1.83\n6  2020 258.8           1.21\n7  2021 271.0           4.71\n8  2022 284.2           4.87\n9  2023 296.8           4.43\n10 2024 307.5           3.61\n\n# Hitung average inflation\navg_inflation &lt;- mean(inflation_rate, na.rm = TRUE)\nprint(paste(\"Average Inflation Rate:\", round(avg_inflation, 2)))\n\n[1] \"Average Inflation Rate: 2.95\"\n\n\n\n\n\nPenting buat kamu:\n\nDaya Beli Turun: Uangmu jadi kurang powernya dari tahun ke tahun.\nTabungan Terkikis: Kalau uang kamu cuma disimpan di bawah kasur, nilainya akan terus turun.\nIdealnya: Inflasi yang moderat (sekitar 2-3%) dianggap sehat karena mendorong orang untuk belanja dan investasi, yang memacu pertumbuhan ekonomi.\nBahayanya: Inflasi yang tinggi (Hyperinflation) bisa bikin ekonomi kacau\n\n\n\n\nFYI, R menyediakan banyak data yang bisa kita gunakan untuk simulasi tidak hanya matematika ekonomi, bahkan ekonometrika. Coba saja package wooldridge"
+  },
+  {
+    "objectID": "docs/lessons/lesson-6-inflation-and-cpi.html#inflasi-itu-apa",
+    "href": "docs/lessons/lesson-6-inflation-and-cpi.html#inflasi-itu-apa",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "Inflasi adalah kondisi di mana harga-harga barang dan jasa secara umum naik terus-menerus.\nBayangkan: Tahun lalu, Rp10.000 bisa buat beli dua bungkus nasi, sekarang cuma dapat satu. Daya beli uangmu terkikis.\nTugas utama Bank Sentral (di Indonesia: Bank Indonesia) adalah mengendalikan laju inflasi—dan mencegah deflasi (harga turun drastis) — agar ekonomi tetap berjalan mulus."
+  },
+  {
+    "objectID": "docs/lessons/lesson-6-inflation-and-cpi.html#indeks-harga-konsumen--ihk-cpi",
+    "href": "docs/lessons/lesson-6-inflation-and-cpi.html#indeks-harga-konsumen--ihk-cpi",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "IHK adalah alat ukur utama inflasi.\nCara kerjanya: IHK mengukur rata-rata perubahan harga sekelompok barang dan jasa yang biasa dibeli konsumen (beras, pulsa, transportasi, dll.) dari waktu ke waktu.\nRumus Sederhana untuk Menghitung Laju Inflasi: \\[\\text{Laju Inflasi} = \\frac{(CPI_{\\text{sekarang}} - CPI_{\\text{sebelum}}) }{CPI_{\\text{sebelum}}} \\times 100\\]"
+  },
+  {
+    "objectID": "docs/lessons/lesson-6-inflation-and-cpi.html#simulasi-perhitungan-inflasi",
+    "href": "docs/lessons/lesson-6-inflation-and-cpi.html#simulasi-perhitungan-inflasi",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "# Buat data frame CPI sekian tahun\nyears &lt;- 2015:2024\ncpi &lt;- c(237.0, 240.0, 245.1, 251.1, 255.7, \n         258.8, 271.0, 284.2, 296.8, 307.5)\n\n# Hitung Inflation Rate\ninflation_rate &lt;- c(NA, diff(cpi) / cpi[-length(cpi)] * 100)\n\ninflation_data &lt;- data.frame(\n  Year = years,\n  CPI = cpi,\n  Inflation_Rate = round(inflation_rate, 2)\n)\n\nprint(inflation_data)\n\n   Year   CPI Inflation_Rate\n1  2015 237.0             NA\n2  2016 240.0           1.27\n3  2017 245.1           2.12\n4  2018 251.1           2.45\n5  2019 255.7           1.83\n6  2020 258.8           1.21\n7  2021 271.0           4.71\n8  2022 284.2           4.87\n9  2023 296.8           4.43\n10 2024 307.5           3.61\n\n# Hitung average inflation\navg_inflation &lt;- mean(inflation_rate, na.rm = TRUE)\nprint(paste(\"Average Inflation Rate:\", round(avg_inflation, 2)))\n\n[1] \"Average Inflation Rate: 2.95\""
+  },
+  {
+    "objectID": "docs/lessons/lesson-6-inflation-and-cpi.html#dampak-inflasi",
+    "href": "docs/lessons/lesson-6-inflation-and-cpi.html#dampak-inflasi",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "Penting buat kamu:\n\nDaya Beli Turun: Uangmu jadi kurang powernya dari tahun ke tahun.\nTabungan Terkikis: Kalau uang kamu cuma disimpan di bawah kasur, nilainya akan terus turun.\nIdealnya: Inflasi yang moderat (sekitar 2-3%) dianggap sehat karena mendorong orang untuk belanja dan investasi, yang memacu pertumbuhan ekonomi.\nBahayanya: Inflasi yang tinggi (Hyperinflation) bisa bikin ekonomi kacau"
+  },
+  {
+    "objectID": "docs/lessons/lesson-6-inflation-and-cpi.html#coba-lebih-lanjut",
+    "href": "docs/lessons/lesson-6-inflation-and-cpi.html#coba-lebih-lanjut",
+    "title": "Inflation and CPI",
+    "section": "",
+    "text": "FYI, R menyediakan banyak data yang bisa kita gunakan untuk simulasi tidak hanya matematika ekonomi, bahkan ekonometrika. Coba saja package wooldridge"
+  },
+  {
+    "objectID": "docs/lessons/lesson-4-elasticity-of-demand.html",
+    "href": "docs/lessons/lesson-4-elasticity-of-demand.html",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "Seberapa “Sensitif” Pembeli?\nOke, kita tahu kalau harga naik, Permintaan turun. Tapi, seberapa jauh penurunannya? Di sesi ini, kita akan bedah Elastisitas Harga Permintaan (Elasticity of Demand), yaitu ilmu yang mengukur tingkat sensitivitas pembeli terhadap perubahan harga. Dan pastinya, kita hitung pakai R!\n\n\n\nElastisitas ini mengukur: “Kalau harga naik 1%, seberapa besar sih Permintaan itu bakal berubah (dalam % juga)?”\nRumus perhitungannya gampang:\n\\[E_d = \\frac{\\% \\text{ Perubahan Kuantitas Diminta}}{\\% \\text{ Perubahan Harga}}\\]\nPenting: Nilai \\(E_d\\) ini selalu dalam nilai absolut (\\(|E_d|\\)).\nFormula:\n\\[\nE_d = (\\% \\text{ Change in Quantity Demanded}) / (\\% \\text{ Change in Price})\n\\]\n\n\n\nPoin utama:\n• Elastis \\((|E_d| &gt; 1)\\):\nContoh: Jasa ojek online. Kalau harganya naik dikit, kamu langsung pindah ke transportasi lain. Sangat responsif!\n• Inelastis \\((|E_d| &lt; 1)\\):\nContoh: Bensin, atau obat-obatan penting. Mau harganya naik, kamu tetap harus beli. Tidak responsif terhadap perubahan harga.\n• Unit Elastis \\((|E_d| = 1)\\):\nPerubahan harga (misal 10%) menghasilkan perubahan Permintaan yang sama persis (10%).\n• Sangat Elastis/Sempurna \\((|E_d| = \\infty)\\):\nKenaikan harga sekecil apapun, Permintaan langsung nol. (Ini teori ideal, jarang di dunia nyata).\n• Sangat Inelastis/Sempurna \\((|E_d| = 0)\\):\nHarga berubah drastis, tapi Permintaan tidak bergerak sama sekali. (Contoh: Air mineral di gurun).\n\n\n\n\n# Hitung Elastisitas Permintaan\ncalculate_elasticity &lt;- function(P1, P2, Q1, Q2) {\n  # Metode Midpoint (lebih akurat)\n  price_change &lt;- (P2 - P1) / ((P2 + P1) / 2)\n  quantity_change &lt;- (Q2 - Q1) / ((Q2 + Q1) / 2)\n  \n  elasticity &lt;- quantity_change / price_change\n  return(elasticity)\n}\n\n# Contoh: Permintaan Kopi\nprice1 &lt;- 3.00\nprice2 &lt;- 3.50\nquantity1 &lt;- 100\nquantity2 &lt;- 85\n\nelasticity &lt;- calculate_elasticity(price1, price2, \n                                   quantity1, quantity2)\n\nprint(paste(\"Price Elasticity of Demand:\", round(elasticity, 2)))\n\n[1] \"Price Elasticity of Demand: -1.05\"\n\nif (abs(elasticity) &gt; 1) {\n  print(paste(\"Demand is ELASTIC\"))\n} else if (abs(elasticity) &lt; 1) {\n  print(paste(\"Demand is INELASTIC\"))\n} else {\n  print(paste(\"Demand is UNIT ELASTIC\"))\n}\n\n[1] \"Demand is ELASTIC\"\n\n\n\n\n\nKalau kamu tahu produkmu itu Inelastis, kamu bisa menaikkan harga tanpa takut kehilangan banyak pelanggan. Sebaliknya, kalau Elastis, kamu harus hati-hati banget.\n\n\n\nHarga sebuah produk turun dari Rp 10.000 menjadi Rp 8.000. Akibat dari penurunan harga tersebut, jumlah barang yang diminta meningkat dari 100 unit menjadi 140 unit. Coba kalian hitung elastisitas permintaannya, dan tentukan apakah permintaan tersebut elastis atau inelastis."
+  },
+  {
+    "objectID": "docs/lessons/lesson-4-elasticity-of-demand.html#elastisitas-harga-permintaan",
+    "href": "docs/lessons/lesson-4-elasticity-of-demand.html#elastisitas-harga-permintaan",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "Elastisitas ini mengukur: “Kalau harga naik 1%, seberapa besar sih Permintaan itu bakal berubah (dalam % juga)?”\nRumus perhitungannya gampang:\n\\[E_d = \\frac{\\% \\text{ Perubahan Kuantitas Diminta}}{\\% \\text{ Perubahan Harga}}\\]\nPenting: Nilai \\(E_d\\) ini selalu dalam nilai absolut (\\(|E_d|\\)).\nFormula:\n\\[\nE_d = (\\% \\text{ Change in Quantity Demanded}) / (\\% \\text{ Change in Price})\n\\]"
+  },
+  {
+    "objectID": "docs/lessons/lesson-4-elasticity-of-demand.html#tipe-elastisitas",
+    "href": "docs/lessons/lesson-4-elasticity-of-demand.html#tipe-elastisitas",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "Poin utama:\n• Elastis \\((|E_d| &gt; 1)\\):\nContoh: Jasa ojek online. Kalau harganya naik dikit, kamu langsung pindah ke transportasi lain. Sangat responsif!\n• Inelastis \\((|E_d| &lt; 1)\\):\nContoh: Bensin, atau obat-obatan penting. Mau harganya naik, kamu tetap harus beli. Tidak responsif terhadap perubahan harga.\n• Unit Elastis \\((|E_d| = 1)\\):\nPerubahan harga (misal 10%) menghasilkan perubahan Permintaan yang sama persis (10%).\n• Sangat Elastis/Sempurna \\((|E_d| = \\infty)\\):\nKenaikan harga sekecil apapun, Permintaan langsung nol. (Ini teori ideal, jarang di dunia nyata).\n• Sangat Inelastis/Sempurna \\((|E_d| = 0)\\):\nHarga berubah drastis, tapi Permintaan tidak bergerak sama sekali. (Contoh: Air mineral di gurun)."
+  },
+  {
+    "objectID": "docs/lessons/lesson-4-elasticity-of-demand.html#menghitung-elastisitas",
+    "href": "docs/lessons/lesson-4-elasticity-of-demand.html#menghitung-elastisitas",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "# Hitung Elastisitas Permintaan\ncalculate_elasticity &lt;- function(P1, P2, Q1, Q2) {\n  # Metode Midpoint (lebih akurat)\n  price_change &lt;- (P2 - P1) / ((P2 + P1) / 2)\n  quantity_change &lt;- (Q2 - Q1) / ((Q2 + Q1) / 2)\n  \n  elasticity &lt;- quantity_change / price_change\n  return(elasticity)\n}\n\n# Contoh: Permintaan Kopi\nprice1 &lt;- 3.00\nprice2 &lt;- 3.50\nquantity1 &lt;- 100\nquantity2 &lt;- 85\n\nelasticity &lt;- calculate_elasticity(price1, price2, \n                                   quantity1, quantity2)\n\nprint(paste(\"Price Elasticity of Demand:\", round(elasticity, 2)))\n\n[1] \"Price Elasticity of Demand: -1.05\"\n\nif (abs(elasticity) &gt; 1) {\n  print(paste(\"Demand is ELASTIC\"))\n} else if (abs(elasticity) &lt; 1) {\n  print(paste(\"Demand is INELASTIC\"))\n} else {\n  print(paste(\"Demand is UNIT ELASTIC\"))\n}\n\n[1] \"Demand is ELASTIC\""
+  },
+  {
+    "objectID": "docs/lessons/lesson-4-elasticity-of-demand.html#saran",
+    "href": "docs/lessons/lesson-4-elasticity-of-demand.html#saran",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "Kalau kamu tahu produkmu itu Inelastis, kamu bisa menaikkan harga tanpa takut kehilangan banyak pelanggan. Sebaliknya, kalau Elastis, kamu harus hati-hati banget."
+  },
+  {
+    "objectID": "docs/lessons/lesson-4-elasticity-of-demand.html#contoh-soal",
+    "href": "docs/lessons/lesson-4-elasticity-of-demand.html#contoh-soal",
+    "title": "Elasticity of Demand",
+    "section": "",
+    "text": "Harga sebuah produk turun dari Rp 10.000 menjadi Rp 8.000. Akibat dari penurunan harga tersebut, jumlah barang yang diminta meningkat dari 100 unit menjadi 140 unit. Coba kalian hitung elastisitas permintaannya, dan tentukan apakah permintaan tersebut elastis atau inelastis."
+  },
+  {
+    "objectID": "docs/lessons/lesson-2-supply-and-demand.html",
+    "href": "docs/lessons/lesson-2-supply-and-demand.html",
+    "title": "Supply and Demand",
+    "section": "",
+    "text": "Di bagian ini, kita cari tahu konsep dasar yang mengatur semua harga di dunia: Permintaan (Demand) dan Penawaran (Supply). Selanjutnya, kita bakal coba visualisasikan dinamika ini pakai R.\n\n\n\nSekarang, pikirkan kopi susu favoritmu. Sampai akhir minggu lalu harga kopi susu itu masih 15 ribu, dan kamu beli stiap hari. Tapi, tiba-tiba mulai awal minggu ini harganya naik jadi 30 ribu. Kira-kira kamu masih beli sesering dulu enggak?\nKemungkinan besar enggak, kan? Mungkin kamu cuman akan beli awal bulan, atau cari alternatif yang lebih murah.\nInilah Hukum Permintaan: Kalau semua faktor lain tidak berubah, saat harga suatu barang naik, maka jumlah barang yang diminta akan turun. Sebalikanya, kalau harga turun, permintaan naik. Intinya: Hubungan antara harga dan permintaan itu terbalik. Inilah dasar mengapa harga di pasar bergerak.\nFormula:\n\\[Qd = a - b*P\\]\n\n\n\n\n# Tentukan Fungsi Permintaannya\nprice &lt;- seq(0, 100, by = 5)\nquantity_demanded &lt;- 100 - 0.8 * price\n\n# Lanjut kita buat data frame\ndemand_data &lt;- data.frame(\n  Price = price,\n  Quantity = quantity_demanded\n)\n\n# Baru Lanjut Plot Kurvanya\nlibrary(ggplot2)\nggplot(demand_data, aes(x = Quantity, y = Price)) +\n  geom_line(color = \"blue\", size = 1.5) +\n  labs(title = \"Demand Curve\",\n       x = \"Quantity Demanded\",\n       y = \"Price (Rp)\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\nSekarang posisi kita adalah penjual atau produsen. Kamu adalah pemilik kedai kopi. Jika harga kopi susu lagi malah banget (30 ribu) kamu pasti semangat bangget buat bikin stok yang banyak, kalau perlu nambah jam operasional. Kenapa? Karena ada potensi Untung Gede.\nInilah Hukum Penawaran. Kalau semua faktor lain tidak berubah, saat harga suatu barang naik, jumlah barang yang ditawarkan juga akan bertambah. Intinya: Produsen itu semakin semangat menawarkan banyak barang ketika harganya sedang tinggi.\nFormula:\n\\[Qs = c + d*P\\]\n\n\n\n\n# Tentukan Fungsi Permintaan & Penawaran\nprice &lt;- seq(0, 100, by = 2)\nquantity_demanded &lt;- 100 - 0.8 * price\nquantity_supplied &lt;- -20 + 1.2 * price\n\n# Buat kombinasi data framenya\nmarket_data &lt;- data.frame(\n  Price = price,\n  Demand = quantity_demanded,\n  Supply = quantity_supplied\n)\n\n# Cari Titik Keseimbangan\nequilibrium_price &lt;- (100 + 20) / (0.8 + 1.2)\nequilibrium_quantity &lt;- 100 - 0.8 * equilibrium_price\n\nprint(paste(\"Equilibrium Price:\", round(equilibrium_price, 2)))\n\n[1] \"Equilibrium Price: 60\"\n\nprint(paste(\"Equilibrium Quantity:\", round(equilibrium_quantity, 2)))\n\n[1] \"Equilibrium Quantity: 52\"\n\n\n\n\n\nlibrary(ggplot2)\n\n# Fungsi harga\nprice &lt;- seq(0, 100, by = 2)\n\n# Fungsi permintaan & penawaran\ndemand &lt;- 100 - 0.8 * price\nsupply &lt;- -20 + 1.2 * price\n\n# Data frame pasar\nmarket_data &lt;- data.frame(\n  Price = price,\n  Demand = demand,\n  Supply = supply\n)\n\n# cek 6 baris pertama\nhead(market_data)\n\n  Price Demand Supply\n1     0  100.0  -20.0\n2     2   98.4  -17.6\n3     4   96.8  -15.2\n4     6   95.2  -12.8\n5     8   93.6  -10.4\n6    10   92.0   -8.0\n\n\n\n# Plot kurva permintaan\n\nggplot(market_data) +\n  geom_line(aes(x = Demand, y = Price, color = \"Permintaan\")) +\n  geom_line(aes(x = Supply, y = Price, color = \"Penawaran\")) +\n  labs(\n    title = \"Kurva Permintaan dan Penawaran\",\n    x = \"Jumlah\",\n    y = \"Harga\"\n  ) +\n  theme_minimal() +\n  theme(\n    legend.position = c(0.9, 0.5)\n  )\n\n\n\n\n\n\n\n\nPermintaan dan penawaran membantu kita memahami bagaimana keputusan individu bertemu di pasar. Melalui kurva tersebut, kita bisa melihat bagaimana harga keseimbangan terbentuk, mengapa pasar cenderung menunju titik tertentu, dan bagaimana perubahan kondisi mempengaruhi hasil akhir. Konsep ini bisa menjadi fondasi untuk analisis kebijakan ekonomi.\n##Membuat Fungsi Permintaan\nPenasaran kan bagaimana fungsi permintaan seperti \\[Qd = 1000 - 140*P\\] bisa tiba-tiba muncul? Sini aku jelasin.\nMisal, seorang pelaku UMKM mencatat 30 kali transaksi penjualan tas sekolah. Penjualan ke-1 sampai ke-15, harga relatif stabil. Mulai penjualan ke-16, harga mulai dinaikkan (misal karena biaya bahan naik), maka:\n\nset.seed (123)\n\nn &lt;- 30\nobs &lt;- 1:n\n\n# Perhatikan, harga stabil lalu naik di observasi ke-16\nP &lt;- c(\n  rep(80,15), #harga awal\n  seq(85, 120, length.out = 15) #harga naik bertahap\n)\n\n# Permintaan menurun + noise (perilaku konsumen tidak sempurna)\nQ &lt;- 18000 - 100*P + rnorm(n, mean = 0, sd=300)\n\n# Buat dataframe data penjualan (datpj)\n\ndatpj &lt;-data.frame(\n  obs = obs,\n  P=P,\n  Q=round(Q)\n  )\ndatpj\n\n   obs     P     Q\n1    1  80.0  9832\n2    2  80.0  9931\n3    3  80.0 10468\n4    4  80.0 10021\n5    5  80.0 10039\n6    6  80.0 10515\n7    7  80.0 10138\n8    8  80.0  9620\n9    9  80.0  9794\n10  10  80.0  9866\n11  11  80.0 10367\n12  12  80.0 10108\n13  13  80.0 10120\n14  14  80.0 10033\n15  15  80.0  9833\n16  16  85.0 10036\n17  17  87.5  9399\n18  18  90.0  8410\n19  19  92.5  8960\n20  20  95.0  8358\n21  21  97.5  7930\n22  22 100.0  7935\n23  23 102.5  7442\n24  24 105.0  7281\n25  25 107.5  7062\n26  26 110.0  6494\n27  27 112.5  7001\n28  28 115.0  6546\n29  29 117.5  5909\n30  30 120.0  6376\n\n\nSetelah kita dapatkan data, selanjutnya kita periksa visualisasi datanya\n\nlibrary(ggplot2)\n\nggplot(datpj, aes(x=P, y=Q)) +\n  geom_point(size=2) +\n  geom_vline(xintercept = P[16], linetype = \"dashed\") +\n  labs(\n    title = \"Data Penjualan UMKM\",\n    subtitle = \"Harga naik mulai observasi ke-16\",\n    x = \"Harga (ribu rupiah)\",\n    y = \"Jumlah Terjual\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nMelalui visualisasi kita bisa lihat secara jelas ya bagaimana pola datanya. Lanjut, bagian terpenting untuk menjawab pertanyaan awal bagaimana fungsi permintaannya?\n\nmodel_permint &lt;- lm(Q ~ P, data = datpj)\n\nsummary(model_permint)\n\n\nCall:\nlm(formula = Q ~ P, data = datpj)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-581.31 -203.14  -13.31  160.33  522.65 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 18388.020    362.997   50.66   &lt;2e-16 ***\nP            -104.408      3.935  -26.54   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 293 on 28 degrees of freedom\nMultiple R-squared:  0.9618,    Adjusted R-squared:  0.9604 \nF-statistic: 704.2 on 1 and 28 DF,  p-value: &lt; 2.2e-16\n\n\nBerdasarkan formula diatas, kita dapati hasil sebagai berikut:\nPerhatikan nilai intercept dan P\nQ = 18388 - 104*P Q = 18388 - 104P\nIni adalah fungsi permintaan linear. Apakah kalian bisa mengartikan nilai koefisien dari fungsi tersebut?"
+  },
+  {
+    "objectID": "docs/lessons/lesson-2-supply-and-demand.html#hukum-permintaan",
+    "href": "docs/lessons/lesson-2-supply-and-demand.html#hukum-permintaan",
+    "title": "Supply and Demand",
+    "section": "",
+    "text": "Sekarang, pikirkan kopi susu favoritmu. Sampai akhir minggu lalu harga kopi susu itu masih 15 ribu, dan kamu beli stiap hari. Tapi, tiba-tiba mulai awal minggu ini harganya naik jadi 30 ribu. Kira-kira kamu masih beli sesering dulu enggak?\nKemungkinan besar enggak, kan? Mungkin kamu cuman akan beli awal bulan, atau cari alternatif yang lebih murah.\nInilah Hukum Permintaan: Kalau semua faktor lain tidak berubah, saat harga suatu barang naik, maka jumlah barang yang diminta akan turun. Sebalikanya, kalau harga turun, permintaan naik. Intinya: Hubungan antara harga dan permintaan itu terbalik. Inilah dasar mengapa harga di pasar bergerak.\nFormula:\n\\[Qd = a - b*P\\]"
+  },
+  {
+    "objectID": "docs/lessons/lesson-2-supply-and-demand.html#bikin-kurva-permintaan-di-r",
+    "href": "docs/lessons/lesson-2-supply-and-demand.html#bikin-kurva-permintaan-di-r",
+    "title": "Supply and Demand",
+    "section": "",
+    "text": "# Tentukan Fungsi Permintaannya\nprice &lt;- seq(0, 100, by = 5)\nquantity_demanded &lt;- 100 - 0.8 * price\n\n# Lanjut kita buat data frame\ndemand_data &lt;- data.frame(\n  Price = price,\n  Quantity = quantity_demanded\n)\n\n# Baru Lanjut Plot Kurvanya\nlibrary(ggplot2)\nggplot(demand_data, aes(x = Quantity, y = Price)) +\n  geom_line(color = \"blue\", size = 1.5) +\n  labs(title = \"Demand Curve\",\n       x = \"Quantity Demanded\",\n       y = \"Price (Rp)\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "docs/lessons/lesson-2-supply-and-demand.html#hukum-penawaran",
+    "href": "docs/lessons/lesson-2-supply-and-demand.html#hukum-penawaran",
+    "title": "Supply and Demand",
+    "section": "",
+    "text": "Sekarang posisi kita adalah penjual atau produsen. Kamu adalah pemilik kedai kopi. Jika harga kopi susu lagi malah banget (30 ribu) kamu pasti semangat bangget buat bikin stok yang banyak, kalau perlu nambah jam operasional. Kenapa? Karena ada potensi Untung Gede.\nInilah Hukum Penawaran. Kalau semua faktor lain tidak berubah, saat harga suatu barang naik, jumlah barang yang ditawarkan juga akan bertambah. Intinya: Produsen itu semakin semangat menawarkan banyak barang ketika harganya sedang tinggi.\nFormula:\n\\[Qs = c + d*P\\]"
+  },
+  {
+    "objectID": "docs/lessons/lesson-2-supply-and-demand.html#gabungkan-kurva-permintaan-dan-penawaran",
+    "href": "docs/lessons/lesson-2-supply-and-demand.html#gabungkan-kurva-permintaan-dan-penawaran",
+    "title": "Supply and Demand",
+    "section": "",
+    "text": "# Tentukan Fungsi Permintaan & Penawaran\nprice &lt;- seq(0, 100, by = 2)\nquantity_demanded &lt;- 100 - 0.8 * price\nquantity_supplied &lt;- -20 + 1.2 * price\n\n# Buat kombinasi data framenya\nmarket_data &lt;- data.frame(\n  Price = price,\n  Demand = quantity_demanded,\n  Supply = quantity_supplied\n)\n\n# Cari Titik Keseimbangan\nequilibrium_price &lt;- (100 + 20) / (0.8 + 1.2)\nequilibrium_quantity &lt;- 100 - 0.8 * equilibrium_price\n\nprint(paste(\"Equilibrium Price:\", round(equilibrium_price, 2)))\n\n[1] \"Equilibrium Price: 60\"\n\nprint(paste(\"Equilibrium Quantity:\", round(equilibrium_quantity, 2)))\n\n[1] \"Equilibrium Quantity: 52\"\n\n\n\n\n\nlibrary(ggplot2)\n\n# Fungsi harga\nprice &lt;- seq(0, 100, by = 2)\n\n# Fungsi permintaan & penawaran\ndemand &lt;- 100 - 0.8 * price\nsupply &lt;- -20 + 1.2 * price\n\n# Data frame pasar\nmarket_data &lt;- data.frame(\n  Price = price,\n  Demand = demand,\n  Supply = supply\n)\n\n# cek 6 baris pertama\nhead(market_data)\n\n  Price Demand Supply\n1     0  100.0  -20.0\n2     2   98.4  -17.6\n3     4   96.8  -15.2\n4     6   95.2  -12.8\n5     8   93.6  -10.4\n6    10   92.0   -8.0\n\n\n\n# Plot kurva permintaan\n\nggplot(market_data) +\n  geom_line(aes(x = Demand, y = Price, color = \"Permintaan\")) +\n  geom_line(aes(x = Supply, y = Price, color = \"Penawaran\")) +\n  labs(\n    title = \"Kurva Permintaan dan Penawaran\",\n    x = \"Jumlah\",\n    y = \"Harga\"\n  ) +\n  theme_minimal() +\n  theme(\n    legend.position = c(0.9, 0.5)\n  )\n\n\n\n\n\n\n\n\nPermintaan dan penawaran membantu kita memahami bagaimana keputusan individu bertemu di pasar. Melalui kurva tersebut, kita bisa melihat bagaimana harga keseimbangan terbentuk, mengapa pasar cenderung menunju titik tertentu, dan bagaimana perubahan kondisi mempengaruhi hasil akhir. Konsep ini bisa menjadi fondasi untuk analisis kebijakan ekonomi.\n##Membuat Fungsi Permintaan\nPenasaran kan bagaimana fungsi permintaan seperti \\[Qd = 1000 - 140*P\\] bisa tiba-tiba muncul? Sini aku jelasin.\nMisal, seorang pelaku UMKM mencatat 30 kali transaksi penjualan tas sekolah. Penjualan ke-1 sampai ke-15, harga relatif stabil. Mulai penjualan ke-16, harga mulai dinaikkan (misal karena biaya bahan naik), maka:\n\nset.seed (123)\n\nn &lt;- 30\nobs &lt;- 1:n\n\n# Perhatikan, harga stabil lalu naik di observasi ke-16\nP &lt;- c(\n  rep(80,15), #harga awal\n  seq(85, 120, length.out = 15) #harga naik bertahap\n)\n\n# Permintaan menurun + noise (perilaku konsumen tidak sempurna)\nQ &lt;- 18000 - 100*P + rnorm(n, mean = 0, sd=300)\n\n# Buat dataframe data penjualan (datpj)\n\ndatpj &lt;-data.frame(\n  obs = obs,\n  P=P,\n  Q=round(Q)\n  )\ndatpj\n\n   obs     P     Q\n1    1  80.0  9832\n2    2  80.0  9931\n3    3  80.0 10468\n4    4  80.0 10021\n5    5  80.0 10039\n6    6  80.0 10515\n7    7  80.0 10138\n8    8  80.0  9620\n9    9  80.0  9794\n10  10  80.0  9866\n11  11  80.0 10367\n12  12  80.0 10108\n13  13  80.0 10120\n14  14  80.0 10033\n15  15  80.0  9833\n16  16  85.0 10036\n17  17  87.5  9399\n18  18  90.0  8410\n19  19  92.5  8960\n20  20  95.0  8358\n21  21  97.5  7930\n22  22 100.0  7935\n23  23 102.5  7442\n24  24 105.0  7281\n25  25 107.5  7062\n26  26 110.0  6494\n27  27 112.5  7001\n28  28 115.0  6546\n29  29 117.5  5909\n30  30 120.0  6376\n\n\nSetelah kita dapatkan data, selanjutnya kita periksa visualisasi datanya\n\nlibrary(ggplot2)\n\nggplot(datpj, aes(x=P, y=Q)) +\n  geom_point(size=2) +\n  geom_vline(xintercept = P[16], linetype = \"dashed\") +\n  labs(\n    title = \"Data Penjualan UMKM\",\n    subtitle = \"Harga naik mulai observasi ke-16\",\n    x = \"Harga (ribu rupiah)\",\n    y = \"Jumlah Terjual\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nMelalui visualisasi kita bisa lihat secara jelas ya bagaimana pola datanya. Lanjut, bagian terpenting untuk menjawab pertanyaan awal bagaimana fungsi permintaannya?\n\nmodel_permint &lt;- lm(Q ~ P, data = datpj)\n\nsummary(model_permint)\n\n\nCall:\nlm(formula = Q ~ P, data = datpj)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-581.31 -203.14  -13.31  160.33  522.65 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 18388.020    362.997   50.66   &lt;2e-16 ***\nP            -104.408      3.935  -26.54   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 293 on 28 degrees of freedom\nMultiple R-squared:  0.9618,    Adjusted R-squared:  0.9604 \nF-statistic: 704.2 on 1 and 28 DF,  p-value: &lt; 2.2e-16\n\n\nBerdasarkan formula diatas, kita dapati hasil sebagai berikut:\nPerhatikan nilai intercept dan P\nQ = 18388 - 104*P Q = 18388 - 104P\nIni adalah fungsi permintaan linear. Apakah kalian bisa mengartikan nilai koefisien dari fungsi tersebut?"
+  },
+  {
+    "objectID": "docs/lessons/lesson-1-introduction-to-economics-and-r.html",
+    "href": "docs/lessons/lesson-1-introduction-to-economics-and-r.html",
+    "title": "Introduction to Economics & R",
+    "section": "",
+    "text": "Di sesi ini, kita bakal mengupas tuntas dasar-dasar Ekonomi dan gimana R bisa jadi tools super buat kamu menganalisis dunia ekonomi.\n\n\nCoba kamu bayangin: Setiap pagi kamu Cuma punya 15 ribu buat jajan, padahal kamu pengen banget beli kopi susu kekinian, seblak, plus thai tea. Gimana cara kamu milih?\nNah, itulah esensi dari…Ekonomi! Ekonomi adalah ilmu sosial yang sebagian besar kerjanya adalah mengamati gimana individu seperti kamu, bisnis (warung kopi), pemerintah, bahkan negara membuat pilihan cerdas buat ngatur sumber daya yang serba terbatas demi memenuhi keinginan yang tidak terbatas.\nGaris besarnya, Ekonomi itu punya dua jagoan utama:\n\nMicroeconomics (Ekonomi Mikro): ini fokus ke keputusan kecil. Contohnya: Kenapa harga nasi bakso di kampusmu naik? Kenapa kamu lebih milih streaming film daripada beli buku?\nMacroeconomics (Ekonomi Makro): ini lebih melihat gambaran besar. Contoh: Kenapa suatu negara bisa inflasi? Atau Gimana cara pemerintah ngurangin angka pengangguran?\n\n\n\n\nKenapa Anak Ekonomi Wajib Banget Kenalan Sama R? - Pertama dan utama, Gratis Total! (ga perlu bajak software mahal) - Ada toolkit/package khusus econometrics yang lengkap (Jeffrey Wooldridge) - Cocok buat bikin visualisasi data\nOk, install dulu R dan Rstudio kalian\n\n\n\n\n# Load libraries\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\n\n# Your first R command\nprint(\"Kenapa singa kalau berburu harus bersama-sama? \n      karena kalau sendiri namanya bukan singa, tapi single!\")\n\n[1] \"Kenapa singa kalau berburu harus bersama-sama? \\n      karena kalau sendiri namanya bukan singa, tapi single!\"\n\n\nSebagai awal perkenalan, kalian bisa lanjut ke The Wiken Project| Pengenalan R dan RStudio"
+  },
+  {
+    "objectID": "docs/lessons/lesson-1-introduction-to-economics-and-r.html#ekonomi-itu-apa-sih",
+    "href": "docs/lessons/lesson-1-introduction-to-economics-and-r.html#ekonomi-itu-apa-sih",
+    "title": "Introduction to Economics & R",
+    "section": "",
+    "text": "Coba kamu bayangin: Setiap pagi kamu Cuma punya 15 ribu buat jajan, padahal kamu pengen banget beli kopi susu kekinian, seblak, plus thai tea. Gimana cara kamu milih?\nNah, itulah esensi dari…Ekonomi! Ekonomi adalah ilmu sosial yang sebagian besar kerjanya adalah mengamati gimana individu seperti kamu, bisnis (warung kopi), pemerintah, bahkan negara membuat pilihan cerdas buat ngatur sumber daya yang serba terbatas demi memenuhi keinginan yang tidak terbatas.\nGaris besarnya, Ekonomi itu punya dua jagoan utama:\n\nMicroeconomics (Ekonomi Mikro): ini fokus ke keputusan kecil. Contohnya: Kenapa harga nasi bakso di kampusmu naik? Kenapa kamu lebih milih streaming film daripada beli buku?\nMacroeconomics (Ekonomi Makro): ini lebih melihat gambaran besar. Contoh: Kenapa suatu negara bisa inflasi? Atau Gimana cara pemerintah ngurangin angka pengangguran?"
+  },
+  {
+    "objectID": "docs/lessons/lesson-1-introduction-to-economics-and-r.html#kenapa-anak-ekonomi-wajib-banget-kenalan-sama-r",
+    "href": "docs/lessons/lesson-1-introduction-to-economics-and-r.html#kenapa-anak-ekonomi-wajib-banget-kenalan-sama-r",
+    "title": "Introduction to Economics & R",
+    "section": "",
+    "text": "Kenapa Anak Ekonomi Wajib Banget Kenalan Sama R? - Pertama dan utama, Gratis Total! (ga perlu bajak software mahal) - Ada toolkit/package khusus econometrics yang lengkap (Jeffrey Wooldridge) - Cocok buat bikin visualisasi data\nOk, install dulu R dan Rstudio kalian"
+  },
+  {
+    "objectID": "docs/lessons/lesson-1-introduction-to-economics-and-r.html#setting-up-si-r",
+    "href": "docs/lessons/lesson-1-introduction-to-economics-and-r.html#setting-up-si-r",
+    "title": "Introduction to Economics & R",
+    "section": "",
+    "text": "# Load libraries\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\n\n# Your first R command\nprint(\"Kenapa singa kalau berburu harus bersama-sama? \n      karena kalau sendiri namanya bukan singa, tapi single!\")\n\n[1] \"Kenapa singa kalau berburu harus bersama-sama? \\n      karena kalau sendiri namanya bukan singa, tapi single!\"\n\n\nSebagai awal perkenalan, kalian bisa lanjut ke The Wiken Project| Pengenalan R dan RStudio"
+  },
+  {
+    "objectID": "docs/lessons/lesson-3-market-equilibrium.html",
+    "href": "docs/lessons/lesson-3-market-equilibrium.html",
+    "title": "Market Equilibrium",
+    "section": "",
+    "text": "Kita sudah tahu gimana pasar mencari “titik damai”. Sekarang, kita akan bahas: Apa yang bikin kedamaian itu terganggu?\n\n\nKeseimbangan pasar adalah saat:\n\\[\\text{Permintaan} = \\text{Penawaran}\\]\n• Di titik ini, harga sudah pas (Market-Clearing Price).\n• Tidak ada kelebihan stok (surplus) atau kekurangan stok (shortage).\nPasar stabil.\n\n\n\n\n# Tentukan dulu Fungsi Permintaan & Penawaran\ndemand_function &lt;- function(P) {\n  return(100 - 2*P)\n}\n\nsupply_function &lt;- function(P) {\n  return(-10 + 3*P)\n}\n\n# Tentukan Harga Keseimbangan (prinsip, Qd = Qs)\n# 100 - 2P = -10 + 3P\n# 110 = 5P\nequilibrium_price &lt;- 110 / 5\nequilibrium_quantity &lt;- demand_function(equilibrium_price)\n\nprint(paste(\"Equilibrium Price: $\", equilibrium_price))\n\n[1] \"Equilibrium Price: $ 22\"\n\nprint(paste(\"Equilibrium Quantity:\", equilibrium_quantity, \"units\"))\n\n[1] \"Equilibrium Quantity: 56 units\"\n\n\n\n\n\nHarga bisa berubah mendadak bukan cuma karena penjual iseng, tapi karena ada faktor besar lain yang menggeser seluruh kurva Permintaan atau Penawaran.\nIni kayak ada gempa yang mengubah seluruh peta pasar, menghasilkan titik keseimbangan (harga) yang baru."
+  },
+  {
+    "objectID": "docs/lessons/lesson-3-market-equilibrium.html#memahami-keseimbangan-pasar",
+    "href": "docs/lessons/lesson-3-market-equilibrium.html#memahami-keseimbangan-pasar",
+    "title": "Market Equilibrium",
+    "section": "",
+    "text": "Keseimbangan pasar adalah saat:\n\\[\\text{Permintaan} = \\text{Penawaran}\\]\n• Di titik ini, harga sudah pas (Market-Clearing Price).\n• Tidak ada kelebihan stok (surplus) atau kekurangan stok (shortage).\nPasar stabil."
+  },
+  {
+    "objectID": "docs/lessons/lesson-3-market-equilibrium.html#mencari-titik-keseimbangan",
+    "href": "docs/lessons/lesson-3-market-equilibrium.html#mencari-titik-keseimbangan",
+    "title": "Market Equilibrium",
+    "section": "",
+    "text": "# Tentukan dulu Fungsi Permintaan & Penawaran\ndemand_function &lt;- function(P) {\n  return(100 - 2*P)\n}\n\nsupply_function &lt;- function(P) {\n  return(-10 + 3*P)\n}\n\n# Tentukan Harga Keseimbangan (prinsip, Qd = Qs)\n# 100 - 2P = -10 + 3P\n# 110 = 5P\nequilibrium_price &lt;- 110 / 5\nequilibrium_quantity &lt;- demand_function(equilibrium_price)\n\nprint(paste(\"Equilibrium Price: $\", equilibrium_price))\n\n[1] \"Equilibrium Price: $ 22\"\n\nprint(paste(\"Equilibrium Quantity:\", equilibrium_quantity, \"units\"))\n\n[1] \"Equilibrium Quantity: 56 units\""
+  },
+  {
+    "objectID": "docs/lessons/lesson-3-market-equilibrium.html#pergeseran-kurva-permintaan-dan-penawaran",
+    "href": "docs/lessons/lesson-3-market-equilibrium.html#pergeseran-kurva-permintaan-dan-penawaran",
+    "title": "Market Equilibrium",
+    "section": "",
+    "text": "Harga bisa berubah mendadak bukan cuma karena penjual iseng, tapi karena ada faktor besar lain yang menggeser seluruh kurva Permintaan atau Penawaran.\nIni kayak ada gempa yang mengubah seluruh peta pasar, menghasilkan titik keseimbangan (harga) yang baru."
+  },
+  {
+    "objectID": "docs/lessons/lesson-3-market-equilibrium.html#simulasi",
+    "href": "docs/lessons/lesson-3-market-equilibrium.html#simulasi",
+    "title": "Market Equilibrium",
+    "section": "Simulasi",
+    "text": "Simulasi\n\n# Pergeseran Permintaan\nprice &lt;- seq(0, 50, by = 2)\ndemand_original &lt;- 100 - 2 * price\ndemand_shifted &lt;- 120 - 2 * price  # Peningkatan Permintaan\nsupply &lt;- -10 + 3 * price\n\n# Bikin data frame untuk Visualisasi\nshift_data &lt;- data.frame(\n  Price = price,\n  Original_Demand = demand_original,\n  Shifted_Demand = demand_shifted,\n  Supply = supply\n)\n\n# Hitung Harga Keseimbangan Baru\nnew_equilibrium_price &lt;- (120 + 10) / (2 + 3)\nnew_equilibrium_quantity &lt;- -10 + 3 * new_equilibrium_price\n\nprint(paste(\"Original Equilibrium Price: $22\"))\n\n[1] \"Original Equilibrium Price: $22\"\n\nprint(paste(\"New Equilibrium Price: $\", new_equilibrium_price))\n\n[1] \"New Equilibrium Price: $ 26\"\n\n\nPada lesson ini, kita telah mempelajari bagaimana interaksi antara permintaan dan penawaran menentukan keseimbangan pasar yang baru. Konsep market equilibrium ini dapat kita gunakan untuk menganalisis pasar, termasuk dampak kebijakan, perubahan teknologi, dan intervensi pemerintah.\n\n\n\n\n\n\nNote\n\n\n\nMengapa pasar tidak selalu berada pada titik keseimbangan? Kondisi apa yang menyebabkan atau memperlambat proses penyesuaian harga?"
+  },
+  {
+    "objectID": "docs/lessons/lesson-5-gdp-and-economic-growth.html",
+    "href": "docs/lessons/lesson-5-gdp-and-economic-growth.html",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "Setelah membahas pasar, sekarang kita naik level ke skala negara. Di sesi ini, kita akan kenalan sama GDP atau PDB (Produk Domestik Bruto), yaitu ‘rapor’ kesehatan ekonomi suatu negara, dan gimana kita bisa menganalisis Pertumbuhan Ekonomi pakai R.\n\n\n\nSaya yakin kalian sudah paham, tapi ini perlu tetap saya tulis untuk memenuhi halaman lesson, duh.\nGDP itu ibarat total nilai belanjaan seluruh penduduk dan entitas di suatu negara selama periode tertentu (misalnya setahun). Secara formal, GDP adalah total nilai moneter dari semua barang dan jasa akhir yang diproduksi di dalam batas wilayah suatu negara dalam periode waktu spesifik.\nIntinya: GDP adalah indikator yang paling sering dipakai buat tahu seberapa ‘sehat’ dan aktif ekonomi suatu negara. Semakin tinggi PDB, biasanya semakin besar kue ekonominya.\n\n\n\ndihitung dari sisi Pengeluaran (Expenditure Approach). Coba lihat ke mana saja uang di negara itu mengalir:\nFormula:\n\\[GDP = C + I + G + (X - M)\\]\nKeterangan:\n\nC (Consumer Spending / Konsumsi):\n\nPengeluaran kita sehari-hari, dari beli kopi sampai bayar kosan. Ini adalah komponen terbesar, biasanya 60-70% PDB. - I (Investment / Investasi):\nPengeluaran bisnis untuk barang modal (misalnya pabrik baru, mesin, software).\n\nG (Government Spending / Belanja Pemerintah):\n\nPengeluaran pemerintah untuk barang dan jasa (misalnya bangun jalan, bayar gaji PNS).\n\nX - M (Net Exports / Ekspor Bersih):\n\nEkspor (X) (barang yang kita jual ke luar) dikurangi Impor (M) (barang yang kita beli dari luar).\n\n\n\n\n# Buat data frame GDP (billions)\nyears &lt;- 2015:2024\nconsumption &lt;- c(12000, 12400, 12800, 13100, 13500, \n                 13200, 13800, 14300, 14800, 15200)\ninvestment &lt;- c(3000, 3100, 3200, 3300, 3400, \n                3000, 3300, 3500, 3700, 3900)\ngovernment &lt;- c(3500, 3600, 3700, 3800, 3900, \n                4200, 4300, 4400, 4500, 4600)\nnet_exports &lt;- c(-500, -550, -600, -650, -700, \n                 -600, -550, -500, -450, -400)\n\ngdp &lt;- consumption + investment + government + net_exports\n\ngdp_data &lt;- data.frame(\n  Year = years,\n  GDP = gdp,\n  Consumption = consumption,\n  Investment = investment,\n  Government = government,\n  Net_Exports = net_exports\n)\n\n# Hitung growth rate dari GDP\ngdp_growth &lt;- c(NA, diff(gdp) / gdp[-length(gdp)] * 100)\ngdp_data$Growth_Rate &lt;- gdp_growth\n\nprint(gdp_data)\n\n   Year   GDP Consumption Investment Government Net_Exports Growth_Rate\n1  2015 18000       12000       3000       3500        -500          NA\n2  2016 18550       12400       3100       3600        -550    3.055556\n3  2017 19100       12800       3200       3700        -600    2.964960\n4  2018 19550       13100       3300       3800        -650    2.356021\n5  2019 20100       13500       3400       3900        -700    2.813299\n6  2020 19800       13200       3000       4200        -600   -1.492537\n7  2021 20850       13800       3300       4300        -550    5.303030\n8  2022 21700       14300       3500       4400        -500    4.076739\n9  2023 22550       14800       3700       4500        -450    3.917051\n10 2024 23300       15200       3900       4600        -400    3.325942\n\n\n\n\n\n\nlibrary(ggplot2)\n\n# Bikin data frame\nchart_data &lt;- data.frame(\n  year = c(2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024),\n  GDP_Billions = c(18000, 18550, 19100, 19550, 20100, 19800, 20850, 21700, 22550, 23300)\n)\n\n# Tetapkan area plotnya\nggplot(chart_data, aes(x = year)) +\n  geom_area(aes(y = GDP_Billions, fill = \"GDP Billions\"), alpha = 0.6)\n\n\n\n\n\n\n\n  labs(title = \"GDP Growth Over Time\",\n       x = \"Year\",\n       y = \"Value\",\n       fill = \"Legend\") +\n  theme_minimal()\n\nNULL\n\n\n\n\n\n\n# Nominal vs Real GDP (adjusting for inflation)\nnominal_gdp &lt;- c(20000, 21000, 22100, 23300, 24600)\ncpi &lt;- c(100, 102, 105, 108, 112)  # Consumer Price Index\n\n# Real GDP (base year = first year)\nreal_gdp &lt;- (nominal_gdp / cpi) * 100\n\ngdp_comparison &lt;- data.frame(\n  Year = 2020:2024,\n  Nominal_GDP = nominal_gdp,\n  Real_GDP = real_gdp,\n  CPI = cpi\n)\n\nprint(paste(\"\\nNominal GDP shows the current dollar value\\n\"))\n\n[1] \"\\nNominal GDP shows the current dollar value\\n\"\n\nprint(paste(\"Real GDP adjusts for inflation\\n\\n\"))\n\n[1] \"Real GDP adjusts for inflation\\n\\n\"\n\nprint(gdp_comparison)\n\n  Year Nominal_GDP Real_GDP CPI\n1 2020       20000 20000.00 100\n2 2021       21000 20588.24 102\n3 2022       22100 21047.62 105\n4 2023       23300 21574.07 108\n5 2024       24600 21964.29 112"
+  },
+  {
+    "objectID": "docs/lessons/lesson-5-gdp-and-economic-growth.html#apa-itu-gdp",
+    "href": "docs/lessons/lesson-5-gdp-and-economic-growth.html#apa-itu-gdp",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "Saya yakin kalian sudah paham, tapi ini perlu tetap saya tulis untuk memenuhi halaman lesson, duh.\nGDP itu ibarat total nilai belanjaan seluruh penduduk dan entitas di suatu negara selama periode tertentu (misalnya setahun). Secara formal, GDP adalah total nilai moneter dari semua barang dan jasa akhir yang diproduksi di dalam batas wilayah suatu negara dalam periode waktu spesifik.\nIntinya: GDP adalah indikator yang paling sering dipakai buat tahu seberapa ‘sehat’ dan aktif ekonomi suatu negara. Semakin tinggi PDB, biasanya semakin besar kue ekonominya."
+  },
+  {
+    "objectID": "docs/lessons/lesson-5-gdp-and-economic-growth.html#komponen-gdp",
+    "href": "docs/lessons/lesson-5-gdp-and-economic-growth.html#komponen-gdp",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "dihitung dari sisi Pengeluaran (Expenditure Approach). Coba lihat ke mana saja uang di negara itu mengalir:\nFormula:\n\\[GDP = C + I + G + (X - M)\\]\nKeterangan:\n\nC (Consumer Spending / Konsumsi):\n\nPengeluaran kita sehari-hari, dari beli kopi sampai bayar kosan. Ini adalah komponen terbesar, biasanya 60-70% PDB. - I (Investment / Investasi):\nPengeluaran bisnis untuk barang modal (misalnya pabrik baru, mesin, software).\n\nG (Government Spending / Belanja Pemerintah):\n\nPengeluaran pemerintah untuk barang dan jasa (misalnya bangun jalan, bayar gaji PNS).\n\nX - M (Net Exports / Ekspor Bersih):\n\nEkspor (X) (barang yang kita jual ke luar) dikurangi Impor (M) (barang yang kita beli dari luar)."
+  },
+  {
+    "objectID": "docs/lessons/lesson-5-gdp-and-economic-growth.html#coba-kita-simulasikan",
+    "href": "docs/lessons/lesson-5-gdp-and-economic-growth.html#coba-kita-simulasikan",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "# Buat data frame GDP (billions)\nyears &lt;- 2015:2024\nconsumption &lt;- c(12000, 12400, 12800, 13100, 13500, \n                 13200, 13800, 14300, 14800, 15200)\ninvestment &lt;- c(3000, 3100, 3200, 3300, 3400, \n                3000, 3300, 3500, 3700, 3900)\ngovernment &lt;- c(3500, 3600, 3700, 3800, 3900, \n                4200, 4300, 4400, 4500, 4600)\nnet_exports &lt;- c(-500, -550, -600, -650, -700, \n                 -600, -550, -500, -450, -400)\n\ngdp &lt;- consumption + investment + government + net_exports\n\ngdp_data &lt;- data.frame(\n  Year = years,\n  GDP = gdp,\n  Consumption = consumption,\n  Investment = investment,\n  Government = government,\n  Net_Exports = net_exports\n)\n\n# Hitung growth rate dari GDP\ngdp_growth &lt;- c(NA, diff(gdp) / gdp[-length(gdp)] * 100)\ngdp_data$Growth_Rate &lt;- gdp_growth\n\nprint(gdp_data)\n\n   Year   GDP Consumption Investment Government Net_Exports Growth_Rate\n1  2015 18000       12000       3000       3500        -500          NA\n2  2016 18550       12400       3100       3600        -550    3.055556\n3  2017 19100       12800       3200       3700        -600    2.964960\n4  2018 19550       13100       3300       3800        -650    2.356021\n5  2019 20100       13500       3400       3900        -700    2.813299\n6  2020 19800       13200       3000       4200        -600   -1.492537\n7  2021 20850       13800       3300       4300        -550    5.303030\n8  2022 21700       14300       3500       4400        -500    4.076739\n9  2023 22550       14800       3700       4500        -450    3.917051\n10 2024 23300       15200       3900       4600        -400    3.325942"
+  },
+  {
+    "objectID": "docs/lessons/lesson-5-gdp-and-economic-growth.html#visualisasi-gdp-dan-pertumbuhan-ekonomi",
+    "href": "docs/lessons/lesson-5-gdp-and-economic-growth.html#visualisasi-gdp-dan-pertumbuhan-ekonomi",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "library(ggplot2)\n\n# Bikin data frame\nchart_data &lt;- data.frame(\n  year = c(2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024),\n  GDP_Billions = c(18000, 18550, 19100, 19550, 20100, 19800, 20850, 21700, 22550, 23300)\n)\n\n# Tetapkan area plotnya\nggplot(chart_data, aes(x = year)) +\n  geom_area(aes(y = GDP_Billions, fill = \"GDP Billions\"), alpha = 0.6)\n\n\n\n\n\n\n\n  labs(title = \"GDP Growth Over Time\",\n       x = \"Year\",\n       y = \"Value\",\n       fill = \"Legend\") +\n  theme_minimal()\n\nNULL"
+  },
+  {
+    "objectID": "docs/lessons/lesson-5-gdp-and-economic-growth.html#menghitung-real-vs-nominal-gdp",
+    "href": "docs/lessons/lesson-5-gdp-and-economic-growth.html#menghitung-real-vs-nominal-gdp",
+    "title": "GDP and Economic Growth",
+    "section": "",
+    "text": "# Nominal vs Real GDP (adjusting for inflation)\nnominal_gdp &lt;- c(20000, 21000, 22100, 23300, 24600)\ncpi &lt;- c(100, 102, 105, 108, 112)  # Consumer Price Index\n\n# Real GDP (base year = first year)\nreal_gdp &lt;- (nominal_gdp / cpi) * 100\n\ngdp_comparison &lt;- data.frame(\n  Year = 2020:2024,\n  Nominal_GDP = nominal_gdp,\n  Real_GDP = real_gdp,\n  CPI = cpi\n)\n\nprint(paste(\"\\nNominal GDP shows the current dollar value\\n\"))\n\n[1] \"\\nNominal GDP shows the current dollar value\\n\"\n\nprint(paste(\"Real GDP adjusts for inflation\\n\\n\"))\n\n[1] \"Real GDP adjusts for inflation\\n\\n\"\n\nprint(gdp_comparison)\n\n  Year Nominal_GDP Real_GDP CPI\n1 2020       20000 20000.00 100\n2 2021       21000 20588.24 102\n3 2022       22100 21047.62 105\n4 2023       23300 21574.07 108\n5 2024       24600 21964.29 112"
+  }
+]

@@ -1,0 +1,75 @@
+---
+title: "Inflation and CPI"
+subtitle: "Lesson 6 - Economics with R"
+author: "Irfan Tri Raharjo"
+format: 
+  html:
+    code-fold: false
+    toc: true
+    toc-depth: 3
+execute:
+  warning: false
+  message: false
+---
+
+# Inflasi dan IHK
+
+Setelah ngitung kekayaan negara (GDP), sekarang kita bahas penyakitnya: Inflasi. Di sesi ini, kita akan tahu apa itu inflasi, cara mengukurnya pakai Indeks Harga Konsumen (IHK/CPI), dan menganalisis trennya pakai R.
+
+---
+
+## Inflasi itu apa?
+
+Inflasi adalah kondisi di mana harga-harga barang dan jasa secara umum naik terus-menerus.
+
+Bayangkan: Tahun lalu, Rp10.000 bisa buat beli dua bungkus nasi, sekarang cuma dapat satu. Daya beli uangmu terkikis.
+
+Tugas utama Bank Sentral (di Indonesia: Bank Indonesia) adalah mengendalikan laju inflasi—dan mencegah deflasi (harga turun drastis) — agar ekonomi tetap berjalan mulus.
+
+
+## Indeks Harga Konsumen -IHK (CPI)
+
+IHK adalah alat ukur utama inflasi. 
+
+Cara kerjanya:
+IHK mengukur rata-rata perubahan harga sekelompok barang dan jasa yang biasa dibeli konsumen (beras, pulsa, transportasi, dll.) dari waktu ke waktu.
+
+Rumus Sederhana untuk Menghitung Laju Inflasi:
+$$\text{Laju Inflasi} = \frac{(CPI_{\text{sekarang}} - CPI_{\text{sebelum}}) }{CPI_{\text{sebelum}}} \times 100$$
+
+## Simulasi Perhitungan Inflasi
+
+```{r}
+# Buat data frame CPI sekian tahun
+years <- 2015:2024
+cpi <- c(237.0, 240.0, 245.1, 251.1, 255.7, 
+         258.8, 271.0, 284.2, 296.8, 307.5)
+
+# Hitung Inflation Rate
+inflation_rate <- c(NA, diff(cpi) / cpi[-length(cpi)] * 100)
+
+inflation_data <- data.frame(
+  Year = years,
+  CPI = cpi,
+  Inflation_Rate = round(inflation_rate, 2)
+)
+
+print(inflation_data)
+
+# Hitung average inflation
+avg_inflation <- mean(inflation_rate, na.rm = TRUE)
+print(paste("Average Inflation Rate:", round(avg_inflation, 2)))
+```
+
+## Dampak Inflasi
+
+**Penting buat kamu:**
+
+- Daya Beli Turun: Uangmu jadi kurang powernya dari tahun ke tahun.
+- Tabungan Terkikis: Kalau uang kamu cuma disimpan di bawah kasur, nilainya akan terus turun. 
+- Idealnya: Inflasi yang moderat (sekitar 2-3%) dianggap sehat karena mendorong orang untuk belanja dan investasi, yang memacu pertumbuhan ekonomi.
+- Bahayanya: Inflasi yang tinggi (Hyperinflation) bisa bikin ekonomi kacau
+
+## Coba lebih lanjut
+  
+  FYI, R menyediakan banyak data yang bisa kita gunakan untuk simulasi tidak hanya matematika ekonomi, bahkan ekonometrika. Coba saja package wooldridge

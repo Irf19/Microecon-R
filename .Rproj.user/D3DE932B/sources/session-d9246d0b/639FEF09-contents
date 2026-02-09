@@ -1,0 +1,1 @@
+check_newer_version(version = quarto_version(), verbose = TRUE)

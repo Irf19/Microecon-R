@@ -1,0 +1,118 @@
+---
+title: "Market Equilibrium"
+subtitle: "Lesson 3 - Economics with R"
+author: "Irfan Tri Raharjo"
+format: 
+  html:
+    code-fold: false
+    toc: true
+    toc-depth: 3
+execute:
+  warning: false
+  message: false
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+# Keseimbangan Pasar
+
+Kita sudah tahu gimana pasar mencari "titik damai".
+Sekarang, kita akan bahas: Apa yang bikin kedamaian itu terganggu?
+
+
+## Memahami Keseimbangan Pasar
+
+Keseimbangan pasar adalah saat:
+
+$$\text{Permintaan} = \text{Penawaran}$$
+
+• Di titik ini, harga sudah pas (Market-Clearing Price).
+
+• Tidak ada kelebihan stok (surplus) atau kekurangan stok (shortage).
+
+Pasar stabil.
+
+## Mencari Titik Keseimbangan
+
+```{r}
+# Tentukan dulu Fungsi Permintaan & Penawaran
+demand_function <- function(P) {
+  return(100 - 2*P)
+}
+
+supply_function <- function(P) {
+  return(-10 + 3*P)
+}
+
+# Tentukan Harga Keseimbangan (prinsip, Qd = Qs)
+# 100 - 2P = -10 + 3P
+# 110 = 5P
+equilibrium_price <- 110 / 5
+equilibrium_quantity <- demand_function(equilibrium_price)
+
+print(paste("Equilibrium Price: $", equilibrium_price))
+print(paste("Equilibrium Quantity:", equilibrium_quantity, "units"))
+```
+
+## Pergeseran Kurva Permintaan dan Penawaran
+
+Harga bisa berubah mendadak bukan cuma karena penjual iseng, tapi karena ada faktor besar lain yang menggeser seluruh kurva Permintaan atau Penawaran.
+
+Ini kayak ada gempa yang mengubah seluruh peta pasar, menghasilkan titik keseimbangan (harga) yang baru.
+
+# Faktor Penggeser Permintaan (Demand Shifters):
+
+Ini adalah hal-hal yang membuat kamu (sebagai pembeli) tiba-tiba jadi lebih atau kurang pengen suatu barang, tanpa peduli harganya:
+
+• Pendapatan: Gajian! (Permintaan naik).
+
+• Tren/Selera: Makanan itu lagi hype di TikTok.
+
+• Harga Barang Terkait: Harga teh naik, jadi kamu beralih minum kopi.
+
+• Ekspektasi: Kamu dengar harga BBM besok naik, jadi kamu beli sekarang.
+
+# Faktor Penggeser Penawaran (Supply Shifters):
+
+Ini adalah hal-hal yang membuat produsen tiba-tiba jadi lebih atau kurang mampu/mau menjual:
+
+• Harga Bahan Baku: Harga biji kopi naik drastis (Penawaran turun).
+
+• Teknologi: Mesin baru yang bikin produksi lebih cepat (Penawaran naik).
+
+• Ekspektasi: Produsen yakin harga akan naik bulan depan, jadi stok ditahan.
+
+• Kebijakan Pemerintah: Pajak atau subsidi baru.
+
+## Simulasi
+
+```{r}
+# Pergeseran Permintaan
+price <- seq(0, 50, by = 2)
+demand_original <- 100 - 2 * price
+demand_shifted <- 120 - 2 * price  # Peningkatan Permintaan
+supply <- -10 + 3 * price
+
+# Bikin data frame untuk Visualisasi
+shift_data <- data.frame(
+  Price = price,
+  Original_Demand = demand_original,
+  Shifted_Demand = demand_shifted,
+  Supply = supply
+)
+
+# Hitung Harga Keseimbangan Baru
+new_equilibrium_price <- (120 + 10) / (2 + 3)
+new_equilibrium_quantity <- -10 + 3 * new_equilibrium_price
+
+print(paste("Original Equilibrium Price: $22"))
+print(paste("New Equilibrium Price: $", new_equilibrium_price))
+```
+
+Pada lesson ini, kita telah mempelajari bagaimana interaksi antara permintaan dan penawaran menentukan keseimbangan pasar yang baru. Konsep market equilibrium ini dapat kita gunakan untuk menganalisis pasar, termasuk dampak kebijakan, perubahan teknologi, dan intervensi pemerintah.
+
+:::{.callout-note}
+Mengapa pasar tidak selalu berada pada titik keseimbangan? Kondisi apa yang menyebabkan atau memperlambat proses penyesuaian harga?
+:::
+------------------------------------------------------------------------

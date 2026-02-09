@@ -1,0 +1,23 @@
+---
+title: "BelajaR"
+format: html
+editor: visual
+---
+
+# Aplikasi Ekonomi Mikro dengan R: Pengantar
+
+Pada bagian ini kalian akan belajar memulai pembelajaran ekonomi mikro menggunakan R. Sebagai awalan kalian akan menjawab pertanyaan kuis klasik dari Principles of Economics - Mankiw dan berlatih menggunakan kode R sederhana untuk mencari nilai Q dan P.
+
+Link : [R-Econ 01](https://irfan-raharjo.shinyapps.io/Micro1/)
+
+# Aplikasi Ekonomi Mikro dengan R: Producer Surplus
+
+Soal cerita yang tersaji akan mengingatkan anda pada perhitungan producer surplus sekaligus menjajal kode R.
+
+Link : [R-Econ 02](https://irfan-raharjo.shinyapps.io/Micro2/)
+
+# Aplikasi Ekonomi Mikro dengan R: Simulasi Permintaan
+
+Selanjutnya kita sajikan simulasi permintaan. Selain mengingat materi ilmu ekonomi, kalian juga musti ingat beberapa konsep statistik.
+
+Link : [R-Econ 03](https://irfan-raharjo.shinyapps.io/Micro3/)

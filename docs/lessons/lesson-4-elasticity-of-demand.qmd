@@ -1,0 +1,104 @@
+---
+title: "Elasticity of Demand"
+subtitle: "Lesson 4 - Economics with R"
+author: "Irfan Tri Raharjo"
+format: 
+  html:
+    code-fold: false
+    toc: true
+    toc-depth: 3
+execute:
+  warning: false
+  message: false
+---
+
+# Elastisitas Permintaan
+
+Seberapa "Sensitif" Pembeli?
+
+Oke, kita tahu kalau harga naik, Permintaan turun. Tapi, seberapa jauh penurunannya? Di sesi ini, kita akan bedah Elastisitas Harga Permintaan (Elasticity of Demand), yaitu ilmu yang mengukur tingkat sensitivitas pembeli terhadap perubahan harga. Dan pastinya, kita hitung pakai R!
+
+------------------------------------------------------------------------
+
+## Elastisitas Harga Permintaan
+
+Elastisitas ini mengukur: "Kalau harga naik 1%, seberapa besar sih Permintaan itu bakal berubah (dalam % juga)?"
+
+Rumus perhitungannya gampang:
+
+$$E_d = \frac{\% \text{ Perubahan Kuantitas Diminta}}{\% \text{ Perubahan Harga}}$$
+
+Penting: Nilai $E_d$ ini selalu dalam nilai absolut ($|E_d|$).
+
+**Formula:**
+
+$$
+E_d = (\% \text{ Change in Quantity Demanded}) / (\% \text{ Change in Price})
+$$
+
+## Tipe Elastisitas
+
+**Poin utama:**
+
+• Elastis $(|E_d| > 1)$:
+
+Contoh: Jasa ojek online. Kalau harganya naik dikit, kamu langsung pindah ke transportasi lain. Sangat responsif!
+
+• Inelastis $(|E_d| < 1)$:
+
+Contoh: Bensin, atau obat-obatan penting. Mau harganya naik, kamu tetap harus beli. Tidak responsif terhadap perubahan harga.
+
+• Unit Elastis $(|E_d| = 1)$:
+
+Perubahan harga (misal 10%) menghasilkan perubahan Permintaan yang sama persis (10%).
+
+• Sangat Elastis/Sempurna $(|E_d| = \infty)$:
+
+Kenaikan harga sekecil apapun, Permintaan langsung nol. (Ini teori ideal, jarang di dunia nyata).
+
+• Sangat Inelastis/Sempurna $(|E_d| = 0)$:
+
+Harga berubah drastis, tapi Permintaan tidak bergerak sama sekali. (Contoh: Air mineral di gurun).
+
+## Menghitung Elastisitas
+
+```{r}
+# Hitung Elastisitas Permintaan
+calculate_elasticity <- function(P1, P2, Q1, Q2) {
+  # Metode Midpoint (lebih akurat)
+  price_change <- (P2 - P1) / ((P2 + P1) / 2)
+  quantity_change <- (Q2 - Q1) / ((Q2 + Q1) / 2)
+  
+  elasticity <- quantity_change / price_change
+  return(elasticity)
+}
+
+# Contoh: Permintaan Kopi
+price1 <- 3.00
+price2 <- 3.50
+quantity1 <- 100
+quantity2 <- 85
+
+elasticity <- calculate_elasticity(price1, price2, 
+                                   quantity1, quantity2)
+
+print(paste("Price Elasticity of Demand:", round(elasticity, 2)))
+
+if (abs(elasticity) > 1) {
+  print(paste("Demand is ELASTIC"))
+} else if (abs(elasticity) < 1) {
+  print(paste("Demand is INELASTIC"))
+} else {
+  print(paste("Demand is UNIT ELASTIC"))
+}
+```
+
+## Saran
+
+Kalau kamu tahu produkmu itu Inelastis, kamu bisa menaikkan harga tanpa takut kehilangan banyak pelanggan. Sebaliknya, kalau Elastis, kamu harus hati-hati banget.
+
+## Contoh Soal
+Harga sebuah produk turun dari Rp 10.000 menjadi Rp 8.000. Akibat dari penurunan harga tersebut, jumlah barang yang diminta meningkat dari 100 unit menjadi 140 unit. Coba kalian hitung elastisitas permintaannya, dan tentukan apakah permintaan tersebut elastis atau inelastis. 
+
+
+------------------------------------------------------------------------
