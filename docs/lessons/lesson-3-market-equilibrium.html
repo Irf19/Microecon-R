@@ -8,7 +8,7 @@
 
 <meta name="author" content="Irfan Tri Raharjo">
 
-<title>Introduction to Economics &amp; R – R-ECON</title>
+<title>Market Equilibrium – R-ECON</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,24 +59,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,8 +105,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -116,11 +145,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../Assets/logo-econr.svg" alt="" class="navbar-logo light-content">
-    <img src="../../Assets/logo-econr.svg" alt="" class="navbar-logo dark-content">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../Assets/logo-econr.svg" alt="" class="navbar-logo light-content">
+    <img src="../Assets/logo-econr.svg" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">R-ECON</span>
     </a>
   </div>
@@ -131,7 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../home.html"> 
+    <a class="nav-link" href="../home.html"> 
 <span class="menu-text">Beranda</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -140,41 +169,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-matkul-dasar-ie">    
         <li>
-    <a class="dropdown-item" href="../../lessons/lesson-1-introduction-to-economics-and-r.html">
+    <a class="dropdown-item" href="../lessons/lesson-1-introduction-to-economics-and-r.html">
  <span class="dropdown-text">Lesson 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../lessons/lesson-2-supply-and-demand.html">
+    <a class="dropdown-item" href="../lessons/lesson-2-supply-and-demand.html">
  <span class="dropdown-text">Lesson 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../lessons/lesson-3-market-equilibrium.html">
+    <a class="dropdown-item" href="../lessons/lesson-3-market-equilibrium.html">
  <span class="dropdown-text">Lesson 3</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../lessons/lesson-4-elasticity-of-demand.html">
+    <a class="dropdown-item" href="../lessons/lesson-4-elasticity-of-demand.html">
  <span class="dropdown-text">Lesson 4</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../lessons/lesson-5-gdp-and-economic-growth.html">
+    <a class="dropdown-item" href="../lessons/lesson-5-gdp-and-economic-growth.html">
  <span class="dropdown-text">Lesson 5</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../lessons/lesson-6-inflation-and-cpi.html">
+    <a class="dropdown-item" href="../lessons/lesson-6-inflation-and-cpi.html">
  <span class="dropdown-text">Lesson 6</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../thewikenpro.html"> 
+    <a class="nav-link" href="../thewikenpro.html"> 
 <span class="menu-text">The Wiken Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../belajar.html"> 
+    <a class="nav-link" href="../belajar.html"> 
 <span class="menu-text">BelajaR</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../mailme.html"> 
+    <a class="nav-link" href="../mailme.html"> 
 <span class="menu-text">Mail.me</span></a>
   </li>  
 </ul>
@@ -193,11 +222,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#kenalan-dengan-r-untuk-ekonomi" id="toc-kenalan-dengan-r-untuk-ekonomi" class="nav-link active" data-scroll-target="#kenalan-dengan-r-untuk-ekonomi">Kenalan dengan R untuk Ekonomi</a>
+  <li><a href="#keseimbangan-pasar" id="toc-keseimbangan-pasar" class="nav-link active" data-scroll-target="#keseimbangan-pasar">Keseimbangan Pasar</a>
   <ul class="collapse">
-  <li><a href="#ekonomi-itu-apa-sih" id="toc-ekonomi-itu-apa-sih" class="nav-link" data-scroll-target="#ekonomi-itu-apa-sih">Ekonomi itu Apa Sih?</a></li>
-  <li><a href="#kenapa-anak-ekonomi-wajib-banget-kenalan-sama-r" id="toc-kenapa-anak-ekonomi-wajib-banget-kenalan-sama-r" class="nav-link" data-scroll-target="#kenapa-anak-ekonomi-wajib-banget-kenalan-sama-r">Kenapa Anak Ekonomi Wajib Banget Kenalan Sama R?</a></li>
-  <li><a href="#setting-up-si-r" id="toc-setting-up-si-r" class="nav-link" data-scroll-target="#setting-up-si-r">Setting Up si R</a></li>
+  <li><a href="#memahami-keseimbangan-pasar" id="toc-memahami-keseimbangan-pasar" class="nav-link" data-scroll-target="#memahami-keseimbangan-pasar">Memahami Keseimbangan Pasar</a></li>
+  <li><a href="#mencari-titik-keseimbangan" id="toc-mencari-titik-keseimbangan" class="nav-link" data-scroll-target="#mencari-titik-keseimbangan">Mencari Titik Keseimbangan</a></li>
+  <li><a href="#pergeseran-kurva-permintaan-dan-penawaran" id="toc-pergeseran-kurva-permintaan-dan-penawaran" class="nav-link" data-scroll-target="#pergeseran-kurva-permintaan-dan-penawaran">Pergeseran Kurva Permintaan dan Penawaran</a></li>
+  </ul></li>
+  <li><a href="#faktor-penggeser-permintaan-demand-shifters" id="toc-faktor-penggeser-permintaan-demand-shifters" class="nav-link" data-scroll-target="#faktor-penggeser-permintaan-demand-shifters">Faktor Penggeser Permintaan (Demand Shifters):</a></li>
+  <li><a href="#faktor-penggeser-penawaran-supply-shifters" id="toc-faktor-penggeser-penawaran-supply-shifters" class="nav-link" data-scroll-target="#faktor-penggeser-penawaran-supply-shifters">Faktor Penggeser Penawaran (Supply Shifters):</a>
+  <ul class="collapse">
+  <li><a href="#simulasi" id="toc-simulasi" class="nav-link" data-scroll-target="#simulasi">Simulasi</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -207,8 +241,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Economics &amp; R</h1>
-<p class="subtitle lead">Lesson 1 - Economics with R</p>
+<h1 class="title">Market Equilibrium</h1>
+<p class="subtitle lead">Lesson 3 - Economics with R</p>
 </div>
 
 
@@ -231,40 +265,111 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="kenalan-dengan-r-untuk-ekonomi" class="level1">
-<h1>Kenalan dengan R untuk Ekonomi</h1>
-<p>Di sesi ini, kita bakal mengupas tuntas dasar-dasar Ekonomi dan gimana R bisa jadi tools super buat kamu menganalisis dunia ekonomi.</p>
-<section id="ekonomi-itu-apa-sih" class="level2">
-<h2 class="anchored" data-anchor-id="ekonomi-itu-apa-sih">Ekonomi itu Apa Sih?</h2>
-<p>Coba kamu bayangin: Setiap pagi kamu Cuma punya 15 ribu buat jajan, padahal kamu pengen banget beli kopi susu kekinian, seblak, plus thai tea. Gimana cara kamu milih?</p>
-<p>Nah, itulah esensi dari…Ekonomi! Ekonomi adalah ilmu sosial yang sebagian besar kerjanya adalah mengamati gimana individu seperti kamu, bisnis (warung kopi), pemerintah, bahkan negara membuat pilihan cerdas buat ngatur sumber daya yang serba terbatas demi memenuhi keinginan yang tidak terbatas.</p>
-<p>Garis besarnya, Ekonomi itu punya dua jagoan utama:</p>
-<ul>
-<li><p>Microeconomics (Ekonomi Mikro): ini fokus ke keputusan kecil. Contohnya: Kenapa harga nasi bakso di kampusmu naik? Kenapa kamu lebih milih streaming film daripada beli buku?</p></li>
-<li><p>Macroeconomics (Ekonomi Makro): ini lebih melihat gambaran besar. Contoh: Kenapa suatu negara bisa inflasi? Atau Gimana cara pemerintah ngurangin angka pengangguran?</p></li>
-</ul>
+<section id="keseimbangan-pasar" class="level1">
+<h1>Keseimbangan Pasar</h1>
+<p>Kita sudah tahu gimana pasar mencari “titik damai”. Sekarang, kita akan bahas: Apa yang bikin kedamaian itu terganggu?</p>
+<section id="memahami-keseimbangan-pasar" class="level2">
+<h2 class="anchored" data-anchor-id="memahami-keseimbangan-pasar">Memahami Keseimbangan Pasar</h2>
+<p>Keseimbangan pasar adalah saat:</p>
+<p><span class="math display">\[\text{Permintaan} = \text{Penawaran}\]</span></p>
+<p>• Di titik ini, harga sudah pas (Market-Clearing Price).</p>
+<p>• Tidak ada kelebihan stok (surplus) atau kekurangan stok (shortage).</p>
+<p>Pasar stabil.</p>
 </section>
-<section id="kenapa-anak-ekonomi-wajib-banget-kenalan-sama-r" class="level2">
-<h2 class="anchored" data-anchor-id="kenapa-anak-ekonomi-wajib-banget-kenalan-sama-r">Kenapa Anak Ekonomi Wajib Banget Kenalan Sama R?</h2>
-<p>Kenapa Anak Ekonomi Wajib Banget Kenalan Sama R? - Pertama dan utama, Gratis Total! (ga perlu bajak software mahal) - Ada toolkit/package khusus econometrics yang lengkap (Jeffrey Wooldridge) - Cocok buat bikin visualisasi data</p>
-<p>Ok, install dulu R dan Rstudio kalian</p>
-</section>
-<section id="setting-up-si-r" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-si-r">Setting Up si R</h2>
+<section id="mencari-titik-keseimbangan" class="level2">
+<h2 class="anchored" data-anchor-id="mencari-titik-keseimbangan">Mencari Titik Keseimbangan</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tentukan dulu Fungsi Permintaan &amp; Penawaran</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>demand_function <span class="ot">&lt;-</span> <span class="cf">function</span>(P) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">100</span> <span class="sc">-</span> <span class="dv">2</span><span class="sc">*</span>P)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Your first R command</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Kenapa singa kalau berburu harus bersama-sama? </span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">      karena kalau sendiri namanya bukan singa, tapi single!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>supply_function <span class="ot">&lt;-</span> <span class="cf">function</span>(P) {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span><span class="dv">10</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>P)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Tentukan Harga Keseimbangan (prinsip, Qd = Qs)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 100 - 2P = -10 + 3P</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 110 = 5P</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>equilibrium_price <span class="ot">&lt;-</span> <span class="dv">110</span> <span class="sc">/</span> <span class="dv">5</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>equilibrium_quantity <span class="ot">&lt;-</span> <span class="fu">demand_function</span>(equilibrium_price)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Equilibrium Price: $"</span>, equilibrium_price))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Kenapa singa kalau berburu harus bersama-sama? \n      karena kalau sendiri namanya bukan singa, tapi single!"</code></pre>
+<pre><code>[1] "Equilibrium Price: $ 22"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Equilibrium Quantity:"</span>, equilibrium_quantity, <span class="st">"units"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Equilibrium Quantity: 56 units"</code></pre>
 </div>
 </div>
-<p>Sebagai awal perkenalan, kalian bisa lanjut ke <a href="https://irfan-tri-raharjo.quarto.pub/r-microecon/thewikenpro.html">The Wiken Project</a>| <a href="https://rpubs.com/Irfan_Raharjo/1021498">Pengenalan R dan RStudio</a></p>
+</section>
+<section id="pergeseran-kurva-permintaan-dan-penawaran" class="level2">
+<h2 class="anchored" data-anchor-id="pergeseran-kurva-permintaan-dan-penawaran">Pergeseran Kurva Permintaan dan Penawaran</h2>
+<p>Harga bisa berubah mendadak bukan cuma karena penjual iseng, tapi karena ada faktor besar lain yang menggeser seluruh kurva Permintaan atau Penawaran.</p>
+<p>Ini kayak ada gempa yang mengubah seluruh peta pasar, menghasilkan titik keseimbangan (harga) yang baru.</p>
+</section>
+</section>
+<section id="faktor-penggeser-permintaan-demand-shifters" class="level1">
+<h1>Faktor Penggeser Permintaan (Demand Shifters):</h1>
+<p>Ini adalah hal-hal yang membuat kamu (sebagai pembeli) tiba-tiba jadi lebih atau kurang pengen suatu barang, tanpa peduli harganya:</p>
+<p>• Pendapatan: Gajian! (Permintaan naik).</p>
+<p>• Tren/Selera: Makanan itu lagi hype di TikTok.</p>
+<p>• Harga Barang Terkait: Harga teh naik, jadi kamu beralih minum kopi.</p>
+<p>• Ekspektasi: Kamu dengar harga BBM besok naik, jadi kamu beli sekarang.</p>
+</section>
+<section id="faktor-penggeser-penawaran-supply-shifters" class="level1">
+<h1>Faktor Penggeser Penawaran (Supply Shifters):</h1>
+<p>Ini adalah hal-hal yang membuat produsen tiba-tiba jadi lebih atau kurang mampu/mau menjual:</p>
+<p>• Harga Bahan Baku: Harga biji kopi naik drastis (Penawaran turun).</p>
+<p>• Teknologi: Mesin baru yang bikin produksi lebih cepat (Penawaran naik).</p>
+<p>• Ekspektasi: Produsen yakin harga akan naik bulan depan, jadi stok ditahan.</p>
+<p>• Kebijakan Pemerintah: Pajak atau subsidi baru.</p>
+<section id="simulasi" class="level2">
+<h2 class="anchored" data-anchor-id="simulasi">Simulasi</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pergeseran Permintaan</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>price <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">2</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>demand_original <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> price</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>demand_shifted <span class="ot">&lt;-</span> <span class="dv">120</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> price  <span class="co"># Peningkatan Permintaan</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>supply <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">10</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> price</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Bikin data frame untuk Visualisasi</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>shift_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Price =</span> price,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Original_Demand =</span> demand_original,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Shifted_Demand =</span> demand_shifted,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Supply =</span> supply</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Hitung Harga Keseimbangan Baru</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>new_equilibrium_price <span class="ot">&lt;-</span> (<span class="dv">120</span> <span class="sc">+</span> <span class="dv">10</span>) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>new_equilibrium_quantity <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">10</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> new_equilibrium_price</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Original Equilibrium Price: $22"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Original Equilibrium Price: $22"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"New Equilibrium Price: $"</span>, new_equilibrium_price))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "New Equilibrium Price: $ 26"</code></pre>
+</div>
+</div>
+<p>Pada lesson ini, kita telah mempelajari bagaimana interaksi antara permintaan dan penawaran menentukan keseimbangan pasar yang baru. Konsep market equilibrium ini dapat kita gunakan untuk menganalisis pasar, termasuk dampak kebijakan, perubahan teknologi, dan intervensi pemerintah.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mengapa pasar tidak selalu berada pada titik keseimbangan? Kondisi apa yang menyebabkan atau memperlambat proses penyesuaian harga?</p>
+</div>
+</div>
+<hr>
 
 
 </section>

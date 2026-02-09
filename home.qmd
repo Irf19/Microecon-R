@@ -4,7 +4,6 @@ format: html
 editor: visual
 ---
 
-
 R-Econ berisi materi belajar ekonomi dasar yang dirancang untuk para pelajar SMA/SMK sederajat yang baru mulai mengenal ekonomi mikro, grafik permintaan dan penawaran, serta sedikit komputasi statistik.
 
 Platform ini disusun dari pengalaman mengikuti program micromasters dan praktik belajar mandiri. R sendiri merupakan bahasa pemrograman untuk komputasi statistik dan grafis yang *open-source*.
