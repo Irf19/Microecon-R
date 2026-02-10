@@ -3,7 +3,7 @@
     "path": "D:/WikenProjectR/landing_page_quarto/EKON-R/index.qmd",
     "project_path": "index.qmd",
     "type": "quarto_markdown",
-    "hash": "1222785171",
+    "hash": "158705262",
     "contents": "",
     "dirty": false,
     "created": 1770630797398.0,
@@ -17,16 +17,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "cursorPosition": "10,150",
+        "cursorPosition": "1,8",
         "scrollLine": "0",
         "rmdVisualModeLocation": "2:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1770708926,
+    "lastKnownWriteTime": 1770709491,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1770708926,
+    "last_content_update": 1770709491106,
     "read_only": false,
     "read_only_alternatives": []
 }
