@@ -106,6 +106,7 @@ ggplot(chart_data, aes(x = year)) +
 ## Menghitung Real vs Nominal GDP
 
 ```{r}
+#| echo: true
 # Nominal vs Real GDP (adjusting for inflation)
 nominal_gdp <- c(20000, 21000, 22100, 23300, 24600)
 cpi <- c(100, 102, 105, 108, 112)  # Consumer Price Index
@@ -120,8 +121,7 @@ gdp_comparison <- data.frame(
   CPI = cpi
 )
 
-print(paste("\nNominal GDP shows the current dollar value\n"))
-print(paste("Real GDP adjusts for inflation\n\n"))
+
 print(gdp_comparison)
 ```
 

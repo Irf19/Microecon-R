@@ -40,3 +40,6 @@ website:
 format:
   html:
     css: styles.css
+    google-analytics: "G-KP8JERTSJ1"
+    include-in-header: 
+    - gsc.html
