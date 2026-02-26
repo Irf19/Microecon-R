@@ -10,5 +10,5 @@ editor: visual
 ## Mail.me
 
 Kolaborasi dan project, hubungi\
-[**irfantriharjo\@gmail.com**](mailto:irfantriharjo@gmail.com){.email}
+[**microeconr\@gmail.com**](mailto:microeconr@gmail.com){.email}
 :::

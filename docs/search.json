@@ -137,7 +137,7 @@
     "href": "belajar.html",
     "title": "BelajaR",
     "section": "",
-    "text": "Aplikasi Ekonomi Mikro dengan R: Pengantar\nPada bagian ini kalian akan belajar memulai pembelajaran ekonomi mikro menggunakan R. Sebagai awalan kalian akan menjawab pertanyaan kuis klasik dari Principles of Economics - Mankiw dan berlatih menggunakan kode R sederhana untuk mencari nilai Q dan P.\nLink : R-Econ 01\n\n\nAplikasi Ekonomi Mikro dengan R: Producer Surplus\nSoal cerita yang tersaji akan mengingatkan anda pada perhitungan producer surplus sekaligus menjajal kode R.\nLink : R-Econ 02\n\n\nAplikasi Ekonomi Mikro dengan R: Simulasi Permintaan\nSelanjutnya kita sajikan simulasi permintaan. Selain mengingat materi ilmu ekonomi, kalian juga musti ingat beberapa konsep statistik.\nLink : R-Econ 03"
+    "text": "Aplikasi Ekonomi Mikro dengan R: Pengantar\nPada bagian ini kalian akan belajar memulai pembelajaran ekonomi mikro menggunakan R. Sebagai awalan kalian akan menjawab pertanyaan kuis klasik dari Principles of Economics - Mankiw dan berlatih menggunakan kode R sederhana untuk mencari nilai Q dan P.\nLink : R-Econ 01\n\n\nAplikasi Ekonomi Mikro dengan R: Producer Surplus\nSoal cerita yang tersaji akan mengingatkan anda pada perhitungan producer surplus sekaligus menjajal kode R.\nLink : R-Econ 02\n\n\nAplikasi Ekonomi Mikro dengan R: Simulasi Permintaan\nSelanjutnya kita sajikan simulasi permintaan. Selain mengingat materi ilmu ekonomi, kalian juga musti ingat beberapa konsep statistik.\nLink : R-Econ 03\n\n\nE-book\nPanduan instalasi R dan RStudio\n\n\nSeries"
   },
   {
     "objectID": "lessons/lesson-1-introduction-to-economics-and-r.html",
@@ -249,13 +249,13 @@
     "href": "mailme.html",
     "title": "mail.me",
     "section": "",
-    "text": "Kolaborasi dan project, hubungi\nirfantriharjo@gmail.com"
+    "text": "Kolaborasi dan project, hubungi\nmicroeconr@gmail.com"
   },
   {
     "objectID": "mailme.html#mail.me",
     "href": "mailme.html#mail.me",
     "title": "mail.me",
     "section": "",
-    "text": "Kolaborasi dan project, hubungi\nirfantriharjo@gmail.com"
+    "text": "Kolaborasi dan project, hubungi\nmicroeconr@gmail.com"
   }
 ]

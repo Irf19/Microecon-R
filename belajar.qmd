@@ -21,3 +21,10 @@ Link : [R-Econ 02](https://irfan-raharjo.shinyapps.io/Micro2/)
 Selanjutnya kita sajikan simulasi permintaan. Selain mengingat materi ilmu ekonomi, kalian juga musti ingat beberapa konsep statistik.
 
 Link : [R-Econ 03](https://irfan-raharjo.shinyapps.io/Micro3/)
+
+# E-book
+
+[Panduan instalasi R dan RStudio](https://drive.google.com/file/d/16YcQMBMIzE8SHqcPMQcb1_hOV1ZZ6tOB/view?usp=sharing)
+
+# Series
+
