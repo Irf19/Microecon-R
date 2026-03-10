@@ -43,8 +43,7 @@ library(dplyr)
 library(tidyr)
 
 # Your first R command
-print("Kenapa singa kalau berburu harus bersama-sama? 
-      karena kalau sendiri namanya bukan singa, tapi single!")
+print("Kenapa singa kalau berburu harus bersama-sama? Karena kalau sendiri namanya bukan singa, tapi single!")
 ```
 
 
