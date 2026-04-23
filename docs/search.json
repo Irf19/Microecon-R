@@ -4,7 +4,7 @@
     "href": "thewikenpro.html",
     "title": "The Wiken Project| Eksplorasi Ekonomi & Data dengan R",
     "section": "",
-    "text": "The Wiken Project adalah koleksi simulasi analisis data ekonomi menggunakan R yang menjembatani teori ekonomi mikro dengan fenomena nyata. Di sini, anda akan menemukan tulisan dan aplikasi interaktif tentang pengenalan R, visualisasi mobilitas sosial, pengaruh kota kelahiran terhadap pendapatan, dan lain-lain sebagai bagian dari pembelajaran ekonomi berbasis data.\nJelajahi proyek ekonomi berbasis simulasi data & R yang menghubungkan teori dengan realitas ekonomi sehari-hari. Termasuk analisis mobilitas sosial, birthplace effect, dan visualisasi data.\n\nRPubs\n1. Pengenalan R dan RStudio\n\nTeknologi dan Pertumbuhan Ekonomi: Analisis Dampak Inovasi Digital\nVisualisasi Mobilitas Sosial: Perintis vs Pewaris dalam Grafik Sankey\nPengaruh Kota Kelahiran terhadap Pendapatan | Birthplace Effect\n\n\n\nShinnyApp\n\nAnalisis Regresi\nTicTac Games"
+    "text": "The Wiken Project adalah koleksi simulasi analisis data ekonomi menggunakan R yang menjembatani teori ekonomi mikro dengan fenomena nyata. Di sini, anda akan menemukan tulisan dan aplikasi interaktif tentang pengenalan R, visualisasi mobilitas sosial, pengaruh kota kelahiran terhadap pendapatan, dan lain-lain sebagai bagian dari pembelajaran ekonomi berbasis data.\nJelajahi proyek ekonomi berbasis simulasi data & R yang menghubungkan teori dengan realitas ekonomi sehari-hari. Termasuk analisis mobilitas sosial, birthplace effect, dan visualisasi data.\n\nRPubs\n\nPengenalan R dan RStudio\nTeknologi dan Pertumbuhan Ekonomi: Analisis Dampak Inovasi Digital\nVisualisasi Mobilitas Sosial: Perintis vs Pewaris dalam Grafik Sankey\nPengaruh Kota Kelahiran terhadap Pendapatan | Birthplace Effect\nDynamic Pricing: Mengapa Harga Berubah? Simulasi Ekonomi dengan R\n\n\n\nShinnyApp\n\nAnalisis Regresi\nTicTac Games"
   },
   {
     "objectID": "lessons/lesson-6-inflation-and-cpi.html",
@@ -128,9 +128,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Laman Belajar Ekonomi dan R",
+    "title": "Platform Belajar Ekonomi dan R",
     "section": "",
-    "text": "Econ-R berisi materi belajar ekonomi dasar yang dirancang untuk para pelajar SMA/SMK sederajat yang baru mulai mengenal ekonomi mikro, grafik permintaan dan penawaran, serta sedikit komputasi statistik.\nPlatform ini disusun dari pengalaman mengikuti program micromasters dan praktik belajar mandiri. R sendiri merupakan bahasa pemrograman untuk komputasi statistik dan grafis yang open-source.\nMelalui platform ini, kamu akan belajar melalui praktik belajar mandiri, mencoba langsung konsep ekonomi mikro menggunakan data sederhana di R. Econ-R bisa jadi langkah awal sebelum naik ke level pembelajaran ala Micromasters DEDP.\nLangkah awal"
+    "text": "Econ-R merupakan platform pembelajaran ekonomi komputasional yang memadukan teori, simulasi, serta visualisasi dengan memanfaatkan bahasa pemrograman R. Platform ini menyajikan materi ekonomi dasar dan pengenalan awal komputasi statistik yang dirancang khusus bagi pelajar tingkat menengah.\nPengembangan platform ini didasarkan pada pengalaman mengikuti program micromaster serta proses pembelajaran mandiri. R sendiri merupakan bahasa pemrograman berbasis open-source yang banyak digunakan untuk analisis statistik dan visualisasi data.\nMelalui Econ-R, useRs diajak untuk belajar secara mandiri melalui pendekatan praktik langsung.Konsep-konsep ekonomi mikro akan dipahami dengan bantuan data sederhana yang diolah menggunakan R. Platform ini dapat menjadi pijakan awal sebelum melanjutkan ke tingkat pembelajaran lanjut, seperti program Micromasters DEDP\nLangkah awal"
   },
   {
     "objectID": "belajar.html",
