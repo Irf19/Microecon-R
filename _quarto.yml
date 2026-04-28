@@ -6,7 +6,10 @@ project:
 
 website:
   title: "ECON-R"
-
+  site-url: https://microeconr.netlify.app/
+  
+  description: "Platform belajar ekonomi komputasional dengan R untuk siswa SMA dan pemula."
+  
   navbar:
     logo: Assets/logo-econr.svg
     left:

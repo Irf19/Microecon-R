@@ -20,7 +20,6 @@ editor:
 Kita sudah tahu gimana pasar mencari "titik damai".
 Sekarang, kita akan bahas: Apa yang bikin kedamaian itu terganggu?
 
-
 ## Memahami Keseimbangan Pasar
 
 Keseimbangan pasar adalah saat:
@@ -65,7 +64,8 @@ Ini kayak ada gempa yang mengubah seluruh peta pasar, menghasilkan titik keseimb
 
 Ini adalah hal-hal yang membuat kamu (sebagai pembeli) tiba-tiba jadi lebih atau kurang pengen suatu barang, tanpa peduli harganya:
 
-• Pendapatan: Gajian! (Permintaan naik).
+• Pendapatan: Gajian!
+(Permintaan naik).
 
 • Tren/Selera: Makanan itu lagi hype di TikTok.
 
@@ -110,9 +110,16 @@ print(paste("Original Equilibrium Price: $22"))
 print(paste("New Equilibrium Price: $", new_equilibrium_price))
 ```
 
-Pada lesson ini, kita telah mempelajari bagaimana interaksi antara permintaan dan penawaran menentukan keseimbangan pasar yang baru. Konsep market equilibrium ini dapat kita gunakan untuk menganalisis pasar, termasuk dampak kebijakan, perubahan teknologi, dan intervensi pemerintah.
+Pada lesson ini, kita telah mempelajari bagaimana interaksi antara permintaan dan penawaran menentukan keseimbangan pasar yang baru.
+Konsep market equilibrium ini dapat kita gunakan untuk menganalisis pasar, termasuk dampak kebijakan, perubahan teknologi, dan intervensi pemerintah.
 
-:::{.callout-note}
-Mengapa pasar tidak selalu berada pada titik keseimbangan? Kondisi apa yang menyebabkan atau memperlambat proses penyesuaian harga?
+::: callout-note
+Mengapa pasar tidak selalu berada pada titik keseimbangan?
+Kondisi apa yang menyebabkan atau memperlambat proses penyesuaian harga?
 :::
+
 ------------------------------------------------------------------------
+
+[Lanjut](https://microeconr.netlify.app/lessons/lesson-4-elasticity-of-demand)
+
+[Kembali](https://microeconr.netlify.app/lessons/lesson-3-market-equilibrium)

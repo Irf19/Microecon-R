@@ -625,6 +625,8 @@ F-statistic: 704.2 on 1 and 28 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Q = 18388 - 104*P Q = 18388 - 104P</p>
 <p>Ini adalah fungsi permintaan linear. Apakah kalian bisa mengartikan nilai koefisien dari fungsi tersebut?</p>
 <hr>
+<p><a href="https://microeconr.netlify.app/lessons/lesson-3-market-equilibrium">Lanjut</a></p>
+<p><a href="https://microeconr.netlify.app/lessons/lesson-1-introduction-to-economics-and-r">Kembali</a></p>
 
 
 </section>
@@ -705,7 +707,7 @@ F-statistic: 704.2 on 1 and 28 DF,  p-value: &lt; 2.2e-16</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/microeconr\.netlify\.app\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

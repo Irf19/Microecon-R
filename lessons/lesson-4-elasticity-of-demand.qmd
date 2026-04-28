@@ -98,7 +98,11 @@ if (abs(elasticity) > 1) {
 Kalau kamu tahu produkmu itu Inelastis, kamu bisa menaikkan harga tanpa takut kehilangan banyak pelanggan. Sebaliknya, kalau Elastis, kamu harus hati-hati banget.
 
 ## Contoh Soal
-Harga sebuah produk turun dari Rp 10.000 menjadi Rp 8.000. Akibat dari penurunan harga tersebut, jumlah barang yang diminta meningkat dari 100 unit menjadi 140 unit. Coba kalian hitung elastisitas permintaannya, dan tentukan apakah permintaan tersebut elastis atau inelastis. 
 
+Harga sebuah produk turun dari Rp 10.000 menjadi Rp 8.000. Akibat dari penurunan harga tersebut, jumlah barang yang diminta meningkat dari 100 unit menjadi 140 unit. Coba kalian hitung elastisitas permintaannya, dan tentukan apakah permintaan tersebut elastis atau inelastis.
 
 ------------------------------------------------------------------------
+
+[Lanjut](https://microeconr.netlify.app/lessons/lesson-5-gdp-and-economic-growth)
+
+[Kembali](https://microeconr.netlify.app/lessons/lesson-3-market-equilibrium)

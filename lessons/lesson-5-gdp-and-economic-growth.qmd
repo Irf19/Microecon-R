@@ -125,5 +125,8 @@ gdp_comparison <- data.frame(
 print(gdp_comparison)
 ```
 
-
 ------------------------------------------------------------------------
+
+[Lanjut](https://microeconr.netlify.app/lessons/lesson-6-inflation-and-cpi)
+
+[Kembali](https://microeconr.netlify.app/lessons/lesson-4-elasticity-of-demand)

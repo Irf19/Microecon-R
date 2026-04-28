@@ -132,14 +132,11 @@ ggplot(market_data) +
 
 ```
 
-Permintaan dan penawaran membantu kita memahami bagaimana keputusan individu bertemu di pasar. Melalui kurva tersebut, kita bisa melihat bagaimana harga keseimbangan terbentuk, mengapa pasar cenderung menunju titik tertentu, dan bagaimana perubahan kondisi mempengaruhi hasil akhir.
-Konsep ini bisa menjadi fondasi untuk analisis kebijakan ekonomi. 
+Permintaan dan penawaran membantu kita memahami bagaimana keputusan individu bertemu di pasar. Melalui kurva tersebut, kita bisa melihat bagaimana harga keseimbangan terbentuk, mengapa pasar cenderung menunju titik tertentu, dan bagaimana perubahan kondisi mempengaruhi hasil akhir. Konsep ini bisa menjadi fondasi untuk analisis kebijakan ekonomi.
 
 ##Membuat Fungsi Permintaan
 
-Penasaran kan bagaimana fungsi permintaan seperti 
-$$Qd = 1000 - 140*P$$
-bisa tiba-tiba muncul? Sini aku jelasin.
+Penasaran kan bagaimana fungsi permintaan seperti $$Qd = 1000 - 140*P$$ bisa tiba-tiba muncul? Sini aku jelasin.
 
 Misal, seorang pelaku UMKM mencatat 30 kali transaksi penjualan tas sekolah. Penjualan ke-1 sampai ke-15, harga relatif stabil. Mulai penjualan ke-16, harga mulai dinaikkan (misal karena biaya bahan naik), maka:
 
@@ -184,6 +181,7 @@ ggplot(datpj, aes(x=P, y=Q)) +
   ) +
   theme_minimal()
 ```
+
 Melalui visualisasi kita bisa lihat secara jelas ya bagaimana pola datanya. Lanjut, bagian terpenting untuk menjawab pertanyaan awal bagaimana fungsi permintaannya?
 
 ```{r}
@@ -191,13 +189,17 @@ model_permint <- lm(Q ~ P, data = datpj)
 
 summary(model_permint)
 ```
+
 Berdasarkan formula diatas, kita dapati hasil sebagai berikut:
 
 Perhatikan nilai intercept dan P
 
-Q = 18388 - 104*P
-Q = 18388 - 104P
+Q = 18388 - 104\*P Q = 18388 - 104P
 
 Ini adalah fungsi permintaan linear. Apakah kalian bisa mengartikan nilai koefisien dari fungsi tersebut?
 
 ------------------------------------------------------------------------
+
+[Lanjut](https://microeconr.netlify.app/lessons/lesson-3-market-equilibrium)
+
+[Kembali](https://microeconr.netlify.app/lessons/lesson-1-introduction-to-economics-and-r)
