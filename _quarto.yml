@@ -5,9 +5,9 @@ project:
     - Assets
 
 website:
-  title: "ECON-R"
+  title: ""
   site-url: https://microeconr.netlify.app/
-  
+  favicon: Assets/logo-econr.svg
   description: "Platform belajar ekonomi komputasional dengan R untuk siswa SMA dan pemula."
   
   navbar:

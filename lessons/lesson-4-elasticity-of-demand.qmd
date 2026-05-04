@@ -1,6 +1,6 @@
 ---
-title: "Elasticity of Demand"
-subtitle: "Lesson 4 - Economics with R"
+title: "Elastisitas Permintaan: Cara Menghitung Sensitivitas Harga di R"
+subtitle: "Mengukur Respon Konsumen terhadap Perubahan Harga"
 author: "Irfan Tri Raharjo"
 format: 
   html:

@@ -1,6 +1,6 @@
 ---
-title: "Supply and Demand"
-subtitle: "Lesson 2 - Economics with R"
+title: "Analisis Penawaran dan Permintaan: Visualisasi Kurva dengan R"
+subtitle: "Memahami Hukum Pasar Melalui Pemrograman R"
 author: "Irfan Tri Raharjo"
 format: 
   html:

@@ -1,13 +1,30 @@
 ---
-title: "Platform Belajar Ekonomi dan R"
+title: ""
 format: html
-editor: visual
 ---
 
-Econ-R merupakan platform pembelajaran ekonomi komputasional yang memadukan teori, simulasi, serta visualisasi dengan memanfaatkan bahasa pemrograman R. Platform ini menyajikan materi ekonomi dasar dan pengenalan awal komputasi statistik yang dirancang khusus bagi pelajar tingkat menengah.
+::: {.hero}
 
-Pengembangan platform ini didasarkan pada pengalaman mengikuti program micromaster serta proses pembelajaran mandiri. R sendiri merupakan bahasa pemrograman berbasis *open-source* yang banyak digunakan untuk analisis statistik dan visualisasi data.
+<div class="hero-left">
 
-Melalui Econ-R, useRs diajak untuk belajar secara mandiri melalui pendekatan praktik langsung.Konsep-konsep ekonomi mikro akan dipahami dengan bantuan data sederhana yang diolah menggunakan R. Platform ini dapat menjadi pijakan awal sebelum melanjutkan ke tingkat pembelajaran lanjut, seperti program [Micromasters DEDP](https://micromasters.mit.edu/dedp/learner-resources/)
+<span class="badge">PENGANTAR TEORI & PRAKTIK</span>
 
-[Langkah awal](https://microeconr.netlify.app/lessons/lesson-1-introduction-to-economics-and-r)
+<h1>
+Belajar Ekonomi dengan R<br>
+</h1>
+
+<p>
+Platform belajar analisis data ekonomi dengan R untuk siswa dan mahasiswa yang ingin memahami ekonomi secara praktis melalui data dan komputasi statistik.
+</p>
+
+<a href="/lessons/lesson-1-introduction-to-economics-and-r.html" class="btn-primary">
+Mulai Belajar
+</a>
+
+</div>
+
+<div class="hero-right">
+<img src="/Assets/P.png" alt="Analytics">
+</div>
+
+:::

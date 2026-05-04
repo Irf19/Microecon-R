@@ -1,6 +1,6 @@
 ---
-title: "Introduction to Economics & R"
-subtitle: "Lesson 1 - Economics with R"
+title: " Pengenalan Ekonomi & R"
+subtitle: "Panduan Dasar Komputasi Statistik"
 author: "Irfan Tri Raharjo"
 format: 
   html:
@@ -34,7 +34,7 @@ Kenapa Anak Ekonomi Wajib Banget Kenalan Sama R? - Pertama dan utama, Gratis Tot
 
 Ok, install dulu R dan Rstudio kalian
 
-## Setting Up si R
+## Setting Up R
 
 ```{r}
 # Load libraries

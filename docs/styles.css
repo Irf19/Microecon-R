@@ -1,7 +1,124 @@
-/* css styles */
+/* ======================
+   HERO SECTION (FINAL CLEAN)
+====================== */
 
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #ecfdf5, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* LEFT */
+.hero-left {
+  max-width: 520px;
+}
+
+.hero-left h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-left p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* BUTTON */
+.btn-primary {
+  display: inline-block;
+  background: #16a34a;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+  box-shadow: 0 4px 14px rgba(22,163,74,0.25);
+}
+
+.btn-primary:hover {
+  background: #15803d;
+}
+
+/* RIGHT */
+.hero-right img {
+  max-width: 360px;
+  width: 100%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ======================
+   NAVBAR CLEAN FINAL
+====================== */
+
+.navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* BRAND (logo + text) */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151 !important;
+  margin-right: 16px;
+}
+
+/* logo */
 .navbar-brand img {
-  height: 48px;     
-  max-height: 48px;
-  padding: 0;
+  height: 38px;
+  width: auto;
+}
+
+/* MENU */
+.navbar-nav {
+  margin-left: 20px;  
+  gap: 12px;
+}
+
+/* link */
+.navbar-nav .nav-link {
+  color: #374151 !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #16a34a !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: #16a34a !important;
+  font-weight: 600;
 }

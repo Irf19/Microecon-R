@@ -1,6 +1,6 @@
 ---
-title: "GDP and Economic Growth"
-subtitle: "Lesson 5 - Economics with R"
+title: "GDP dan Pertumbuhan Ekonomi: Analisis Makroekonomi Berbasis Data"
+subtitle: "Mengukur Kesehatan Ekonomi Negara Melalui PDB (Produk Domestik Bruto)"
 author: "Irfan Tri Raharjo"
 format: 
   html:
