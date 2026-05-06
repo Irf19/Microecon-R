@@ -47,3 +47,5 @@ format:
     include-in-header: 
     - gsc.html
     - schema.html
+
+site-url: https://ekonr.netlify.app/

@@ -1,30 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 120">
 
   <!-- HEXAGON -->
-    <polygon points="60,5 110,35 110,85 60,115 10,85 10,35"
+  <polygon points="65,5 115,35 115,85 65,115 15,85 15,35"
            fill="none"
            stroke="#059669"
-           stroke-width="9"/>
+           stroke-width="6"/>
 
   <!-- Bar chart -->
-  <rect x="38" y="60" width="8" height="25" fill="#16a34a"/>
-  <rect x="52" y="50" width="8" height="35" fill="#16a34a"/>
-  <rect x="66" y="40" width="8" height="45" fill="#16a34a"/>
+  <rect x="45" y="60" width="10" height="30" fill="#16a34a"/>
+  <rect x="60" y="50" width="10" height="40" fill="#16a34a"/>
+  <rect x="75" y="40" width="10" height="50" fill="#16a34a"/>
 
-  <!-- Stylized R curve -->
-  <path d="M78 78 Q90 65 78 52"
+  <!-- Stylized R -->
+  <path d="M90 78 Q102 65 90 52"
         stroke="#22c55e"
-        stroke-width="3"
+        stroke-width="4"
         fill="none"/>
-
-  <!-- TEXT -->
-  <text x="130" y="90"
-        font-family="Segoe UI, sans-serif"
-        font-size="90"
-        font-weight="600"
-        letter-spacing="0.5"
-        fill="#111827">
-    ECON-R
-  </text>
 
 </svg>
