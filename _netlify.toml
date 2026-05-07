@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "https://microeconr.netlify.app/*"
-  to = "https://ekon-r.netlify.app/"
-  status = 301
