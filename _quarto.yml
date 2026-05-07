@@ -3,12 +3,13 @@ project:
   output-dir: docs
   resources:
     - Assets
+    - googlea9c12b708b05d534.html 
 
 website:
   title: ""
-  site-url: https://microeconr.netlify.app/
+  site-url: https://ekon-r.netlify.app/
   favicon: Assets/logo-econr.svg
-  description: "Platform belajar ekonomi komputasional dengan R untuk siswa SMA dan pemula."
+  description: "Platform belajar analisis data ekonomi dengan R untuk siswa dan mahasiswa yang ingin memahami ekonomi secara praktis melalui data dan komputasi statistik."
   
   navbar:
     logo: Assets/logo-econr.svg
