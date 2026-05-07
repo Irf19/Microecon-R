@@ -3,8 +3,7 @@ project:
   output-dir: docs
   resources:
     - Assets
-    - googlea9c12b708b05d534.html 
-
+    
 website:
   title: "EKON-R"
   site-url: https://ekon-r.netlify.app/
