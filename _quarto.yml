@@ -5,7 +5,7 @@ project:
     - Assets
     
 website:
-  title: "EKON-R"
+  title: ""
   site-url: https://ekon-r.netlify.app/
   favicon: Assets/logo-econr.svg
   description: "Platform belajar analisis data ekonomi dengan R untuk siswa dan mahasiswa yang ingin memahami ekonomi secara praktis melalui data dan komputasi statistik."

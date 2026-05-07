@@ -1,0 +1,79 @@
+---
+title: "Kuis Interaktif: Elastisitas Permintaan dan Penawaran"
+author: "IRf"
+runtime: shiny_prerendered
+output:
+  learnr::tutorial:
+    progressive: true
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+
+tutorial_options(
+  exercise.timelimit = 60,
+  exercise.checker = gradethis::grade_learnr
+)
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+
+📘 **Penjelasan:**
+- `learnr` → untuk kuis & latihan interaktif.  
+- `gradethis` → untuk memberi nilai otomatis pada latihan kode.  
+- `exercise.checker = gradethis::grade_learnr` → menghubungkan mekanisme penilaian.
+
+---
+
+## 🧮 Langkah 3 — Tambahkan konten belajar
+
+Misalnya kita bahas topik *Elastisitas Permintaan dan Penawaran*.
+
+Tambahkan bagian teks biasa (markdown):
+
+```markdown
+## 📘 Konsep Dasar
+
+Formula elastisitas permintaan:
+\[
+E_d = \frac{\%\Delta Q_d}{\%\Delta P}
+\]
+
+
+```{r, context="server"}
+quiz(
+  question("Jika harga naik 10% dan permintaan turun 20%, berapakah elastisitas permintaannya?",
+    answer("-0.2"),
+    answer("-2", correct = TRUE),
+    answer("2"),
+    answer("0.5"),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+
+```
+
+
+📘 **Penjelasan:**
+- `quiz()` dan `question()` → fungsi dari `learnr` untuk membuat kuis.  
+- `context="server"` → penting! artinya bagian ini dijalankan dalam *server environment* Shiny.  
+
+---
+
+## 🧠 Langkah 5 — Tambahkan latihan kode interaktif
+
+
+```{r latihan1, exercise=TRUE}
+# Hitung elastisitas permintaan
+delta_Q <- -15
+delta_P <- 5
+
+Ed <- delta_Q / delta_P
+Ed
+
+```
+

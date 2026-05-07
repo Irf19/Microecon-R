@@ -1,0 +1,76 @@
+
+---
+title: "Bab 2: Turunan Pertama dalam Ekonomi"
+author: "Nama Anda"
+output: html_document
+---
+
+## 2.1 Pengantar
+
+Dalam ilmu ekonomi, turunan pertama digunakan untuk mengukur perubahan kecil dalam suatu variabel ekonomi. Konsep ini dikenal sebagai konsep *marginal*, seperti *marginal cost (MC)*, *marginal revenue (MR)*, dan *marginal product (MP)*. Turunan membantu kita menentukan bagaimana output, biaya, atau pendapatan berubah ketika variabel input berubah sedikit.
+
+## 2.2 Konsep Dasar Turunan
+
+Secara matematis, turunan pertama dari fungsi f(x) didefinisikan sebagai:
+
+$$
+f'(x) = \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Delta x}
+$$
+
+Dalam ekonomi:
+- Jika \( C(x) \) adalah fungsi biaya total, maka \( C'(x) \) adalah biaya marginal.
+- Jika \( R(x) \) adalah fungsi pendapatan total, maka \( R'(x) \) adalah pendapatan marginal.
+
+## 2.3 Contoh Soal Manual
+
+**Soal:**  
+Diketahui fungsi biaya:  
+\( C(x) = 5x^2 + 10x + 100 \)
+
+Tentukan:
+1. Biaya marginal \( C'(x) \)
+2. Biaya marginal saat x = 4
+
+**Jawaban:**
+1. \( C'(x) = 10x + 10 \)  
+2. \( C'(4) = 10(4) + 10 = 50 \)
+
+Interpretasi: Biaya untuk memproduksi unit ke-5 adalah sekitar 50 satuan biaya.
+
+## 2.4 Penyelesaian dengan R
+
+Gunakan paket `Deriv` untuk menghitung turunan secara simbolik.
+
+```{r}
+# Instalasi jika belum terpasang (hapus komentar saat dijalankan)
+# install.packages("Deriv")
+library(Deriv)
+
+# Definisikan fungsi biaya total
+C <- function(x) 5*x^2 + 10*x + 100
+
+# Hitung turunan pertama
+C_prime <- Deriv(C, "x")
+C_prime
+
+# Evaluasi biaya marginal saat x = 4
+C_prime(4)
+```
+
+## 2.5 Visualisasi Fungsi dan Marginal
+
+```{r}
+curve(C(x), from = 0, to = 10, col = "blue", lwd = 2, ylab = "C(x)", main = "Fungsi Biaya Total")
+curve(C_prime(x), from = 0, to = 10, col = "red", lwd = 2, add = TRUE)
+legend("topleft", legend = c("C(x)", "C'(x)"), col = c("blue", "red"), lwd = 2)
+```
+
+## 2.6 Latihan Mandiri
+
+1. Diketahui \( R(x) = 20x - x^2 \). Hitung pendapatan marginal \( R'(x) \).
+2. Evaluasi nilai \( R'(5) \). Apa interpretasi ekonominya?
+3. Gunakan R untuk menghitung dan memvisualisasikan fungsi \( R(x) \) dan \( R'(x) \).
+
+## 2.7 Kesimpulan
+
+Turunan pertama adalah alat penting dalam analisis ekonomi. Dengan bantuan R, kita bisa menghitung dan memvisualisasikan fungsi ekonomi dan perubahan marginnya secara efisien dan akurat.
