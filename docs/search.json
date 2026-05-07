@@ -161,9 +161,9 @@
     "text": "Kenapa Anak Ekonomi Wajib Banget Kenalan Sama R? - Pertama dan utama, Gratis Total! (ga perlu bajak software mahal) - Ada toolkit/package khusus econometrics yang lengkap (Jeffrey Wooldridge) - Cocok buat bikin visualisasi data\nOk, install dulu R dan Rstudio kalian"
   },
   {
-    "objectID": "lessons/lesson-1-introduction-to-economics-and-r.html#setting-up-si-r",
-    "href": "lessons/lesson-1-introduction-to-economics-and-r.html#setting-up-si-r",
-    "title": "Pengantar Ekonomi dengan R",
+    "objectID": "lessons/lesson-1-introduction-to-economics-and-r.html#setting-up-r",
+    "href": "lessons/lesson-1-introduction-to-economics-and-r.html#setting-up-r",
+    "title": "Pengenalan Ekonomi & R",
     "section": "",
     "text": "# Load libraries\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\n\n# Your first R command\nprint(\"Kenapa singa kalau berburu harus bersama-sama? Karena kalau sendiri namanya bukan singa, tapi single!\")\n\n[1] \"Kenapa singa kalau berburu harus bersama-sama? Karena kalau sendiri namanya bukan singa, tapi single!\"\n\n\nSebagai awal perkenalan, kalian bisa baca The Wiken Project| Pengenalan R dan RStudio, atau lanjut Materi Supply and Demand"
   },
@@ -264,12 +264,5 @@
     "title": "mail.me",
     "section": "",
     "text": "Kolaborasi dan project, hubungi\nmicroeconr@gmail.com"
-  },
-  {
-    "objectID": "lessons/lesson-1-introduction-to-economics-and-r.html#setting-up-r",
-    "href": "lessons/lesson-1-introduction-to-economics-and-r.html#setting-up-r",
-    "title": "Pengenalan Ekonomi & R",
-    "section": "",
-    "text": "# Load libraries\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\n\n# Your first R command\nprint(\"Kenapa singa kalau berburu harus bersama-sama? Karena kalau sendiri namanya bukan singa, tapi single!\")\n\n[1] \"Kenapa singa kalau berburu harus bersama-sama? Karena kalau sendiri namanya bukan singa, tapi single!\"\n\n\nSebagai awal perkenalan, kalian bisa baca The Wiken Project| Pengenalan R dan RStudio, atau lanjut Materi Supply and Demand"
   }
 ]

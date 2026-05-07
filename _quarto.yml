@@ -6,7 +6,7 @@ project:
     - googlea9c12b708b05d534.html 
 
 website:
-  title: ""
+  title: "EKON-R"
   site-url: https://ekon-r.netlify.app/
   favicon: Assets/logo-econr.svg
   description: "Platform belajar analisis data ekonomi dengan R untuk siswa dan mahasiswa yang ingin memahami ekonomi secara praktis melalui data dan komputasi statistik."
@@ -49,4 +49,3 @@ format:
     - gsc.html
     - schema.html
 
-site-url: https://ekonr.netlify.app/

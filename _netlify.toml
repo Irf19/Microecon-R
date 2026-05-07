@@ -1,4 +1,4 @@
 [[redirects]]
   from = "https://microeconr.netlify.app/*"
-  to = "https://ekonr.netlify.app/:splat"
+  to = "https://ekon-r.netlify.app/"
   status = 301
