@@ -1,5 +1,6 @@
 ---
-title: "EKON-R"
+title: ""
+title-block-style: none
 format: html
 ---
 
@@ -7,7 +8,7 @@ format: html
 
 <div class="hero-left">
 
-<span class="badge">PENGANTAR TEORI & PRAKTIK</span>
+<span class="badge">DASAR & IMPLEMENTASI</span>
 
 <h1>
 Belajar Ekonomi dengan R<br>

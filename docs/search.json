@@ -128,9 +128,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "EKON-R",
+    "title": "\nBelajar Ekonomi dengan R\n",
     "section": "",
-    "text": "PENGANTAR TEORI & PRAKTIK\n\nBelajar Ekonomi dengan R\n\n\nPlatform belajar analisis data ekonomi dengan R untuk siswa dan mahasiswa yang ingin memahami ekonomi secara praktis melalui data dan komputasi statistik.\n\n Mulai Belajar"
+    "text": "DASAR & IMPLEMENTASI\n\nBelajar Ekonomi dengan R\n\n\nPlatform belajar analisis data ekonomi dengan R untuk siswa dan mahasiswa yang ingin memahami ekonomi secara praktis melalui data dan komputasi statistik.\n\n Mulai Belajar"
   },
   {
     "objectID": "belajar.html",
@@ -138,6 +138,62 @@
     "title": "BelajaR",
     "section": "",
     "text": "Aplikasi Ekonomi Mikro dengan R: Pengantar\nPada bagian ini kalian akan belajar memulai pembelajaran ekonomi mikro menggunakan R. Sebagai awalan kalian akan menjawab pertanyaan kuis klasik dari Principles of Economics - Mankiw dan berlatih menggunakan kode R sederhana untuk mencari nilai Q dan P.\nLink : R-Econ 01\n\n\nAplikasi Ekonomi Mikro dengan R: Producer Surplus\nSoal cerita yang tersaji akan mengingatkan anda pada perhitungan producer surplus sekaligus menjajal kode R.\nLink : R-Econ 02\n\n\nAplikasi Ekonomi Mikro dengan R: Simulasi Permintaan\nSelanjutnya kita sajikan simulasi permintaan. Selain mengingat materi ilmu ekonomi, kalian juga musti ingat beberapa konsep statistik.\nLink : R-Econ 03\n\n\nE-book\nPanduan instalasi R dan RStudio\n\n\nSeries"
+  },
+  {
+    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html",
+    "href": "Downloads/Bab_2_Turunan_Ekonomi.html",
+    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
+    "section": "",
+    "text": "Dalam ilmu ekonomi, turunan pertama digunakan untuk mengukur perubahan kecil dalam suatu variabel ekonomi. Konsep ini dikenal sebagai konsep marginal, seperti marginal cost (MC), marginal revenue (MR), dan marginal product (MP). Turunan membantu kita menentukan bagaimana output, biaya, atau pendapatan berubah ketika variabel input berubah sedikit."
+  },
+  {
+    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#pengantar",
+    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#pengantar",
+    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
+    "section": "",
+    "text": "Dalam ilmu ekonomi, turunan pertama digunakan untuk mengukur perubahan kecil dalam suatu variabel ekonomi. Konsep ini dikenal sebagai konsep marginal, seperti marginal cost (MC), marginal revenue (MR), dan marginal product (MP). Turunan membantu kita menentukan bagaimana output, biaya, atau pendapatan berubah ketika variabel input berubah sedikit."
+  },
+  {
+    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#konsep-dasar-turunan",
+    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#konsep-dasar-turunan",
+    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
+    "section": "2.2 Konsep Dasar Turunan",
+    "text": "2.2 Konsep Dasar Turunan\nSecara matematis, turunan pertama dari fungsi f(x) didefinisikan sebagai:\n\\[\nf'(x) = \\lim_{\\Delta x \\to 0} \\frac{f(x+\\Delta x) - f(x)}{\\Delta x}\n\\]\nDalam ekonomi: - Jika ( C(x) ) adalah fungsi biaya total, maka ( C’(x) ) adalah biaya marginal. - Jika ( R(x) ) adalah fungsi pendapatan total, maka ( R’(x) ) adalah pendapatan marginal."
+  },
+  {
+    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#contoh-soal-manual",
+    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#contoh-soal-manual",
+    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
+    "section": "2.3 Contoh Soal Manual",
+    "text": "2.3 Contoh Soal Manual\nSoal:\nDiketahui fungsi biaya:\n( C(x) = 5x^2 + 10x + 100 )\nTentukan: 1. Biaya marginal ( C’(x) ) 2. Biaya marginal saat x = 4\nJawaban: 1. ( C’(x) = 10x + 10 )\n2. ( C’(4) = 10(4) + 10 = 50 )\nInterpretasi: Biaya untuk memproduksi unit ke-5 adalah sekitar 50 satuan biaya."
+  },
+  {
+    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#penyelesaian-dengan-r",
+    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#penyelesaian-dengan-r",
+    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
+    "section": "2.4 Penyelesaian dengan R",
+    "text": "2.4 Penyelesaian dengan R\nGunakan paket Deriv untuk menghitung turunan secara simbolik.\n\n# Instalasi jika belum terpasang (hapus komentar saat dijalankan)\n# install.packages(\"Deriv\")\nlibrary(Deriv)\n\n# Definisikan fungsi biaya total\nC &lt;- function(x) 5*x^2 + 10*x + 100\n\n# Hitung turunan pertama\nC_prime &lt;- Deriv(C, \"x\")\nC_prime\n\nfunction (x) \n10 + 10 * x\n\n# Evaluasi biaya marginal saat x = 4\nC_prime(4)\n\n[1] 50"
+  },
+  {
+    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#visualisasi-fungsi-dan-marginal",
+    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#visualisasi-fungsi-dan-marginal",
+    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
+    "section": "2.5 Visualisasi Fungsi dan Marginal",
+    "text": "2.5 Visualisasi Fungsi dan Marginal\n\ncurve(C(x), from = 0, to = 10, col = \"blue\", lwd = 2, ylab = \"C(x)\", main = \"Fungsi Biaya Total\")\ncurve(C_prime(x), from = 0, to = 10, col = \"red\", lwd = 2, add = TRUE)\nlegend(\"topleft\", legend = c(\"C(x)\", \"C'(x)\"), col = c(\"blue\", \"red\"), lwd = 2)"
+  },
+  {
+    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#latihan-mandiri",
+    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#latihan-mandiri",
+    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
+    "section": "2.6 Latihan Mandiri",
+    "text": "2.6 Latihan Mandiri\n\nDiketahui ( R(x) = 20x - x^2 ). Hitung pendapatan marginal ( R’(x) ).\nEvaluasi nilai ( R’(5) ). Apa interpretasi ekonominya?\nGunakan R untuk menghitung dan memvisualisasikan fungsi ( R(x) ) dan ( R’(x) )."
+  },
+  {
+    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#kesimpulan",
+    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#kesimpulan",
+    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
+    "section": "2.7 Kesimpulan",
+    "text": "2.7 Kesimpulan\nTurunan pertama adalah alat penting dalam analisis ekonomi. Dengan bantuan R, kita bisa menghitung dan memvisualisasikan fungsi ekonomi dan perubahan marginnya secara efisien dan akurat."
   },
   {
     "objectID": "lessons/lesson-1-introduction-to-economics-and-r.html",
@@ -264,61 +320,5 @@
     "title": "mail.me",
     "section": "",
     "text": "Kolaborasi dan project, hubungi\nmicroeconr@gmail.com"
-  },
-  {
-    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html",
-    "href": "Downloads/Bab_2_Turunan_Ekonomi.html",
-    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
-    "section": "",
-    "text": "Dalam ilmu ekonomi, turunan pertama digunakan untuk mengukur perubahan kecil dalam suatu variabel ekonomi. Konsep ini dikenal sebagai konsep marginal, seperti marginal cost (MC), marginal revenue (MR), dan marginal product (MP). Turunan membantu kita menentukan bagaimana output, biaya, atau pendapatan berubah ketika variabel input berubah sedikit."
-  },
-  {
-    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#pengantar",
-    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#pengantar",
-    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
-    "section": "",
-    "text": "Dalam ilmu ekonomi, turunan pertama digunakan untuk mengukur perubahan kecil dalam suatu variabel ekonomi. Konsep ini dikenal sebagai konsep marginal, seperti marginal cost (MC), marginal revenue (MR), dan marginal product (MP). Turunan membantu kita menentukan bagaimana output, biaya, atau pendapatan berubah ketika variabel input berubah sedikit."
-  },
-  {
-    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#konsep-dasar-turunan",
-    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#konsep-dasar-turunan",
-    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
-    "section": "2.2 Konsep Dasar Turunan",
-    "text": "2.2 Konsep Dasar Turunan\nSecara matematis, turunan pertama dari fungsi f(x) didefinisikan sebagai:\n\\[\nf'(x) = \\lim_{\\Delta x \\to 0} \\frac{f(x+\\Delta x) - f(x)}{\\Delta x}\n\\]\nDalam ekonomi: - Jika ( C(x) ) adalah fungsi biaya total, maka ( C’(x) ) adalah biaya marginal. - Jika ( R(x) ) adalah fungsi pendapatan total, maka ( R’(x) ) adalah pendapatan marginal."
-  },
-  {
-    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#contoh-soal-manual",
-    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#contoh-soal-manual",
-    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
-    "section": "2.3 Contoh Soal Manual",
-    "text": "2.3 Contoh Soal Manual\nSoal:\nDiketahui fungsi biaya:\n( C(x) = 5x^2 + 10x + 100 )\nTentukan: 1. Biaya marginal ( C’(x) ) 2. Biaya marginal saat x = 4\nJawaban: 1. ( C’(x) = 10x + 10 )\n2. ( C’(4) = 10(4) + 10 = 50 )\nInterpretasi: Biaya untuk memproduksi unit ke-5 adalah sekitar 50 satuan biaya."
-  },
-  {
-    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#penyelesaian-dengan-r",
-    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#penyelesaian-dengan-r",
-    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
-    "section": "2.4 Penyelesaian dengan R",
-    "text": "2.4 Penyelesaian dengan R\nGunakan paket Deriv untuk menghitung turunan secara simbolik.\n\n# Instalasi jika belum terpasang (hapus komentar saat dijalankan)\n# install.packages(\"Deriv\")\nlibrary(Deriv)\n\n# Definisikan fungsi biaya total\nC &lt;- function(x) 5*x^2 + 10*x + 100\n\n# Hitung turunan pertama\nC_prime &lt;- Deriv(C, \"x\")\nC_prime\n\nfunction (x) \n10 + 10 * x\n\n# Evaluasi biaya marginal saat x = 4\nC_prime(4)\n\n[1] 50"
-  },
-  {
-    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#visualisasi-fungsi-dan-marginal",
-    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#visualisasi-fungsi-dan-marginal",
-    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
-    "section": "2.5 Visualisasi Fungsi dan Marginal",
-    "text": "2.5 Visualisasi Fungsi dan Marginal\n\ncurve(C(x), from = 0, to = 10, col = \"blue\", lwd = 2, ylab = \"C(x)\", main = \"Fungsi Biaya Total\")\ncurve(C_prime(x), from = 0, to = 10, col = \"red\", lwd = 2, add = TRUE)\nlegend(\"topleft\", legend = c(\"C(x)\", \"C'(x)\"), col = c(\"blue\", \"red\"), lwd = 2)"
-  },
-  {
-    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#latihan-mandiri",
-    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#latihan-mandiri",
-    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
-    "section": "2.6 Latihan Mandiri",
-    "text": "2.6 Latihan Mandiri\n\nDiketahui ( R(x) = 20x - x^2 ). Hitung pendapatan marginal ( R’(x) ).\nEvaluasi nilai ( R’(5) ). Apa interpretasi ekonominya?\nGunakan R untuk menghitung dan memvisualisasikan fungsi ( R(x) ) dan ( R’(x) )."
-  },
-  {
-    "objectID": "Downloads/Bab_2_Turunan_Ekonomi.html#kesimpulan",
-    "href": "Downloads/Bab_2_Turunan_Ekonomi.html#kesimpulan",
-    "title": "Bab 2: Turunan Pertama dalam Ekonomi",
-    "section": "2.7 Kesimpulan",
-    "text": "2.7 Kesimpulan\nTurunan pertama adalah alat penting dalam analisis ekonomi. Dengan bantuan R, kita bisa menghitung dan memvisualisasikan fungsi ekonomi dan perubahan marginnya secara efisien dan akurat."
   }
 ]

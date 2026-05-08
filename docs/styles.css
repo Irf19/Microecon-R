@@ -124,16 +124,10 @@
   font-weight: 600;
 }
 
-/* Geser title hlm ke kiri */
-.quarto-title-block .quarto-title-banner,
-.quarto-title-block .quarto-title {
-  padding-left: 0 !important;
-  margin-left: -180px;
-}
-
-/* Title halaman Quarto */
-.quarto-title .title {
-  color: #065f46 !important;
-  letter-spacing: -0.5px;
-  font-weight: 700;
+.hero-brand {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #065f46;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
 }

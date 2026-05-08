@@ -1,20 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 90">
 
-  <!-- HEXAGON -->
-  <polygon points="65,5 115,35 115,85 65,115 15,85 15,35"
-           fill="none"
-           stroke="#059669"
-           stroke-width="6"/>
+  <!-- Accent line -->
+  <rect x="0" y="72" width="220" height="4" rx="2"
+        fill="#BBF7D0" />
 
-  <!-- Bar chart -->
-  <rect x="45" y="60" width="10" height="30" fill="#16a34a"/>
-  <rect x="60" y="50" width="10" height="40" fill="#16a34a"/>
-  <rect x="75" y="40" width="10" height="50" fill="#16a34a"/>
+  <!-- EKON -->
+  <text
+    x="10"
+    y="58"
+    font-family="Arial"
+    font-size="44"
+    font-weight="700"
+    fill="#1F2937"
+    letter-spacing="1">
+    EKON
+  </text>
 
-  <!-- Stylized R -->
-  <path d="M90 78 Q102 65 90 52"
-        stroke="#22c55e"
-        stroke-width="4"
-        fill="none"/>
+  <!-- Dash -->
+  <text
+    x="168"
+    y="58"
+    font-family="Arial"
+    font-size="44"
+    font-weight="500"
+    fill="#4B5563">
+    -
+  </text>
+
+  <!-- R -->
+  <text
+    x="192"
+    y="58"
+    font-family="Arial"
+    font-size="44"
+    font-weight="700"
+    fill="#059669">
+    R
+  </text>
 
 </svg>

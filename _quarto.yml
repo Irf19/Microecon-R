@@ -5,12 +5,13 @@ project:
     - Assets
     
 website:
-  title: ""
+  title: "EKON-R: Eksplorasi. Analisis. Insight"
   site-url: https://ekon-r.netlify.app/
   favicon: Assets/logo-econr.svg
   description: "Platform belajar analisis data ekonomi dengan R untuk siswa dan mahasiswa yang ingin memahami ekonomi secara praktis melalui data dan komputasi statistik."
   
   navbar:
+    title: false
     logo: Assets/logo-econr.svg
     left:
       - href: index.qmd
